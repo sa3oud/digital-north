@@ -283,7 +283,7 @@
 
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(3, 1fr);
             gap: 2rem;
         }
 
@@ -442,6 +442,12 @@
             }
         }
 
+        @media (max-width: 968px) {
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
         @media (max-width: 768px) {
             .hero h1 {
                 font-size: 2.5rem;
@@ -495,10 +501,10 @@
     <section id="home" class="hero">
         <h1>NORTH DIGITAL</h1>
         <p class="subtitle">Technical Consultancy</p>
-        <p>Amsterdam-based technical consultancy specializing in platform troubleshooting, infrastructure management, and automation solutions. Delivering rapid diagnostics and sustainable fixes for server, frontend, and backend challenges.</p>
+        <p>Amsterdam area-based technical consultancy specializing in full-stack development, infrastructure troubleshooting, and automation solutions. Delivering rapid diagnostics and sustainable fixes for modern web platforms.</p>
         <div class="cta-buttons">
             <a href="#contact" class="btn btn-primary">Get In Touch</a>
-            <a href="https://github.com/Sa3oud" target="_blank" class="btn btn-secondary">View Portfolio</a>
+            <a href="#services" class="btn btn-secondary">Our Services</a>
         </div>
     </section>
 
@@ -507,8 +513,8 @@
         <div class="about-content">
             <div class="about-text">
                 <h3>Rapid Diagnostics, Sustainable Solutions</h3>
-                <p>North Digital is an Amsterdam-based technical consultancy founded by Aimar, bringing 4+ years of experience in platform troubleshooting, infrastructure management, and automation.</p>
-                <p>We specialize in rapid response to technical emergencies while building long-term solutions. From server crashes to frontend performance issues to backend bottlenecks—we diagnose, fix, and prevent recurrence.</p>
+                <p>North Digital is an Amsterdam area-based technical consultancy founded by Aimar, bringing 4+ years of experience in full-stack development, platform troubleshooting, and automation.</p>
+                <p>We specialize in rapid response to technical emergencies while building long-term solutions. From server crashes to frontend performance issues to e-commerce platform optimization—we diagnose, fix, and prevent recurrence.</p>
                 <p>Our approach combines immediate problem-solving with systematic improvements, ensuring your platforms run reliably while scaling efficiently.</p>
             </div>
             <div class="stats-grid">
@@ -537,46 +543,68 @@
         
         <div class="services-grid">
             <div class="service-card">
-                <h3>🔧 Server Troubleshooting</h3>
+                <h3>🔧 Server & Infrastructure</h3>
                 <ul>
                     <li>Emergency server recovery</li>
                     <li>Performance diagnostics</li>
                     <li>Database optimization</li>
-                    <li>Resource bottleneck identification</li>
                     <li>Security incident response</li>
+                    <li>Infrastructure monitoring</li>
                 </ul>
             </div>
             
             <div class="service-card">
-                <h3>💻 Backend Troubleshooting</h3>
+                <h3>💻 Backend Development</h3>
                 <ul>
-                    <li>API performance issues</li>
-                    <li>Database query optimization</li>
-                    <li>Memory leak detection</li>
-                    <li>Integration debugging</li>
-                    <li>Code performance profiling</li>
+                    <li>API development & integration</li>
+                    <li>Database design & optimization</li>
+                    <li>Python, PHP applications</li>
+                    <li>Performance profiling</li>
+                    <li>Microservices architecture</li>
                 </ul>
             </div>
             
             <div class="service-card">
-                <h3>🎨 Frontend Troubleshooting</h3>
+                <h3>🌐 Frontend Development</h3>
                 <ul>
-                    <li>Load time optimization</li>
-                    <li>JavaScript error resolution</li>
-                    <li>Browser compatibility fixes</li>
-                    <li>Asset delivery optimization</li>
-                    <li>Rendering performance tuning</li>
+                    <li>Responsive web applications</li>
+                    <li>JavaScript optimization</li>
+                    <li>Load time improvements</li>
+                    <li>Browser compatibility</li>
+                    <li>UI/UX implementation</li>
                 </ul>
             </div>
             
             <div class="service-card">
-                <h3>⚙️ Platform Optimization</h3>
+                <h3>🛒 E-commerce Solutions</h3>
                 <ul>
-                    <li>Full-stack health assessments</li>
-                    <li>Automation implementation</li>
-                    <li>Monitoring and alerting setup</li>
-                    <li>Infrastructure modernization</li>
-                    <li>Workflow optimization</li>
+                    <li>Magento development</li>
+                    <li>Payment gateway integration</li>
+                    <li>Cart optimization</li>
+                    <li>Platform migration</li>
+                    <li>Performance tuning</li>
+                </ul>
+            </div>
+            
+            <div class="service-card">
+                <h3>📈 SEO & Performance</h3>
+                <ul>
+                    <li>Technical SEO audits</li>
+                    <li>Site speed optimization</li>
+                    <li>Core Web Vitals improvement</li>
+                    <li>Schema markup implementation</li>
+                    <li>SEO strategy & analytics</li>
+                </ul>
+            </div>
+            
+            <div class="service-card">
+                <h3>⚙️ Automation & Integration</h3>
+                <ul>
+                    <li>Workflow automation (N8N, Zapier)</li>
+                    <li>Data pipeline development</li>
+                    <li>CI/CD setup</li>
+                    <li>API integration</li>
+                    <li>Process optimization</li>
                 </ul>
             </div>
         </div>
@@ -597,12 +625,8 @@
                         <span>+31 06 83 072 284</span>
                     </div>
                     <div class="contact-item">
-                        <span class="icon">💻</span>
-                        <a href="https://github.com/SaadSahmad" target="_blank">View Portfolio</a>
-                    </div>
-                    <div class="contact-item">
                         <span class="icon">📍</span>
-                        <span>Amsterdam, Netherlands</span>
+                        <span>Amsterdam area, Netherlands</span>
                     </div>
                 </div>
             </div>
