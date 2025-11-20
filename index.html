@@ -31,11 +31,11 @@
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
             line-height: 1.6;
             color: #333;
-            background: var(--white);
+            background: var(--primary-black);
             overflow-x: hidden;
         }
 
-        /* ========== HAMBURGER MENU (ALL PAGES) ========== */
+        /* ========== HAMBURGER MENU ========== */
         .hamburger-btn {
             position: fixed;
             top: 2rem;
@@ -91,7 +91,7 @@
             transform: rotate(-45deg) translate(7px, -7px);
         }
 
-        /* Mobile Menu Overlay */
+        /* Mobile Menu */
         .mobile-menu {
             position: fixed;
             top: 0;
@@ -135,9 +135,43 @@
             transform: translateX(10px);
         }
 
+        /* ========== FULL PAGE BACKGROUND WRAPPER ========== */
+        .full-page-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            z-index: 0;
+        }
+
+        .full-page-bg video,
+        .full-page-bg img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .full-page-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                to right,
+                rgba(10, 10, 10, 0.9) 0%,
+                rgba(10, 10, 10, 0.75) 40%,
+                rgba(10, 10, 10, 0.4) 70%,
+                transparent 100%
+            );
+        }
+
         /* ========== HERO SLIDER ========== */
         .hero-slider-wrapper {
-            margin-top: 0;
             height: 100vh;
             position: relative;
         }
@@ -159,7 +193,6 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            object-position: center;
         }
 
         .slide-overlay {
@@ -285,39 +318,126 @@
             height: 10px;
         }
 
+        /* ========== PAGE CONTENT WRAPPER ========== */
+        .page-content {
+            position: relative;
+            z-index: 1;
+            min-height: 100vh;
+            padding: 8rem 3rem 3rem;
+        }
+
+        .content-container {
+            max-width: 1440px;
+            margin: 0 auto;
+        }
+
+        /* ========== ABOUT PAGE CONTENT ========== */
+        .about-header {
+            margin-bottom: 6rem;
+        }
+
+        .about-header h1 {
+            color: var(--white);
+            font-size: 4.5rem;
+            font-weight: 200;
+            letter-spacing: -0.02em;
+            margin-bottom: 1.5rem;
+        }
+
+        .about-header p {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.3rem;
+            max-width: 700px;
+            font-weight: 300;
+            line-height: 1.7;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1.3fr 1fr;
+            gap: 6rem;
+            align-items: start;
+        }
+
+        .about-text h2 {
+            color: var(--white);
+            font-size: 2.8rem;
+            font-weight: 300;
+            margin-bottom: 2.5rem;
+            letter-spacing: -0.01em;
+        }
+
+        .about-text p {
+            color: rgba(255, 255, 255, 0.85);
+            font-size: 1.15rem;
+            line-height: 1.9;
+            margin-bottom: 1.8rem;
+        }
+
+        .about-text strong {
+            color: var(--white);
+            font-weight: 600;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        .stat-card {
+            background: rgba(26, 26, 26, 0.8);
+            backdrop-filter: blur(10px);
+            padding: 3rem 2rem;
+            text-align: center;
+            transition: all 0.4s ease;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        .stat-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+            border-color: var(--gold);
+            background: rgba(212, 175, 55, 0.15);
+        }
+
+        .stat-number {
+            font-size: 4rem;
+            font-weight: 200;
+            color: var(--white);
+            display: block;
+            margin-bottom: 0.75rem;
+        }
+
+        .stat-label {
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.7);
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            font-weight: 500;
+        }
+
         /* ========== SERVICES SECTION ========== */
         .services-wrapper {
-            background: var(--primary-black);
+            margin-top: 4rem;
         }
 
         .service-section {
-            border-bottom: 2px solid rgba(255, 255, 255, 0.08);
+            background: rgba(26, 26, 26, 0.6);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            margin-bottom: 2px;
             transition: all 0.4s ease;
-            position: relative;
         }
 
-        .service-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 0;
-            height: 100%;
-            background: rgba(22, 33, 62, 0.3);
-            transition: width 0.4s ease;
-            z-index: 0;
-        }
-
-        .service-section:hover::before {
-            width: 100%;
+        .service-section:hover {
+            background: rgba(22, 33, 62, 0.7);
         }
 
         .service-container {
             max-width: 1440px;
             margin: 0 auto;
             padding: 4rem 3rem;
-            position: relative;
-            z-index: 1;
         }
 
         .service-content {
@@ -329,8 +449,8 @@
         }
 
         .service-icon {
-            width: 240px;
-            height: 240px;
+            width: 200px;
+            height: 200px;
             flex-shrink: 0;
             color: var(--gold);
             opacity: 0.8;
@@ -352,7 +472,6 @@
             font-weight: 400;
             margin-bottom: 0.75rem;
             opacity: 0.85;
-            transition: all 0.3s ease;
         }
 
         .service-section:hover .service-category {
@@ -366,7 +485,6 @@
             font-weight: 500;
             margin-bottom: 2rem;
             line-height: 1.2;
-            transition: all 0.3s ease;
         }
 
         .service-section:hover .service-title {
@@ -381,7 +499,7 @@
 
         .service-tag {
             padding: 0.7rem 1.2rem;
-            background: var(--dark-blue);
+            background: rgba(24, 40, 62, 0.9);
             color: var(--white);
             font-size: 0.85rem;
             transition: all 0.3s ease;
@@ -398,7 +516,7 @@
             width: 56px;
             height: 56px;
             border-radius: 50%;
-            background: var(--dark-blue);
+            background: rgba(24, 40, 62, 0.8);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -435,99 +553,184 @@
             background: var(--primary-black);
         }
 
-        /* ========== CLIENTS SECTION ========== */
-        .clients-section {
-            background: var(--white);
-            padding: 8rem 3rem;
+        /* ========== CONTACT FORM ========== */
+        .contact-form-section {
+            background: rgba(26, 26, 26, 0.8);
+            backdrop-filter: blur(10px);
+            padding: 5rem 3rem;
+            margin-top: 4rem;
+            border: 1px solid rgba(212, 175, 55, 0.2);
         }
 
-        .clients-container {
-            max-width: 1440px;
+        .contact-form-container {
+            max-width: 1200px;
             margin: 0 auto;
-        }
-
-        .clients-header h2 {
-            color: var(--accent-blue);
-            font-size: 3rem;
-            font-weight: 300;
-            margin-bottom: 2rem;
-            letter-spacing: -0.01em;
-        }
-
-        .clients-header p {
-            font-size: 1.1rem;
-            color: var(--grey-400);
-            line-height: 1.8;
-            max-width: 900px;
-            margin-bottom: 5rem;
-        }
-
-        .clients-header strong {
-            color: var(--primary-black);
-            font-weight: 600;
-        }
-
-        .clients-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-            gap: 4rem 3rem;
-            align-items: center;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 5rem;
+            align-items: start;
         }
 
-        .client-logo-placeholder {
-            height: 80px;
-            background: #f0f0f0;
+        .contact-form-info h2 {
+            font-size: 2.5rem;
+            font-weight: 300;
+            color: var(--white);
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-form-info p {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.8;
+            margin-bottom: 3rem;
+        }
+
+        .contact-phone-wrapper {
             display: flex;
             align-items: center;
-            justify-content: center;
-            color: #ccc;
+            gap: 1rem;
+            margin-top: 3rem;
+        }
+
+        .contact-phone-wrapper svg {
+            width: 24px;
+            height: 24px;
+            fill: var(--gold);
+        }
+
+        .contact-phone-wrapper a {
+            color: var(--white);
+            text-decoration: none;
+            font-size: 1.3rem;
+            font-weight: 600;
+            padding-left: 1.5rem;
+            border-left: 3px solid var(--gold);
+            transition: color 0.3s ease;
+        }
+
+        .contact-phone-wrapper a:hover {
+            color: var(--gold);
+        }
+
+        .contact-form-wrapper {
+            background: rgba(10, 10, 10, 0.7);
+            padding: 3rem;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        .contact-form-wrapper h3 {
+            font-size: 1.5rem;
+            font-weight: 500;
+            color: var(--white);
+            margin-bottom: 2rem;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
             font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--white);
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.05);
+            font-family: inherit;
+            font-size: 1rem;
             transition: all 0.3s ease;
-            border: 1px solid #e0e0e0;
+            color: var(--white);
         }
 
-        .client-logo-placeholder:hover {
-            background: #e8e8e8;
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: rgba(255, 255, 255, 0.4);
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
             border-color: var(--gold);
+            box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1);
+            background: rgba(255, 255, 255, 0.08);
         }
 
-        /* ========== CONTACT SECTION ========== */
-        .contact-section {
-            background: var(--primary-black);
-            padding: 8rem 3rem;
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
         }
 
-        .contact-container {
-            max-width: 1440px;
-            margin: 0 auto;
+        .form-submit {
+            background: var(--gold);
+            color: var(--primary-black);
+            padding: 1.2rem 3rem;
+            border: none;
+            font-size: 0.9rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
         }
 
-        .contact-header h2 {
+        .form-submit:hover {
+            background: #e4c04a;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(212, 175, 55, 0.3);
+        }
+
+        /* ========== LOCATIONS SECTION ========== */
+        .locations-section {
+            margin-top: 4rem;
+        }
+
+        .locations-header h2 {
             color: var(--white);
             font-size: 3rem;
             font-weight: 300;
             margin-bottom: 1rem;
         }
 
-        .contact-header p {
+        .locations-header p {
             color: rgba(255, 255, 255, 0.85);
             font-size: 1.2rem;
-            margin-bottom: 5rem;
+            margin-bottom: 3rem;
         }
 
         .locations-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2px;
+            gap: 2rem;
         }
 
         .location-card {
-            background: var(--secondary-black);
+            background: rgba(26, 26, 26, 0.8);
+            backdrop-filter: blur(10px);
             padding: 3rem 2rem;
             transition: all 0.3s ease;
             cursor: pointer;
             position: relative;
             overflow: hidden;
+            border: 1px solid rgba(212, 175, 55, 0.2);
         }
 
         .location-card::before {
@@ -546,8 +749,8 @@
         }
 
         .location-card:hover {
-            background: rgba(26, 26, 26, 0.6);
             transform: translateY(-8px);
+            border-color: var(--gold);
         }
 
         .location-card h3 {
@@ -570,143 +773,15 @@
             font-weight: 500;
         }
 
-        /* ========== PAGE HERO (About/Services/Contact) ========== */
-        .page-hero {
-            margin-top: 0;
-            min-height: 100vh;
-            position: relative;
-            background: var(--primary-black);
-            display: flex;
-            align-items: center;
-            justify-content: flex-start;
-            padding: 8rem 3rem 4rem;
-        }
-
-        .page-hero-bg {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            opacity: 0.4;
-        }
-
-        .page-hero-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(
-                to right,
-                rgba(10, 10, 10, 0.85) 0%,
-                rgba(10, 10, 10, 0.6) 40%,
-                rgba(10, 10, 10, 0.2) 70%,
-                transparent 100%
-            );
-        }
-
-        .page-hero-content {
-            position: relative;
-            z-index: 2;
-            max-width: 1200px;
-            color: var(--white);
-            margin-left: 0;
-        }
-
-        .page-hero h1 {
-            font-size: 4.5rem;
-            font-weight: 200;
-            letter-spacing: -0.02em;
-            margin-bottom: 1.5rem;
-            max-width: 900px;
-        }
-
-        .page-hero p {
-            font-size: 1.3rem;
-            opacity: 0.9;
-            max-width: 700px;
-            font-weight: 300;
-            line-height: 1.7;
-        }
-
-        /* ========== CONTENT SECTIONS ========== */
-        .content-section {
-            padding: 7rem 3rem;
-            max-width: 1440px;
-            margin: 0 auto;
-        }
-
-        .about-grid {
-            display: grid;
-            grid-template-columns: 1.3fr 1fr;
-            gap: 6rem;
-            align-items: start;
-        }
-
-        .about-text h2 {
-            font-size: 2.8rem;
-            font-weight: 300;
-            color: var(--primary-black);
-            margin-bottom: 2.5rem;
-            letter-spacing: -0.01em;
-        }
-
-        .about-text p {
-            font-size: 1.15rem;
-            line-height: 1.9;
-            color: var(--grey-400);
-            margin-bottom: 1.8rem;
-        }
-
-        .about-text strong {
-            color: var(--primary-black);
-            font-weight: 600;
-        }
-
-        .stats-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2rem;
-        }
-
-        .stat-card {
-            background: #f8f8f8;
-            padding: 3rem 2rem;
-            text-align: center;
-            transition: all 0.4s ease;
-            border: 1px solid #e8e8e8;
-        }
-
-        .stat-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
-            border-color: var(--gold);
-            background: var(--white);
-        }
-
-        .stat-number {
-            font-size: 4rem;
-            font-weight: 200;
-            color: var(--primary-black);
-            display: block;
-            margin-bottom: 0.75rem;
-        }
-
-        .stat-label {
-            font-size: 0.85rem;
-            color: var(--grey-400);
-            text-transform: uppercase;
-            letter-spacing: 0.15em;
-            font-weight: 500;
-        }
-
         /* ========== FOOTER ========== */
         footer {
-            background: var(--primary-black);
+            background: rgba(10, 10, 10, 0.9);
+            backdrop-filter: blur(10px);
             border-top: 1px solid rgba(255, 255, 255, 0.08);
             padding: 5rem 3rem 2rem;
+            position: relative;
+            z-index: 1;
+            margin-top: 8rem;
         }
 
         .footer-container {
@@ -786,148 +861,16 @@
             display: block;
         }
 
-        /* ========== CONTACT FORM ========== */
-        .contact-form-section {
-            background: var(--white);
-            padding: 6rem 3rem;
-        }
-
-        .contact-form-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1fr 1.5fr;
-            gap: 5rem;
-            align-items: start;
-        }
-
-        .contact-form-info h2 {
-            font-size: 2.5rem;
-            font-weight: 300;
-            color: var(--primary-black);
-            margin-bottom: 1.5rem;
-        }
-
-        .contact-form-info p {
-            font-size: 1.1rem;
-            color: var(--grey-400);
-            line-height: 1.8;
-            margin-bottom: 3rem;
-        }
-
-        .contact-phone-wrapper {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            margin-top: 3rem;
-        }
-
-        .contact-phone-wrapper svg {
-            width: 24px;
-            height: 24px;
-            fill: var(--primary-black);
-        }
-
-        .contact-phone-wrapper a {
-            color: var(--primary-black);
-            text-decoration: none;
-            font-size: 1.3rem;
-            font-weight: 600;
-            padding-left: 1.5rem;
-            border-left: 3px solid var(--gold);
-            transition: color 0.3s ease;
-        }
-
-        .contact-phone-wrapper a:hover {
-            color: var(--gold);
-        }
-
-        .contact-form-wrapper {
-            background: #f8f8f8;
-            padding: 3rem;
-        }
-
-        .contact-form-wrapper h3 {
-            font-size: 1.5rem;
-            font-weight: 500;
-            color: var(--primary-black);
-            margin-bottom: 2rem;
-        }
-
-        .form-row {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1.5rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-
-        .form-group label {
-            display: block;
-            font-size: 0.85rem;
-            font-weight: 600;
-            color: var(--primary-black);
-            margin-bottom: 0.5rem;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
-
-        .form-group input,
-        .form-group select,
-        .form-group textarea {
-            width: 100%;
-            padding: 1rem;
-            border: 1px solid #ddd;
-            background: var(--white);
-            font-family: inherit;
-            font-size: 1rem;
-            transition: all 0.3s ease;
-        }
-
-        .form-group input:focus,
-        .form-group select:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: var(--gold);
-            box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1);
-        }
-
-        .form-group textarea {
-            min-height: 150px;
-            resize: vertical;
-        }
-
-        .form-submit {
-            background: var(--gold);
-            color: var(--primary-black);
-            padding: 1.2rem 3rem;
-            border: none;
-            font-size: 0.9rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            width: 100%;
-        }
-
-        .form-submit:hover {
-            background: #e4c04a;
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(212, 175, 55, 0.3);
-        }
-
         /* ========== RESPONSIVE ========== */
         @media (max-width: 968px) {
             .slide-text h1,
-            .slide-text h2 {
+            .slide-text h2,
+            .about-header h1 {
                 font-size: 2.5rem;
             }
 
-            .slide-content {
+            .slide-content,
+            .page-content {
                 padding: 0 2rem 4rem 2rem;
             }
 
@@ -949,8 +892,8 @@
             }
 
             .service-icon {
-                width: 180px;
-                height: 180px;
+                width: 150px;
+                height: 150px;
             }
 
             .service-title {
@@ -959,10 +902,6 @@
 
             .service-tags {
                 justify-content: center;
-            }
-
-            .clients-header h2 {
-                font-size: 2rem;
             }
 
             .about-grid {
@@ -974,12 +913,13 @@
                 grid-template-columns: 1fr;
             }
 
-            .page-hero h1 {
-                font-size: 2.5rem;
+            .contact-form-container {
+                grid-template-columns: 1fr;
+                gap: 3rem;
             }
 
-            .page-hero p {
-                font-size: 1.1rem;
+            .form-row {
+                grid-template-columns: 1fr;
             }
 
             .footer-nav {
@@ -991,15 +931,6 @@
                 flex-direction: column;
                 gap: 1.5rem;
                 text-align: center;
-            }
-
-            .contact-form-container {
-                grid-template-columns: 1fr;
-                gap: 3rem;
-            }
-
-            .form-row {
-                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -1028,9 +959,13 @@
             <div class="swiper-container heroSwiper">
                 <div class="swiper-wrapper">
                     
-                    <!-- Slide 1 -->
+                    <!-- Slide 1 - TESTING WITH PEXELS VIDEO -->
                     <div class="swiper-slide">
-                        <img src="hero-1.jpg" class="slide-bg" alt="">
+                        <!-- VIDEO FROM PEXELS -->
+                        <video class="slide-bg" autoplay muted loop playsinline>
+                            <source src="https://videos.pexels.com/video-files/2759477/2759477-uhd_2560_1440_30fps.mp4" type="video/mp4">
+                        </video>
+                        
                         <div class="slide-overlay"></div>
                         <div class="slide-content">
                             <div class="slide-text">
@@ -1051,7 +986,7 @@
                         <div class="slide-content">
                             <div class="slide-text">
                                 <h2>24/7 Incident Monitoring</h2>
-                                <p>Real-time alerting. Performance tracking. Automated response. Keep your platforms running smoothly with comprehensive monitoring solutions.</p>
+                                <p>Real-time alerting. Performance tracking. Automated response. Keep your platforms running smoothly.</p>
                                 <div class="slide-buttons">
                                     <a href="#" onclick="showPage('services'); return false;" class="btn btn-primary">Learn More</a>
                                 </div>
@@ -1066,7 +1001,7 @@
                         <div class="slide-content">
                             <div class="slide-text">
                                 <h2>Managed Hosting Solutions</h2>
-                                <p>SSL security. Daily backups. Performance optimization. Let us handle your infrastructure while you focus on growth.</p>
+                                <p>SSL security. Daily backups. Performance optimization. Let us handle your infrastructure.</p>
                                 <div class="slide-buttons">
                                     <a href="#" onclick="showPage('services'); return false;" class="btn btn-primary">Our Hosting</a>
                                 </div>
@@ -1081,7 +1016,7 @@
                         <div class="slide-content">
                             <div class="slide-text">
                                 <h2>Full-Stack Development</h2>
-                                <p>From frontend to backend. E-commerce to automation. We build scalable, reliable solutions for modern businesses.</p>
+                                <p>From frontend to backend. E-commerce to automation. We build scalable solutions.</p>
                                 <div class="slide-buttons">
                                     <a href="#" onclick="showPage('services'); return false;" class="btn btn-primary">View Services</a>
                                 </div>
@@ -1104,7 +1039,6 @@
                                 <circle cx="120" cy="120" r="90" stroke="currentColor" stroke-width="2" opacity="0.4"/>
                                 <circle cx="120" cy="120" r="60" stroke="currentColor" stroke-width="2" opacity="0.6"/>
                                 <circle cx="120" cy="120" r="30" fill="currentColor" opacity="0.8"/>
-                                <path d="M120 30 L150 90 L210 90 L165 120 L180 180 L120 150 L60 180 L75 120 L30 90 L90 90 Z" fill="currentColor" opacity="0.5"/>
                             </svg>
                         </div>
                         <div class="service-info">
@@ -1130,11 +1064,10 @@
                                 <rect x="60" y="60" width="120" height="120" stroke="currentColor" stroke-width="2" opacity="0.4"/>
                                 <circle cx="90" cy="90" r="20" fill="currentColor" opacity="0.6"/>
                                 <circle cx="150" cy="150" r="20" fill="currentColor" opacity="0.6"/>
-                                <line x1="90" y1="90" x2="150" y2="150" stroke="currentColor" stroke-width="3"/>
                             </svg>
                         </div>
                         <div class="service-info">
-                            <div class="service-category">Operational optimization and intelligence</div>
+                            <div class="service-category">Operational optimization</div>
                             <h3 class="service-title">Systems that optimize</h3>
                             <div class="service-tags">
                                 <span class="service-tag">Repetitive tasks slowing you down?</span>
@@ -1154,7 +1087,6 @@
                             <svg viewBox="0 0 240 240" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M120 40 L180 100 L180 180 L60 180 L60 100 Z" stroke="currentColor" stroke-width="2" opacity="0.4"/>
                                 <circle cx="120" cy="130" r="40" stroke="currentColor" stroke-width="2" opacity="0.6"/>
-                                <circle cx="120" cy="130" r="20" fill="currentColor"/>
                             </svg>
                         </div>
                         <div class="service-info">
@@ -1172,21 +1104,23 @@
             </div>
         </div>
 
-        <!-- Contact CTA Section -->
-        <div class="contact-section">
-            <div class="contact-container">
-                <div class="contact-header">
-                    <h2>Work with us</h2>
-                    <p>It might just be the best decision you make.</p>
-                </div>
-                <div class="locations-grid">
-                    <div class="location-card">
-                        <h3>Amsterdam</h3>
-                        <p class="location-subtitle">Contact us</p>
+        <!-- Contact CTA -->
+        <div class="page-content">
+            <div class="content-container">
+                <div class="locations-section">
+                    <div class="locations-header">
+                        <h2>Work with us</h2>
+                        <p>It might just be the best decision you make.</p>
                     </div>
-                    <div class="location-card">
-                        <h3>Remote Support</h3>
-                        <p class="location-subtitle">Contact us</p>
+                    <div class="locations-grid">
+                        <div class="location-card">
+                            <h3>Amsterdam</h3>
+                            <p class="location-subtitle">Contact us</p>
+                        </div>
+                        <div class="location-card">
+                            <h3>Remote Support</h3>
+                            <p class="location-subtitle">Contact us</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1195,40 +1129,51 @@
 
     <!-- ABOUT PAGE -->
     <div id="aboutPage" class="page">
-        <div class="page-hero">
-            <img src="about-hero.jpg" class="page-hero-bg" alt="">
-            <div class="page-hero-overlay"></div>
-            <div class="page-hero-content">
-                <h1>About North Digital</h1>
-                <p>Full-stack excellence meets rapid diagnostics. We build complete digital solutions that last.</p>
-            </div>
+        <!-- Full-page background - REPLACE WITH YOUR IMAGE/VIDEO -->
+        <div class="full-page-bg">
+            <!-- OPTION 1: VIDEO -->
+            <!-- <video autoplay muted loop playsinline>
+                <source src="about-bg-video.mp4" type="video/mp4">
+            </video> -->
+            
+            <!-- OPTION 2: IMAGE -->
+            <img src="about-hero.jpg" alt="">
+            
+            <div class="full-page-overlay"></div>
         </div>
 
-        <div class="content-section">
-            <div class="about-grid">
-                <div class="about-text">
-                    <h2>Full-Stack Excellence, Rapid Diagnostics</h2>
-                    <p>Netherlands-based technical consultancy with 4+ years of experience in full-stack development, platform troubleshooting, and automation. From frontend to backend, we build complete solutions.</p>
-                    <p><strong>We specialize in emergencies.</strong> Server crashes. Frontend performance issues. E-commerce platform failures. Database bottlenecks. We diagnose fast, fix it right, and prevent recurrence.</p>
-                    <p><strong>Built to last.</strong> Every solution combines immediate problem-solving with systematic improvements—ensuring your platforms run reliably at scale.</p>
+        <div class="page-content">
+            <div class="content-container">
+                <div class="about-header">
+                    <h1>About North Digital</h1>
+                    <p>Full-stack excellence meets rapid diagnostics. We build complete digital solutions that last.</p>
                 </div>
 
-                <div class="stats-grid">
-                    <div class="stat-card">
-                        <span class="stat-number">80%</span>
-                        <span class="stat-label">Process Efficiency Gain</span>
+                <div class="about-grid">
+                    <div class="about-text">
+                        <h2>Full-Stack Excellence, Rapid Diagnostics</h2>
+                        <p>Netherlands-based technical consultancy with 4+ years of experience in full-stack development, platform troubleshooting, and automation. From frontend to backend, we build complete solutions.</p>
+                        <p><strong>We specialize in emergencies.</strong> Server crashes. Frontend performance issues. E-commerce platform failures. Database bottlenecks. We diagnose fast, fix it right, and prevent recurrence.</p>
+                        <p><strong>Built to last.</strong> Every solution combines immediate problem-solving with systematic improvements—ensuring your platforms run reliably at scale.</p>
                     </div>
-                    <div class="stat-card">
-                        <span class="stat-number">70%</span>
-                        <span class="stat-label">Incident Reduction</span>
-                    </div>
-                    <div class="stat-card">
-                        <span class="stat-number">24-48h</span>
-                        <span class="stat-label">Initial Assessment</span>
-                    </div>
-                    <div class="stat-card">
-                        <span class="stat-number">4+</span>
-                        <span class="stat-label">Years Experience</span>
+
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <span class="stat-number">80%</span>
+                            <span class="stat-label">Process Efficiency Gain</span>
+                        </div>
+                        <div class="stat-card">
+                            <span class="stat-number">70%</span>
+                            <span class="stat-label">Incident Reduction</span>
+                        </div>
+                        <div class="stat-card">
+                            <span class="stat-number">24-48h</span>
+                            <span class="stat-label">Initial Assessment</span>
+                        </div>
+                        <div class="stat-card">
+                            <span class="stat-number">4+</span>
+                            <span class="stat-label">Years Experience</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1237,83 +1182,89 @@
 
     <!-- SERVICES PAGE -->
     <div id="servicesPage" class="page">
-        <div class="page-hero">
-            <img src="services-hero.jpg" class="page-hero-bg" alt="">
-            <div class="page-hero-overlay"></div>
-            <div class="page-hero-content">
-                <h1>Build smarter growth</h1>
-                <p>We architect the platforms, data foundations, and intelligent systems that power organizations with advanced digital ambitions. Building connected digital ecosystems that last.</p>
-            </div>
+        <!-- Full-page background -->
+        <div class="full-page-bg">
+            <img src="services-hero.jpg" alt="">
+            <div class="full-page-overlay"></div>
         </div>
 
-        <div class="services-wrapper">
-            <div class="service-section">
-                <div class="service-container">
-                    <div class="service-content">
-                        <div class="service-icon">
-                            <svg viewBox="0 0 240 240" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <circle cx="120" cy="120" r="90" stroke="currentColor" stroke-width="2" opacity="0.4"/>
-                                <path d="M60 120 L120 60 L180 120 L120 180 Z" fill="currentColor" opacity="0.5"/>
-                            </svg>
-                        </div>
-                        <div class="service-info">
-                            <div class="service-category">Frontend Development</div>
-                            <h3 class="service-title">Responsive & Fast</h3>
-                            <div class="service-tags">
-                                <span class="service-tag">JavaScript optimization</span>
-                                <span class="service-tag">Load time improvements</span>
-                                <span class="service-tag">Browser compatibility</span>
-                                <span class="service-tag">UI/UX implementation</span>
-                            </div>
-                        </div>
-                        <div class="service-expand"></div>
-                    </div>
+        <div class="page-content">
+            <div class="content-container">
+                <div class="about-header">
+                    <h1>Build smarter growth</h1>
+                    <p>We architect the platforms, data foundations, and intelligent systems that power organizations with advanced digital ambitions.</p>
                 </div>
-            </div>
 
-            <div class="service-section">
-                <div class="service-container">
-                    <div class="service-content">
-                        <div class="service-icon">
-                            <svg viewBox="0 0 240 240" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <rect x="60" y="60" width="120" height="120" stroke="currentColor" stroke-width="2" opacity="0.4"/>
-                                <circle cx="120" cy="120" r="40" fill="currentColor" opacity="0.6"/>
-                            </svg>
-                        </div>
-                        <div class="service-info">
-                            <div class="service-category">Backend Development</div>
-                            <h3 class="service-title">Robust Architecture</h3>
-                            <div class="service-tags">
-                                <span class="service-tag">API development</span>
-                                <span class="service-tag">Database optimization</span>
-                                <span class="service-tag">Python & PHP</span>
-                                <span class="service-tag">Microservices</span>
+                <div class="services-wrapper">
+                    <div class="service-section">
+                        <div class="service-container">
+                            <div class="service-content">
+                                <div class="service-icon">
+                                    <svg viewBox="0 0 240 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <circle cx="120" cy="120" r="90" stroke="currentColor" stroke-width="2" opacity="0.4"/>
+                                        <path d="M60 120 L120 60 L180 120 L120 180 Z" fill="currentColor" opacity="0.5"/>
+                                    </svg>
+                                </div>
+                                <div class="service-info">
+                                    <div class="service-category">Frontend Development</div>
+                                    <h3 class="service-title">Responsive & Fast</h3>
+                                    <div class="service-tags">
+                                        <span class="service-tag">JavaScript optimization</span>
+                                        <span class="service-tag">Load time improvements</span>
+                                        <span class="service-tag">Browser compatibility</span>
+                                        <span class="service-tag">UI/UX implementation</span>
+                                    </div>
+                                </div>
+                                <div class="service-expand"></div>
                             </div>
                         </div>
-                        <div class="service-expand"></div>
                     </div>
-                </div>
-            </div>
 
-            <div class="service-section">
-                <div class="service-container">
-                    <div class="service-content">
-                        <div class="service-icon">
-                            <svg viewBox="0 0 240 240" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M120 50 L180 110 L180 180 L60 180 L60 110 Z" stroke="currentColor" stroke-width="2" opacity="0.4"/>
-                            </svg>
-                        </div>
-                        <div class="service-info">
-                            <div class="service-category">Infrastructure & Hosting</div>
-                            <h3 class="service-title">Reliable & Secure</h3>
-                            <div class="service-tags">
-                                <span class="service-tag">24/7 monitoring</span>
-                                <span class="service-tag">Emergency recovery</span>
-                                <span class="service-tag">SSL & backups</span>
-                                <span class="service-tag">Performance tuning</span>
+                    <div class="service-section">
+                        <div class="service-container">
+                            <div class="service-content">
+                                <div class="service-icon">
+                                    <svg viewBox="0 0 240 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <rect x="60" y="60" width="120" height="120" stroke="currentColor" stroke-width="2" opacity="0.4"/>
+                                        <circle cx="120" cy="120" r="40" fill="currentColor" opacity="0.6"/>
+                                    </svg>
+                                </div>
+                                <div class="service-info">
+                                    <div class="service-category">Backend Development</div>
+                                    <h3 class="service-title">Robust Architecture</h3>
+                                    <div class="service-tags">
+                                        <span class="service-tag">API development</span>
+                                        <span class="service-tag">Database optimization</span>
+                                        <span class="service-tag">Python & PHP</span>
+                                        <span class="service-tag">Microservices</span>
+                                    </div>
+                                </div>
+                                <div class="service-expand"></div>
                             </div>
                         </div>
-                        <div class="service-expand"></div>
+                    </div>
+
+                    <div class="service-section">
+                        <div class="service-container">
+                            <div class="service-content">
+                                <div class="service-icon">
+                                    <svg viewBox="0 0 240 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M120 50 L180 110 L180 180 L60 180 L60 110 Z" stroke="currentColor" stroke-width="2" opacity="0.4"/>
+                                    </svg>
+                                </div>
+                                <div class="service-info">
+                                    <div class="service-category">Infrastructure & Hosting</div>
+                                    <h3 class="service-title">Reliable & Secure</h3>
+                                    <div class="service-tags">
+                                        <span class="service-tag">24/7 monitoring</span>
+                                        <span class="service-tag">Emergency recovery</span>
+                                        <span class="service-tag">SSL & backups</span>
+                                        <span class="service-tag">Performance tuning</span>
+                                    </div>
+                                </div>
+                                <div class="service-expand"></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1322,99 +1273,104 @@
 
     <!-- CONTACT PAGE -->
     <div id="contactPage" class="page">
-        <div class="page-hero">
-            <img src="contact-hero.jpg" class="page-hero-bg" alt="">
-            <div class="page-hero-overlay"></div>
-            <div class="page-hero-content">
-                <h1>Contact</h1>
-                <p>Let's discuss how we can help accelerate your digital business.</p>
-            </div>
+        <!-- Full-page background -->
+        <div class="full-page-bg">
+            <img src="contact-hero.jpg" alt="">
+            <div class="full-page-overlay"></div>
         </div>
 
-        <!-- Contact Form Section -->
-        <div class="contact-form-section">
-            <div class="contact-form-container">
-                <div class="contact-form-info">
-                    <h2>Get In Touch</h2>
-                    <p>Whether you're ready to start a project or just have a few questions, we're here to help! You can contact us at the number below or fill in the contact form.</p>
-                    
-                    <div class="contact-phone-wrapper">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.11-.27 11.44 11.44 0 003.48.56 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.44 11.44 0 00.56 3.48 1 1 0 01-.27 1.11z"/>
-                        </svg>
-                        <a href="tel:+31068307228">+31 06 83 072 284</a>
+        <div class="page-content">
+            <div class="content-container">
+                <div class="about-header">
+                    <h1>Contact</h1>
+                    <p>Let's discuss how we can help accelerate your digital business.</p>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="contact-form-section">
+                    <div class="contact-form-container">
+                        <div class="contact-form-info">
+                            <h2>Get In Touch</h2>
+                            <p>Whether you're ready to start a project or just have a few questions, we're here to help! Contact us below.</p>
+                            
+                            <div class="contact-phone-wrapper">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.11-.27 11.44 11.44 0 003.48.56 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.44 11.44 0 00.56 3.48 1 1 0 01-.27 1.11z"/>
+                                </svg>
+                                <a href="tel:+31068307228">+31 06 83 072 284</a>
+                            </div>
+                        </div>
+
+                        <div class="contact-form-wrapper">
+                            <h3>Send us a message</h3>
+                            <form id="contactForm">
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label>First Name *</label>
+                                        <input type="text" required placeholder="First name">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Last Name *</label>
+                                        <input type="text" required placeholder="Last name">
+                                    </div>
+                                </div>
+                                
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label>Business Email *</label>
+                                        <input type="email" required placeholder="your@email.com">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Phone Number *</label>
+                                        <input type="tel" required placeholder="+31 06 1234 5678">
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Subject *</label>
+                                    <select required>
+                                        <option value="">Who would you like to contact?</option>
+                                        <option>Sales / New Project</option>
+                                        <option>Emergency Support</option>
+                                        <option>Technical Consultation</option>
+                                        <option>Partnership Inquiry</option>
+                                        <option>Other</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Message *</label>
+                                    <textarea required placeholder="How can we help you?"></textarea>
+                                </div>
+
+                                <button type="submit" class="form-submit">Contact Us</button>
+                            </form>
+                        </div>
                     </div>
                 </div>
 
-                <div class="contact-form-wrapper">
-                    <h3>Send us a message</h3>
-                    <form id="contactForm">
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label>First Name *</label>
-                                <input type="text" required placeholder="First name">
-                            </div>
-                            <div class="form-group">
-                                <label>Last Name *</label>
-                                <input type="text" required placeholder="Last name">
-                            </div>
-                        </div>
-                        
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label>Business Email *</label>
-                                <input type="email" required placeholder="your@email.com">
-                            </div>
-                            <div class="form-group">
-                                <label>Phone Number *</label>
-                                <input type="tel" required placeholder="+31 06 1234 5678">
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label>Subject *</label>
-                            <select required>
-                                <option value="">Who would you like to contact?</option>
-                                <option>Sales / New Project</option>
-                                <option>Emergency Support</option>
-                                <option>Technical Consultation</option>
-                                <option>Partnership Inquiry</option>
-                                <option>Other</option>
-                            </select>
-                        </div>
-
-                        <div class="form-group">
-                            <label>Message *</label>
-                            <textarea required placeholder="How can we help you?"></textarea>
-                        </div>
-
-                        <button type="submit" class="form-submit">Contact Us</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-
-        <div class="contact-section">
-            <div class="contact-container">
-                <div class="contact-header">
-                    <h2>Our Offices</h2>
-                    <p>We're here to help wherever you are.</p>
-                </div>
-                <div class="locations-grid">
-                    <div class="location-card">
-                        <h3>Amsterdam</h3>
-                        <p>Available for on-site consultations</p>
-                        <p>Netherlands</p>
-                        <p>Tel. +31 06 83 072 284</p>
-                        <p class="location-subtitle">Contact us</p>
+                <!-- Locations -->
+                <div class="locations-section">
+                    <div class="locations-header">
+                        <h2>Our Offices</h2>
+                        <p>We're here to help wherever you are.</p>
                     </div>
-                    <div class="location-card">
-                        <h3>Remote Support</h3>
-                        <p>24/7 Availability</p>
-                        <p>Emergency incident response</p>
-                        <p>Response time: &lt;2 hours</p>
-                        <p><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="90f9fef6ffd0feffe2e4f8f4f9f7f9e4f1fcbefefc">[email&#160;protected]</a></p>
-                        <p class="location-subtitle">Contact us</p>
+                    <div class="locations-grid">
+                        <div class="location-card">
+                            <h3>Amsterdam</h3>
+                            <p>Available for on-site consultations</p>
+                            <p>Netherlands</p>
+                            <p>Tel. +31 06 83 072 284</p>
+                            <p class="location-subtitle">Contact us</p>
+                        </div>
+                        <div class="location-card">
+                            <h3>Remote Support</h3>
+                            <p>24/7 Availability</p>
+                            <p>Emergency incident response</p>
+                            <p>Response time: &lt;2 hours</p>
+                            <p><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="4b22252d240b2524393f232f222c223f2a27652527">[email&#160;protected]</a></p>
+                            <p class="location-subtitle">Contact us</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1445,7 +1401,7 @@
                     <h4>Contact</h4>
                     <ul>
                         <li><a href="tel:+31068307228">+31 06 83 072 284</a></li>
-                        <li><a href="/cdn-cgi/l/email-protection#e38a8d858ca38d8c91978b878a848a97828fcd8d8f"><span class="__cf_email__" data-cfemail="31585f575e715f5e4345595558565845505d1f5f5d">[email&#160;protected]</span></a></li>
+                        <li><a href="/cdn-cgi/l/email-protection#2b42454d446b4544595f434f424c425f4a47054547"><span class="__cf_email__" data-cfemail="bdd4d3dbd2fdd3d2cfc9d5d9d4dad4c9dcd193d3d1">[email&#160;protected]</span></a></li>
                     </ul>
                 </div>
             </div>
