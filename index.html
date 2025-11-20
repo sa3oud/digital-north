@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>North Digital - Technical Consultancy</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
     <style>
         * {
             margin: 0;
@@ -12,676 +13,1146 @@
         }
 
         :root {
-            --primary-color: #1a1a2e;
-            --secondary-color: #16213e;
-            --accent-color: #0f3460;
-            --gold-accent: #d4af37;
-            --text-dark: #1a1a2e;
-            --text-medium: #4a4a5e;
-            --text-light: #8b8b9a;
-            --bg-light: #f8f9fa;
+            --primary-black: #0a0a0a;
+            --secondary-black: #1a1a1a;
+            --accent-blue: #16213e;
+            --gold: #d4af37;
             --white: #ffffff;
-            --border-color: #e5e7eb;
+            --grey-400: #6b6b6b;
+            --grey-600: #4a4a4a;
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
-            line-height: 1.7;
-            color: var(--text-dark);
-            background-color: var(--white);
-            letter-spacing: -0.01em;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: var(--white);
+            overflow-x: hidden;
         }
 
-        nav {
+        /* Navigation */
+        header {
             position: fixed;
             top: 0;
             width: 100%;
-            background-color: rgba(255, 255, 255, 0.95);
+            background: rgba(10, 10, 10, 0.98);
             backdrop-filter: blur(10px);
-            box-shadow: 0 1px 0 rgba(0,0,0,0.05);
             z-index: 1000;
-            padding: 1.2rem 0;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.1);
         }
 
-        nav ul {
-            list-style: none;
+        nav {
+            max-width: 1440px;
+            margin: 0 auto;
+            padding: 1.5rem 3rem;
             display: flex;
-            justify-content: center;
+            justify-content: space-between;
             align-items: center;
-            flex-wrap: wrap;
-            gap: 3rem;
         }
 
-        nav a {
+        .logo {
+            color: var(--white);
+            font-size: 1.5rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+        }
+
+        .nav-links a {
             text-decoration: none;
-            color: var(--text-dark);
-            font-weight: 500;
-            font-size: 0.95rem;
-            transition: all 0.3s ease;
-            padding: 0.5rem 0;
-            position: relative;
+            color: var(--white);
+            font-size: 0.9rem;
+            font-weight: 400;
             letter-spacing: 0.02em;
+            transition: color 0.3s ease;
+            position: relative;
         }
 
-        nav a::after {
+        .nav-links a::after {
             content: '';
             position: absolute;
-            bottom: 0;
+            bottom: -5px;
             left: 0;
             width: 0;
             height: 2px;
-            background: var(--gold-accent);
+            background: var(--gold);
             transition: width 0.3s ease;
         }
 
-        nav a:hover {
-            color: var(--gold-accent);
+        .nav-links a:hover {
+            color: var(--gold);
         }
 
-        nav a:hover::after {
+        .nav-links a:hover::after {
             width: 100%;
         }
 
-        .hero {
-            margin-top: 70px;
-            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 50%, var(--accent-color) 100%);
-            color: var(--white);
-            padding: 8rem 2rem;
-            text-align: center;
+        /* Hero Slider Container */
+        .hero-slider-wrapper {
+            margin-top: 80px;
+            height: calc(100vh - 80px);
+            position: relative;
+        }
+
+        .swiper-container {
+            width: 100%;
+            height: 100%;
+        }
+
+        .swiper-slide {
             position: relative;
             overflow: hidden;
         }
 
-        .hero::before {
-            content: '';
+        /* Slide Background Image */
+        .slide-bg {
             position: absolute;
             top: 0;
             left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><rect width="1" height="1" fill="white" fill-opacity="0.03"/></svg>') repeat;
-            pointer-events: none;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
         }
 
-        .hero h1 {
-            font-size: 4rem;
-            margin-bottom: 1rem;
-            font-weight: 300;
-            letter-spacing: 0.05em;
-            animation: fadeInUp 1s ease;
+        /* Shadow Overlay */
+        .slide-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                to right,
+                rgba(10, 10, 10, 0.9) 0%,
+                rgba(10, 10, 10, 0.7) 40%,
+                rgba(10, 10, 10, 0.3) 70%,
+                transparent 100%
+            );
         }
 
-        .hero .subtitle {
-            font-size: 1.3rem;
-            margin-bottom: 1.5rem;
-            opacity: 0.85;
-            font-weight: 300;
-            letter-spacing: 0.03em;
-            animation: fadeInUp 1s ease 0.2s backwards;
-        }
-
-        .hero p {
-            font-size: 1.05rem;
-            max-width: 700px;
-            margin: 0 auto 2.5rem;
-            opacity: 0.75;
-            line-height: 1.8;
-            font-weight: 300;
-            animation: fadeInUp 1s ease 0.4s backwards;
-        }
-
-        .hero .cta-buttons {
+        /* Slide Content Container */
+        .slide-content {
+            position: relative;
+            z-index: 2;
+            height: 100%;
             display: flex;
-            gap: 1.5rem;
-            justify-content: center;
+            align-items: flex-end;
+            max-width: 1440px;
+            margin: 0 auto;
+            padding: 0 3rem 8rem 3rem;
+        }
+
+        .slide-text {
+            max-width: 600px;
+        }
+
+        .slide-text h1,
+        .slide-text h2 {
+            color: var(--white);
+            font-size: 3.5rem;
+            font-weight: 300;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.02em;
+        }
+
+        .slide-text p {
+            color: var(--white);
+            font-size: 1.1rem;
+            line-height: 1.7;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            font-weight: 300;
+        }
+
+        .slide-buttons {
+            display: flex;
+            gap: 1rem;
             flex-wrap: wrap;
-            animation: fadeInUp 1s ease 0.6s backwards;
         }
 
         .btn {
-            padding: 1rem 2.5rem;
+            padding: 0.9rem 2rem;
             border: none;
-            border-radius: 2px;
-            font-size: 0.95rem;
-            font-weight: 500;
+            font-size: 0.9rem;
+            font-weight: 600;
             cursor: pointer;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: all 0.3s ease;
             text-decoration: none;
             display: inline-block;
-            letter-spacing: 0.05em;
-            text-transform: uppercase;
-            font-size: 0.85rem;
+            letter-spacing: 0.02em;
         }
 
         .btn-primary {
-            background-color: var(--gold-accent);
-            color: var(--primary-color);
+            background: var(--gold);
+            color: var(--primary-black);
         }
 
         .btn-primary:hover {
-            background-color: #f0c341;
+            background: #e4c04a;
             transform: translateY(-2px);
             box-shadow: 0 8px 20px rgba(212, 175, 55, 0.3);
         }
 
         .btn-secondary {
-            background-color: transparent;
+            background: transparent;
             color: var(--white);
-            border: 1px solid rgba(255, 255, 255, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.4);
         }
 
         .btn-secondary:hover {
-            background-color: rgba(255, 255, 255, 0.1);
-            border-color: rgba(255, 255, 255, 0.6);
+            background: rgba(255, 255, 255, 0.1);
+            border-color: var(--white);
         }
 
-        .container {
-            max-width: 1200px;
+        /* Swiper Pagination */
+        .swiper-pagination {
+            right: 30px !important;
+            left: auto !important;
+            width: auto !important;
+        }
+
+        .swiper-pagination-bullet {
+            width: 8px;
+            height: 8px;
+            background: rgba(255, 255, 255, 0.5);
+            opacity: 1;
+            margin: 8px 0 !important;
+        }
+
+        .swiper-pagination-bullet-active {
+            background: var(--gold);
+            width: 10px;
+            height: 10px;
+        }
+
+        /* Services Section */
+        .services-wrapper {
+            background: var(--primary-black);
+        }
+
+        .service-section {
+            border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.4s ease;
+        }
+
+        .service-section:hover {
+            background: rgba(22, 33, 62, 0.3);
+        }
+
+        .service-container {
+            max-width: 1440px;
             margin: 0 auto;
-            padding: 4rem 2rem;
+            padding: 4rem 3rem;
         }
 
-        .section-title {
-            text-align: center;
-            font-size: 2.8rem;
-            margin-bottom: 4rem;
-            color: var(--text-dark);
-            position: relative;
-            padding-bottom: 1.5rem;
-            font-weight: 300;
-            letter-spacing: 0.02em;
-        }
-
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 60px;
-            height: 1px;
-            background-color: var(--gold-accent);
-        }
-
-        .about-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
+        .service-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
             gap: 4rem;
+            cursor: pointer;
+        }
+
+        .service-icon {
+            width: 240px;
+            height: 240px;
+            flex-shrink: 0;
+        }
+
+        .service-info {
+            flex: 1;
+        }
+
+        .service-category {
+            color: var(--white);
+            font-size: 1.2rem;
+            font-weight: 400;
+            margin-bottom: 0.5rem;
+            opacity: 0.9;
+        }
+
+        .service-title {
+            color: var(--white);
+            font-size: 2.5rem;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            line-height: 1.2;
+        }
+
+        .service-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+
+        .service-tag {
+            padding: 0.6rem 1rem;
+            background: rgba(24, 40, 62, 0.8);
+            color: var(--white);
+            font-size: 0.85rem;
+            transition: all 0.3s ease;
+        }
+
+        .service-tag:hover {
+            background: rgba(24, 40, 62, 1);
+            transform: translateY(-2px);
+        }
+
+        .service-expand {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            background: rgba(24, 40, 62, 0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            flex-shrink: 0;
+        }
+
+        .service-expand svg {
+            width: 20px;
+            height: 20px;
+            fill: var(--white);
+        }
+
+        .service-section:hover .service-expand {
+            background: var(--gold);
+            transform: rotate(45deg);
+        }
+
+        .service-section:hover .service-expand svg {
+            fill: var(--primary-black);
+        }
+
+        /* Clients Section */
+        .clients-section {
+            background: var(--white);
+            padding: 8rem 3rem;
+        }
+
+        .clients-container {
+            max-width: 1440px;
+            margin: 0 auto;
+        }
+
+        .clients-header h2 {
+            color: var(--accent-blue);
+            font-size: 3rem;
+            font-weight: 300;
+            margin-bottom: 2rem;
+        }
+
+        .clients-header p {
+            font-size: 1.1rem;
+            color: var(--grey-600);
+            line-height: 1.8;
+            max-width: 800px;
+            margin-bottom: 4rem;
+        }
+
+        .clients-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 3rem;
             align-items: center;
         }
 
-        .about-text h3 {
-            font-size: 2rem;
-            margin-bottom: 1.5rem;
-            color: var(--text-dark);
+        .client-logo {
+            height: 60px;
+            opacity: 0.6;
+            transition: opacity 0.3s ease;
+            object-fit: contain;
+        }
+
+        .client-logo:hover {
+            opacity: 1;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            background: var(--primary-black);
+            padding: 8rem 3rem;
+        }
+
+        .contact-container {
+            max-width: 1440px;
+            margin: 0 auto;
+        }
+
+        .contact-header h2 {
+            color: var(--white);
+            font-size: 3rem;
             font-weight: 300;
-            letter-spacing: 0.01em;
+            margin-bottom: 1rem;
         }
 
-        .about-text p {
-            color: var(--text-medium);
-            margin-bottom: 1.5rem;
-            line-height: 1.9;
-            font-size: 1.05rem;
+        .contact-header p {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 1.1rem;
+            margin-bottom: 4rem;
         }
 
-        .stats-grid {
+        .locations-grid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2px;
+        }
+
+        .location-card {
+            background: var(--secondary-black);
+            padding: 2rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .location-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gold);
+            transition: width 0.3s ease;
+        }
+
+        .location-card:hover::before {
+            width: 100%;
+        }
+
+        .location-card:hover {
+            background: rgba(26, 26, 26, 0.8);
+            transform: translateY(-4px);
+        }
+
+        .location-card h3 {
+            color: var(--white);
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .location-card p {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.95rem;
+            margin: 0.25rem 0;
+        }
+
+        .location-subtitle {
+            color: var(--gold) !important;
+            font-size: 0.9rem !important;
+            margin-top: 1rem !important;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary-black);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 4rem 3rem 2rem;
+        }
+
+        .footer-container {
+            max-width: 1440px;
+            margin: 0 auto;
+        }
+
+        .footer-nav {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 3rem;
+            margin-bottom: 4rem;
+        }
+
+        .footer-column h4 {
+            color: var(--white);
+            font-size: 1rem;
+            font-weight: 500;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-column ul li a {
+            color: var(--grey-400);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-column ul li a:hover {
+            color: var(--white);
+        }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer-bottom p {
+            color: var(--grey-400);
+            font-size: 0.9rem;
+        }
+
+        .footer-social {
+            display: flex;
             gap: 1.5rem;
         }
 
-        .stat-card {
-            background: var(--white);
-            padding: 2.5rem;
-            border-radius: 0;
-            text-align: center;
-            color: var(--text-dark);
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            border: 1px solid var(--border-color);
-            position: relative;
-            overflow: hidden;
+        .footer-social a {
+            color: var(--grey-400);
+            transition: color 0.3s ease;
         }
 
-        .stat-card::before {
-            content: '';
+        .footer-social a:hover {
+            color: var(--gold);
+        }
+
+        /* Page Management */
+        .page {
+            display: none;
+        }
+
+        .page.active {
+            display: block;
+        }
+
+        /* Responsive */
+        @media (max-width: 968px) {
+            .slide-text h1,
+            .slide-text h2 {
+                font-size: 2.5rem;
+            }
+
+            .service-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .service-icon {
+                width: 180px;
+                height: 180px;
+            }
+
+            .service-title {
+                font-size: 2rem;
+            }
+
+            .service-tags {
+                justify-content: center;
+            }
+
+            .clients-header h2 {
+                font-size: 2rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            nav {
+                padding: 1.5rem 2rem;
+            }
+
+            .slide-content {
+                padding: 0 2rem 4rem 2rem;
+            }
+        }
+
+        /* Page Hero (About/Services) */
+        .page-hero {
+            margin-top: 80px;
+            min-height: 50vh;
+            position: relative;
+            background: var(--primary-black);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 6rem 3rem;
+        }
+
+        .page-hero-bg {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
-            height: 2px;
-            background: var(--gold-accent);
-            transform: scaleX(0);
-            transition: transform 0.4s ease;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.3;
         }
 
-        .stat-card:hover::before {
-            transform: scaleX(1);
+        .page-hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 1200px;
+            color: var(--white);
+        }
+
+        .page-hero h1 {
+            font-size: 4rem;
+            font-weight: 300;
+            letter-spacing: -0.02em;
+            margin-bottom: 1.5rem;
+        }
+
+        .page-hero p {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            max-width: 800px;
+        }
+
+        /* Content Sections */
+        .content-section {
+            padding: 6rem 3rem;
+            max-width: 1440px;
+            margin: 0 auto;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 5rem;
+            align-items: start;
+        }
+
+        .about-text h2 {
+            font-size: 2.5rem;
+            font-weight: 300;
+            color: var(--primary-black);
+            margin-bottom: 2rem;
+        }
+
+        .about-text p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--grey-600);
+            margin-bottom: 1.5rem;
+        }
+
+        .about-text strong {
+            color: var(--primary-black);
+            font-weight: 600;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        .stat-card {
+            background: #f5f5f5;
+            padding: 2.5rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 1px solid #e0e0e0;
         }
 
         .stat-card:hover {
             transform: translateY(-8px);
-            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
-            border-color: var(--gold-accent);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+            border-color: var(--gold);
         }
 
         .stat-number {
-            font-size: 3rem;
-            font-weight: 300;
+            font-size: 3.5rem;
+            font-weight: 200;
+            color: var(--primary-black);
             display: block;
             margin-bottom: 0.5rem;
-            color: var(--primary-color);
         }
 
         .stat-label {
-            font-size: 0.9rem;
-            color: var(--text-light);
-            letter-spacing: 0.05em;
+            font-size: 0.85rem;
+            color: var(--grey-600);
             text-transform: uppercase;
-            font-size: 0.8rem;
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
-        }
-
-        .service-card {
-            background: var(--white);
-            padding: 3rem 2.5rem;
-            border-radius: 0;
-            border: 1px solid var(--border-color);
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            position: relative;
-        }
-
-        .service-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 3px;
-            height: 0;
-            background: var(--gold-accent);
-            transition: height 0.4s ease;
-        }
-
-        .service-card:hover::before {
-            height: 100%;
-        }
-
-        .service-card:hover {
-            transform: translateX(8px);
-            box-shadow: 0 10px 40px rgba(0,0,0,0.06);
-            border-color: transparent;
-        }
-
-        .service-card h3 {
-            color: var(--text-dark);
-            margin-bottom: 2rem;
-            font-size: 1.3rem;
-            font-weight: 400;
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            letter-spacing: 0.02em;
-        }
-
-        .service-card ul {
-            list-style: none;
-        }
-
-        .service-card li {
-            padding: 0.75rem 0;
-            color: var(--text-medium);
-            position: relative;
-            padding-left: 1.5rem;
-            font-size: 0.95rem;
-            transition: color 0.3s ease;
-        }
-
-        .service-card li::before {
-            content: '—';
-            position: absolute;
-            left: 0;
-            color: var(--gold-accent);
-            font-weight: normal;
-        }
-
-        .service-card:hover li {
-            color: var(--text-dark);
-        }
-
-        #contact {
-            background: var(--primary-color);
-            color: var(--white);
-        }
-
-        #contact .section-title {
-            color: var(--white);
-        }
-
-        #contact .section-title::after {
-            background-color: var(--gold-accent);
-        }
-
-        .contact-content {
-            text-align: center;
-            max-width: 700px;
-            margin: 0 auto;
-        }
-
-        .contact-content > p {
-            font-size: 1.1rem;
-            opacity: 0.7;
-            font-weight: 300;
-            line-height: 1.9;
-        }
-
-        .contact-info {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .contact-item {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 0.75rem;
-            padding: 2rem 1rem;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            transition: all 0.3s ease;
-        }
-
-        .contact-item:hover {
-            background: rgba(255, 255, 255, 0.03);
-            border-color: var(--gold-accent);
-        }
-
-        .contact-item .icon {
-            opacity: 0.6;
-            font-size: 1.8rem;
-        }
-
-        .contact-item a {
-            color: var(--white);
-            text-decoration: none;
-            transition: all 0.3s ease;
-            font-weight: 300;
-        }
-
-        .contact-item span {
-            font-weight: 300;
-        }
-
-        .contact-item a:hover {
-            color: var(--gold-accent);
-        }
-
-        footer {
-            background-color: #0f0f1e;
-            color: rgba(255, 255, 255, 0.5);
-            text-align: center;
-            padding: 2.5rem;
-            font-weight: 300;
-            font-size: 0.9rem;
-            letter-spacing: 0.02em;
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            letter-spacing: 0.1em;
         }
 
         @media (max-width: 968px) {
-            .services-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            .contact-info {
+            .about-grid {
                 grid-template-columns: 1fr;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-
-            .hero .subtitle {
-                font-size: 1.2rem;
-            }
-
-            .about-content {
-                grid-template-columns: 1fr;
+                gap: 3rem;
             }
 
             .stats-grid {
                 grid-template-columns: 1fr;
             }
 
-            .services-grid {
-                grid-template-columns: 1fr;
+            .page-hero h1 {
+                font-size: 2.5rem;
             }
-
-            nav ul {
-                gap: 1rem;
-            }
-
-            nav a {
-                padding: 0.3rem 0.5rem;
-                font-size: 0.9rem;
-            }
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        .icon {
-            font-size: 1.5rem;
         }
     </style>
 </head>
 <body>
-    <nav>
-        <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
+    <header>
+        <nav>
+            <div class="logo">NORTH DIGITAL</div>
+            <ul class="nav-links">
+                <li><a href="#" onclick="showPage('home'); return false;">Home</a></li>
+                <li><a href="#" onclick="showPage('about'); return false;">About</a></li>
+                <li><a href="#" onclick="showPage('services'); return false;">Services</a></li>
+                <li><a href="#" onclick="showPage('contact'); return false;">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-    <section id="home" class="hero">
-        <h1>NORTH DIGITAL</h1>
-        <p class="subtitle">Technical Consultancy</p>
-        <p>Netherlands-based technical consultancy specializing in full-stack development, infrastructure troubleshooting, and automation solutions. Delivering rapid diagnostics and sustainable fixes for modern web platforms.</p>
-        <div class="cta-buttons">
-            <a href="#contact" class="btn btn-primary">Get In Touch</a>
-            <a href="#services" class="btn btn-secondary">Our Services</a>
-        </div>
-    </section>
-
-    <section id="about" class="container">
-        <h2 class="section-title">About North Digital</h2>
-        <div class="about-content">
-            <div class="about-text">
-                <h3>Rapid Diagnostics, Sustainable Solutions</h3>
-                <p>North Digital is a Netherlands-based technical consultancy bringing 4+ years of experience in full-stack development, platform troubleshooting, and automation.</p>
-                <p>We specialize in rapid response to technical emergencies while building long-term solutions. From server crashes to frontend performance issues to e-commerce platform optimization—we diagnose, fix, and prevent recurrence.</p>
-                <p>Our approach combines immediate problem-solving with systematic improvements, ensuring your platforms run reliably while scaling efficiently.</p>
-            </div>
-            <div class="stats-grid">
-                <div class="stat-card">
-                    <span class="stat-number">80%</span>
-                    <span class="stat-label">Process Efficiency Gain</span>
-                </div>
-                <div class="stat-card">
-                    <span class="stat-number">70%</span>
-                    <span class="stat-label">Incident Reduction</span>
-                </div>
-                <div class="stat-card">
-                    <span class="stat-number">24-48h</span>
-                    <span class="stat-label">Initial Assessment</span>
-                </div>
-                <div class="stat-card">
-                    <span class="stat-number">4+</span>
-                    <span class="stat-label">Years Experience</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="services" class="container">
-        <h2 class="section-title">Our Services</h2>
-
-        <div class="services-grid">
-            <div class="service-card">
-                <h3>🌐 Frontend Development</h3>
-                <ul>
-                    <li>Responsive web applications</li>
-                    <li>JavaScript optimization</li>
-                    <li>Load time improvements</li>
-                    <li>Browser compatibility</li>
-                    <li>UI/UX implementation</li>
-                </ul>
-            </div>
-
-            <div class="service-card">
-                <h3>💻 Backend Development</h3>
-                <ul>
-                    <li>API development & integration</li>
-                    <li>Database design & optimization</li>
-                    <li>Python, PHP applications</li>
-                    <li>Performance profiling</li>
-                    <li>Microservices architecture</li>
-                </ul>
-            </div>
-
-            <div class="service-card">
-                <h3>🔧 Server & Infrastructure</h3>
-                <ul>
-                    <li>Emergency server recovery</li>
-                    <li>Performance diagnostics</li>
-                    <li>Database optimization</li>
-                    <li>Security incident response</li>
-                    <li>Infrastructure monitoring</li>
-                </ul>
-            </div>
-
-            <div class="service-card">
-                <h3>🛒 E-commerce Solutions</h3>
-                <ul>
-                    <li>Magento development</li>
-                    <li>Payment gateway integration</li>
-                    <li>Cart optimization</li>
-                    <li>Platform migration</li>
-                    <li>Performance tuning</li>
-                </ul>
-            </div>
-
-            <div class="service-card">
-                <h3>📈 SEO & Performance</h3>
-                <ul>
-                    <li>Technical SEO audits</li>
-                    <li>Site speed optimization</li>
-                    <li>Core Web Vitals improvement</li>
-                    <li>Schema markup implementation</li>
-                    <li>SEO strategy & analytics</li>
-                </ul>
-            </div>
-
-            <div class="service-card">
-                <h3>⚙️ Automation & Integration</h3>
-                <ul>
-                    <li>Workflow automation (N8N, Zapier)</li>
-                    <li>Data pipeline development</li>
-                    <li>CI/CD setup</li>
-                    <li>API integration</li>
-                    <li>Process optimization</li>
-                </ul>
-            </div>
-
-            <div class="service-card">
-                <h3>🔍 Incident Monitoring</h3>
-                <ul>
-                    <li>24/7 uptime monitoring</li>
-                    <li>Real-time alerting systems</li>
-                    <li>Performance tracking & metrics</li>
-                    <li>Automated incident response</li>
-                    <li>Custom dashboards & reporting</li>
-                </ul>
-            </div>
-
-            <div class="service-card">
-                <h3>☁️ Web Hosting</h3>
-                <ul>
-                    <li>Managed server hosting</li>
-                    <li>SSL certificates & security</li>
-                    <li>Daily backups & recovery</li>
-                    <li>Performance optimization</li>
-                    <li>Domain management</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact">
-        <div class="container">
-            <div class="contact-content">
-                <h2 class="section-title">Get In Touch</h2>
-                <p style="margin-bottom: 2rem; font-size: 1.1rem;">Available for emergency troubleshooting or planned technical engagements. Fast response for critical issues.</p>
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <span class="icon">📧</span>
-                        <a href="/cdn-cgi/l/email-protection#cca5a2aaa38ca2a3beb8a4a8a5aba5b8ada0e2a2a0"><span class="__cf_email__" data-cfemail="7910171f163917160b0d111d101e100d1815571715">[email&#160;protected]</span></a>
+    <!-- HOME PAGE -->
+    <div id="homePage" class="page active">
+        <div class="hero-slider-wrapper">
+            <div class="swiper-container heroSwiper">
+                <div class="swiper-wrapper">
+                    
+                    <!-- Slide 1 -->
+                    <div class="swiper-slide">
+                        <img src="hero-1.jpg" class="slide-bg" alt="">
+                        <div class="slide-overlay"></div>
+                        <div class="slide-content">
+                            <div class="slide-text">
+                                <h1>Business Improvement Agency</h1>
+                                <p>We are determined to deliver digital business outcomes—smarter and more sustainable.</p>
+                                <div class="slide-buttons">
+                                    <a href="#" onclick="showPage('services'); return false;" class="btn btn-primary">Our Services</a>
+                                    <a href="#" onclick="showPage('contact'); return false;" class="btn btn-secondary">Get In Touch</a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="contact-item">
-                        <span class="icon">📱</span>
-                        <span>+31 06 83 072 284</span>
+
+                    <!-- Slide 2 -->
+                    <div class="swiper-slide">
+                        <img src="hero-2.jpg" class="slide-bg" alt="">
+                        <div class="slide-overlay"></div>
+                        <div class="slide-content">
+                            <div class="slide-text">
+                                <h2>24/7 Incident Monitoring</h2>
+                                <p>Real-time alerting. Performance tracking. Automated response. Keep your platforms running smoothly with comprehensive monitoring solutions.</p>
+                                <div class="slide-buttons">
+                                    <a href="#" onclick="showPage('services'); return false;" class="btn btn-primary">Learn More</a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="contact-item">
-                        <span class="icon">📍</span>
-                        <span>Netherlands</span>
+
+                    <!-- Slide 3 -->
+                    <div class="swiper-slide">
+                        <img src="hero-3.jpg" class="slide-bg" alt="">
+                        <div class="slide-overlay"></div>
+                        <div class="slide-content">
+                            <div class="slide-text">
+                                <h2>Managed Hosting Solutions</h2>
+                                <p>SSL security. Daily backups. Performance optimization. Let us handle your infrastructure while you focus on growth.</p>
+                                <div class="slide-buttons">
+                                    <a href="#" onclick="showPage('services'); return false;" class="btn btn-primary">Our Hosting</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 4 -->
+                    <div class="swiper-slide">
+                        <img src="hero-4.jpg" class="slide-bg" alt="">
+                        <div class="slide-overlay"></div>
+                        <div class="slide-content">
+                            <div class="slide-text">
+                                <h2>Full-Stack Development</h2>
+                                <p>From frontend to backend. E-commerce to automation. We build scalable, reliable solutions for modern businesses.</p>
+                                <div class="slide-buttons">
+                                    <a href="#" onclick="showPage('services'); return false;" class="btn btn-primary">View Services</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+
+        <!-- Services Section -->
+        <div class="services-wrapper">
+            <div class="service-section">
+                <div class="service-container">
+                    <div class="service-content">
+                        <div class="service-icon">
+                            <svg viewBox="0 0 240 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="120" cy="120" r="100" stroke="currentColor" stroke-width="2" fill="none" opacity="0.3"/>
+                                <path d="M120 20 L220 120 L120 220 L20 120 Z" fill="currentColor" opacity="0.2"/>
+                                <circle cx="120" cy="120" r="40" fill="currentColor" opacity="0.5"/>
+                            </svg>
+                        </div>
+                        <div class="service-info">
+                            <div class="service-category">Digital Infrastructure</div>
+                            <h3 class="service-title">Systems that drive revenue</h3>
+                            <div class="service-tags">
+                                <span class="service-tag">Considering eCommerce replatforming?</span>
+                                <span class="service-tag">Downtime hurting your business?</span>
+                                <span class="service-tag">Content chaos everywhere?</span>
+                                <span class="service-tag">How to scale your business cross border?</span>
+                            </div>
+                        </div>
+                        <div class="service-expand">
+                            <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M10 0 L10 20 M0 10 L20 10" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                        </div>
                     </div>
                 </div>
             </div>
+
+            <div class="service-section">
+                <div class="service-container">
+                    <div class="service-content">
+                        <div class="service-icon">
+                            <svg viewBox="0 0 240 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="40" y="40" width="160" height="160" stroke="currentColor" stroke-width="2" fill="none" opacity="0.3"/>
+                                <circle cx="80" cy="80" r="30" fill="currentColor" opacity="0.4"/>
+                                <circle cx="160" cy="160" r="30" fill="currentColor" opacity="0.4"/>
+                                <line x1="80" y1="80" x2="160" y2="160" stroke="currentColor" stroke-width="3" opacity="0.6"/>
+                            </svg>
+                        </div>
+                        <div class="service-info">
+                            <div class="service-category">Operational optimization</div>
+                            <h3 class="service-title">Systems that optimize</h3>
+                            <div class="service-tags">
+                                <span class="service-tag">Repetitive tasks slowing you down?</span>
+                                <span class="service-tag">How AI can improve your processes?</span>
+                                <span class="service-tag">How to reduce manual labour?</span>
+                            </div>
+                        </div>
+                        <div class="service-expand">
+                            <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M10 0 L10 20 M0 10 L20 10" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="service-section">
+                <div class="service-container">
+                    <div class="service-content">
+                        <div class="service-icon">
+                            <svg viewBox="0 0 240 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M120 40 L180 100 L180 180 L60 180 L60 100 Z" stroke="currentColor" stroke-width="2" fill="none" opacity="0.3"/>
+                                <circle cx="120" cy="120" r="50" fill="currentColor" opacity="0.3"/>
+                                <circle cx="120" cy="120" r="25" fill="currentColor" opacity="0.5"/>
+                            </svg>
+                        </div>
+                        <div class="service-info">
+                            <div class="service-category">Foundation for data and integration</div>
+                            <h3 class="service-title">Systems that scale</h3>
+                            <div class="service-tags">
+                                <span class="service-tag">Struggling with disconnected systems?</span>
+                                <span class="service-tag">Is your data landscape siloed?</span>
+                                <span class="service-tag">Data quality not on par?</span>
+                            </div>
+                        </div>
+                        <div class="service-expand">
+                            <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M10 0 L10 20 M0 10 L20 10" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-    </section>
+
+        <!-- Clients Section -->
+        <div class="clients-section">
+            <div class="clients-container">
+                <div class="clients-header">
+                    <h2>Trusted by industry leaders</h2>
+                    <p>Everything we do is focused on <strong>delivering exceptional results for our clients</strong>. We strongly believe in being part of the client team and playing a crucial role in their continuous evolution and digital improvement.</p>
+                </div>
+                <div class="clients-grid">
+                    <div style="height: 60px; background: #e0e0e0; display: flex; align-items: center; justify-content: center; color: #999;">Client Logo</div>
+                    <div style="height: 60px; background: #e0e0e0; display: flex; align-items: center; justify-content: center; color: #999;">Client Logo</div>
+                    <div style="height: 60px; background: #e0e0e0; display: flex; align-items: center; justify-content: center; color: #999;">Client Logo</div>
+                    <div style="height: 60px; background: #e0e0e0; display: flex; align-items: center; justify-content: center; color: #999;">Client Logo</div>
+                    <div style="height: 60px; background: #e0e0e0; display: flex; align-items: center; justify-content: center; color: #999;">Client Logo</div>
+                    <div style="height: 60px; background: #e0e0e0; display: flex; align-items: center; justify-content: center; color: #999;">Client Logo</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact CTA Section -->
+        <div class="contact-section">
+            <div class="contact-container">
+                <div class="contact-header">
+                    <h2>Work with us</h2>
+                    <p>It might just be the best decision you make.</p>
+                </div>
+                <div class="locations-grid">
+                    <div class="location-card">
+                        <h3>Amsterdam</h3>
+                        <p class="location-subtitle">Contact us</p>
+                    </div>
+                    <div class="location-card">
+                        <h3>Remote Support</h3>
+                        <p class="location-subtitle">Contact us</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ABOUT PAGE -->
+    <div id="aboutPage" class="page">
+        <div class="page-hero">
+            <img src="about-hero.jpg" class="page-hero-bg" alt="">
+            <div class="page-hero-content">
+                <h1>About North Digital</h1>
+                <p>Full-stack excellence meets rapid diagnostics. We build complete digital solutions.</p>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <div class="about-grid">
+                <div class="about-text">
+                    <h2>Full-Stack Excellence, Rapid Diagnostics</h2>
+                    <p>Netherlands-based technical consultancy with 4+ years of experience in full-stack development, platform troubleshooting, and automation. From frontend to backend, we build complete solutions.</p>
+                    <p><strong>We specialize in emergencies.</strong> Server crashes. Frontend performance issues. E-commerce platform failures. Database bottlenecks. We diagnose fast, fix it right, and prevent recurrence.</p>
+                    <p><strong>Built to last.</strong> Every solution combines immediate problem-solving with systematic improvements—ensuring your platforms run reliably at scale.</p>
+                </div>
+
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <span class="stat-number">80%</span>
+                        <span class="stat-label">Process Efficiency Gain</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number">70%</span>
+                        <span class="stat-label">Incident Reduction</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number">24-48h</span>
+                        <span class="stat-label">Initial Assessment</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number">4+</span>
+                        <span class="stat-label">Years Experience</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SERVICES PAGE -->
+    <div id="servicesPage" class="page">
+        <div class="page-hero">
+            <img src="services-hero.jpg" class="page-hero-bg" alt="">
+            <div class="page-hero-content">
+                <h1>Build smarter growth</h1>
+                <p>We architect the platforms, data foundations, and intelligent systems that power organizations with advanced digital ambitions.</p>
+            </div>
+        </div>
+
+        <div class="services-wrapper">
+            <div class="service-section">
+                <div class="service-container">
+                    <div class="service-content">
+                        <div class="service-icon">
+                            <svg viewBox="0 0 240 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="120" cy="120" r="100" stroke="#d4af37" stroke-width="2" fill="none" opacity="0.3"/>
+                                <path d="M120 20 L220 120 L120 220 L20 120 Z" fill="#d4af37" opacity="0.2"/>
+                            </svg>
+                        </div>
+                        <div class="service-info">
+                            <div class="service-category">Frontend Development</div>
+                            <h3 class="service-title">Responsive & Fast</h3>
+                            <div class="service-tags">
+                                <span class="service-tag">JavaScript optimization</span>
+                                <span class="service-tag">Load time improvements</span>
+                                <span class="service-tag">Browser compatibility</span>
+                                <span class="service-tag">UI/UX implementation</span>
+                            </div>
+                        </div>
+                        <div class="service-expand">
+                            <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M10 0 L10 20 M0 10 L20 10" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="service-section">
+                <div class="service-container">
+                    <div class="service-content">
+                        <div class="service-icon">
+                            <svg viewBox="0 0 240 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="40" y="40" width="160" height="160" stroke="#d4af37" stroke-width="2" fill="none" opacity="0.3"/>
+                                <circle cx="120" cy="120" r="50" fill="#d4af37" opacity="0.3"/>
+                            </svg>
+                        </div>
+                        <div class="service-info">
+                            <div class="service-category">Backend Development</div>
+                            <h3 class="service-title">Robust Architecture</h3>
+                            <div class="service-tags">
+                                <span class="service-tag">API development</span>
+                                <span class="service-tag">Database optimization</span>
+                                <span class="service-tag">Python & PHP</span>
+                                <span class="service-tag">Microservices</span>
+                            </div>
+                        </div>
+                        <div class="service-expand">
+                            <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M10 0 L10 20 M0 10 L20 10" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="service-section">
+                <div class="service-container">
+                    <div class="service-content">
+                        <div class="service-icon">
+                            <svg viewBox="0 0 240 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M120 40 L180 100 L180 180 L60 180 L60 100 Z" stroke="#d4af37" stroke-width="2" fill="none" opacity="0.3"/>
+                            </svg>
+                        </div>
+                        <div class="service-info">
+                            <div class="service-category">Infrastructure & Hosting</div>
+                            <h3 class="service-title">Reliable & Secure</h3>
+                            <div class="service-tags">
+                                <span class="service-tag">24/7 monitoring</span>
+                                <span class="service-tag">Emergency recovery</span>
+                                <span class="service-tag">SSL & backups</span>
+                                <span class="service-tag">Performance tuning</span>
+                            </div>
+                        </div>
+                        <div class="service-expand">
+                            <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M10 0 L10 20 M0 10 L20 10" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CONTACT PAGE -->
+    <div id="contactPage" class="page">
+        <div class="page-hero">
+            <img src="contact-hero.jpg" class="page-hero-bg" alt="">
+            <div class="page-hero-content">
+                <h1>Contact</h1>
+                <p>Let's discuss how we can help accelerate your digital business.</p>
+            </div>
+        </div>
+
+        <div class="contact-section">
+            <div class="contact-container">
+                <div class="contact-header">
+                    <h2>Get In Touch</h2>
+                    <p>Whether you're ready to start a project or just have a few questions, we're here to help.</p>
+                </div>
+                <div class="locations-grid">
+                    <div class="location-card">
+                        <h3>Amsterdam</h3>
+                        <p>Available for on-site consultations</p>
+                        <p>Netherlands</p>
+                        <p>Tel. +31 06 83 072 284</p>
+                        <p class="location-subtitle">Contact us</p>
+                    </div>
+                    <div class="location-card">
+                        <h3>Remote Support</h3>
+                        <p>24/7 Availability</p>
+                        <p>Emergency incident response</p>
+                        <p>Response time: &lt;2 hours</p>
+                        <p>info@northdigital.nl</p>
+                        <p class="location-subtitle">Contact us</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <footer>
-        <p>&copy; 2025 North Digital. All rights reserved.</p>
+        <div class="footer-container">
+            <div class="footer-nav">
+                <div class="footer-column">
+                    <h4>North Digital</h4>
+                    <ul>
+                        <li><a href="#" onclick="showPage('about'); return false;">About us</a></li>
+                        <li><a href="#" onclick="showPage('services'); return false;">Services</a></li>
+                        <li><a href="#" onclick="showPage('contact'); return false;">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#">Frontend Development</a></li>
+                        <li><a href="#">Backend Development</a></li>
+                        <li><a href="#">Infrastructure</a></li>
+                        <li><a href="#">Monitoring</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><a href="tel:+31068307228">+31 06 83 072 284</a></li>
+                        <li><a href="mailto:info@northdigital.nl">info@northdigital.nl</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 North Digital. All rights reserved.</p>
+                <div class="footer-social">
+                    <a href="#" aria-label="LinkedIn">LinkedIn</a>
+                    <a href="#" aria-label="Twitter">Twitter</a>
+                </div>
+            </div>
+        </div>
     </footer>
 
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        function showPage(page) {
+            document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+            document.getElementById(page + 'Page').classList.add('active');
+            window.scrollTo(0, 0);
+        }
+
+        var swiper = new Swiper(".heroSwiper", {
+            direction: "vertical",
+            slidesPerView: 1,
+            speed: 800,
+            autoplay: {
+                delay: 6000,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            mousewheel: true,
+            effect: 'fade',
+            fadeEffect: {
+                crossFade: true
+            }
         });
-
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -100px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.animation = 'fadeInUp 0.8s ease forwards';
+    </script>
+</body>
+</html>
