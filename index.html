@@ -438,15 +438,14 @@
         }
 
         .service-section {
-            background: rgba(26, 26, 26, 0.6);
-            backdrop-filter: blur(10px);
+            background: transparent;
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
             margin-bottom: 2px;
             transition: all 0.4s ease;
         }
 
         .service-section:hover {
-            background: rgba(22, 33, 62, 0.7);
+            background: rgba(22, 33, 62, 0.3);
         }
 
         .service-container {
@@ -514,15 +513,15 @@
 
         .service-tag {
             padding: 0.7rem 1.2rem;
-            background: rgba(24, 40, 62, 0.9);
+            background: rgba(24, 40, 62, 0.5);
             color: var(--white);
             font-size: 0.85rem;
             transition: all 0.3s ease;
-            border: 1px solid transparent;
+            border: 1px solid rgba(255, 255, 255, 0.2);
         }
 
         .service-tag:hover {
-            background: rgba(24, 40, 62, 1);
+            background: rgba(24, 40, 62, 0.8);
             border-color: var(--gold);
             transform: translateY(-2px);
         }
@@ -531,13 +530,14 @@
             width: 56px;
             height: 56px;
             border-radius: 50%;
-            background: rgba(24, 40, 62, 0.8);
+            background: rgba(24, 40, 62, 0.4);
             display: flex;
             align-items: center;
             justify-content: center;
             transition: all 0.4s ease;
             flex-shrink: 0;
             position: relative;
+            border: 1px solid rgba(255, 255, 255, 0.2);
         }
 
         .service-expand::before,
