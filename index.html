@@ -152,11 +152,11 @@
 
         /* ========== FULL PAGE BACKGROUND WRAPPER ========== */
         .full-page-bg {
-            position: fixed;
+            position: absolute;
             top: 0;
             left: 0;
             width: 100%;
-            height: 100vh;
+            height: 100%;
             z-index: 0;
         }
 
@@ -870,6 +870,8 @@
         /* ========== PAGE MANAGEMENT ========== */
         .page {
             display: none;
+            position: relative;
+            min-height: 100vh;
         }
 
         .page.active {
