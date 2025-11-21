@@ -278,36 +278,40 @@
         }
 
         .btn {
-            padding: 1rem 2.5rem;
+            padding: 1.2rem 2.5rem;
             border: none;
-            font-size: 0.9rem;
-            font-weight: 600;
+            font-size: 1rem;
+            font-weight: 700;
             cursor: pointer;
             transition: all 0.3s ease;
             text-decoration: none;
             display: inline-block;
-            letter-spacing: 0.02em;
+            letter-spacing: 0;
+            text-transform: none;
+            border-radius: 0;
+            font-family: inherit;
         }
 
         .btn-primary {
             background: var(--gold);
-            color: var(--primary-black);
+            color: var(--white);
         }
 
         .btn-primary:hover {
             background: #c203a0;
-            transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(161, 2, 134, 0.4);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(161, 2, 134, 0.3);
         }
 
         .btn-secondary {
             background: transparent;
             color: var(--white);
-            border: 1px solid rgba(255, 255, 255, 0.5);
+            border: 2px solid var(--white);
         }
 
         .btn-secondary:hover {
-            background: rgba(255, 255, 255, 0.15);
+            background: var(--white);
+            color: var(--primary-black);
             border-color: var(--white);
         }
 
@@ -695,22 +699,23 @@
 
         .form-submit {
             background: var(--gold);
-            color: var(--primary-black);
+            color: var(--white);
             padding: 1.2rem 3rem;
             border: none;
-            font-size: 0.9rem;
+            font-size: 1rem;
             font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
+            text-transform: none;
+            letter-spacing: 0;
             cursor: pointer;
             transition: all 0.3s ease;
             width: 100%;
+            border-radius: 0;
         }
 
         .form-submit:hover {
             background: #c203a0;
             transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(161, 2, 134, 0.3);
+            box-shadow: 0 4px 12px rgba(161, 2, 134, 0.3);
         }
 
         /* ========== LOCATIONS SECTION ========== */
