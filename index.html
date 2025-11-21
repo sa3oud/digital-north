@@ -71,8 +71,8 @@
         }
 
         .hamburger-btn:hover {
-            background: rgba(161, 2, 134, 0.9);
-            border-color: var(--gold);
+            background: rgba(26, 26, 26, 0.95);
+            border-color: rgba(255, 255, 255, 0.6);
         }
 
         .hamburger-btn span {
@@ -83,7 +83,7 @@
         }
 
         .hamburger-btn:hover span {
-            background: var(--primary-black);
+            background: var(--white);
         }
 
         .hamburger-btn.active {
@@ -252,6 +252,28 @@
             }
         }
 
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(-40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
         .slide-text h1,
         .slide-text h2 {
             color: var(--white);
@@ -361,6 +383,7 @@
             font-weight: 200;
             letter-spacing: -0.02em;
             margin-bottom: 1.5rem;
+            animation: slideInRight 0.8s ease-out;
         }
 
         .about-header p {
@@ -369,6 +392,7 @@
             max-width: 700px;
             font-weight: 300;
             line-height: 1.7;
+            animation: slideInRight 0.8s ease-out 0.2s both;
         }
 
         .about-grid {
@@ -384,6 +408,7 @@
             font-weight: 300;
             margin-bottom: 2.5rem;
             letter-spacing: -0.01em;
+            animation: slideInRight 0.8s ease-out 0.3s both;
         }
 
         .about-text p {
@@ -391,6 +416,15 @@
             font-size: 1.15rem;
             line-height: 1.9;
             margin-bottom: 1.8rem;
+            animation: slideInRight 0.8s ease-out 0.4s both;
+        }
+
+        .about-text p:nth-of-type(2) {
+            animation-delay: 0.5s;
+        }
+
+        .about-text p:nth-of-type(3) {
+            animation-delay: 0.6s;
         }
 
         .about-text strong {
@@ -411,6 +445,23 @@
             text-align: center;
             transition: all 0.4s ease;
             border: 1px solid rgba(161, 2, 134, 0.2);
+            animation: slideInLeft 0.8s ease-out both;
+        }
+
+        .stat-card:nth-child(1) {
+            animation-delay: 0.5s;
+        }
+
+        .stat-card:nth-child(2) {
+            animation-delay: 0.6s;
+        }
+
+        .stat-card:nth-child(3) {
+            animation-delay: 0.7s;
+        }
+
+        .stat-card:nth-child(4) {
+            animation-delay: 0.8s;
         }
 
         .stat-card:hover {
@@ -446,6 +497,23 @@
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
             margin-bottom: 2px;
             transition: all 0.4s ease;
+            animation: slideInRight 0.8s ease-out both;
+        }
+
+        .service-section:nth-child(1) {
+            animation-delay: 0.2s;
+        }
+
+        .service-section:nth-child(2) {
+            animation-delay: 0.4s;
+        }
+
+        .service-section:nth-child(3) {
+            animation-delay: 0.6s;
+        }
+
+        .service-section:nth-child(4) {
+            animation-delay: 0.8s;
         }
 
         .service-section:hover {
@@ -990,10 +1058,11 @@
                         <div class="slide-overlay"></div>
                         <div class="slide-content">
                             <div class="slide-text">
-                                <h1>Business Improvement Agency</h1>
-                                <p>We are determined to deliver digital business outcomes—smarter and more sustainable.</p>
+                                <h1>We automate the boring stuff so you can focus on growth</h1>
+                                <p>Still doing manual data entry? Wasting hours on repetitive tasks? We get it—and we fix it. With smart automation and AI, we've helped businesses cut operational costs by 40% and free up 15+ hours per week. Let's do the same for you.</p>
                                 <div class="slide-buttons">
                                     <a href="#" onclick="showPage('services'); return false;" class="btn btn-primary">Our Services</a>
+                                    <a href="https://n8n.io" target="_blank" class="btn btn-primary">AI & Automation</a>
                                     <a href="#" onclick="showPage('contact'); return false;" class="btn btn-secondary">Get In Touch</a>
                                 </div>
                             </div>
@@ -1085,8 +1154,8 @@
             <div class="content-container">
                 <div class="locations-section">
                     <div class="locations-header">
-                        <h2>Work with us</h2>
-                        <p>It might just be the best decision you make.</p>
+                        <h2>Where we work</h2>
+                        <p>Based in Amsterdam, available everywhere. Time zones are just numbers.</p>
                     </div>
                     <div class="locations-grid">
                         <div class="location-card">
@@ -1116,16 +1185,17 @@
         <div class="page-content">
             <div class="content-container">
                 <div class="about-header">
-                    <h1>About North Digital</h1>
-                    <p>Full-stack excellence meets rapid diagnostics. We build complete digital solutions that last.</p>
+                    <h1>Who We Are</h1>
+                    <p>We're North Digital, and we're kind of obsessed with making technology actually work for businesses instead of against them.</p>
                 </div>
 
                 <div class="about-grid">
                     <div class="about-text">
-                        <h2>Full-Stack Excellence, Rapid Diagnostics</h2>
-                        <p>Netherlands-based technical consultancy with 4+ years of experience in full-stack development, platform troubleshooting, and automation. From frontend to backend, we build complete solutions.</p>
-                        <p><strong>We specialize in emergencies.</strong> Server crashes. Frontend performance issues. E-commerce platform failures. Database bottlenecks. We diagnose fast, fix it right, and prevent recurrence.</p>
-                        <p><strong>Built to last.</strong> Every solution combines immediate problem-solving with systematic improvements—ensuring your platforms run reliably at scale.</p>
+                        <h2>Built different</h2>
+                        <p>Here's the thing about most tech consultants: they talk a lot, deliver slowly, and disappear when things break. We're not that. We're the team you call at 2 AM when your e-commerce site crashes, and we actually pick up.</p>
+                        <p>With 4+ years deep in the trenches—Python, SQL, N8N, full-stack development—we've seen it all. Crashed servers, broken pipelines, data nightmares, integration disasters. <strong>We fix it fast</strong>, explain what went wrong (in normal language), and make sure it doesn't happen again.</p>
+                        <p>Our approach is simple: <strong>build systems that work, automate the boring stuff, and keep total cost down.</strong> No vendor lock-in. No proprietary nonsense. Just clean, scalable solutions that grow with you.</p>
+                        <a href="#" onclick="showPage('contact'); return false;" class="btn btn-primary">Let's Talk</a>
                     </div>
 
                     <div class="stats-grid">
@@ -1164,8 +1234,8 @@
         <div class="page-content">
             <div class="content-container">
                 <div class="about-header">
-                    <h1>Build smarter growth</h1>
-                    <p>We architect the platforms, data foundations, and intelligent systems that power organizations with advanced digital ambitions.</p>
+                    <h1>What We Actually Do</h1>
+                    <p>We're not just consultants who talk—we build, fix, and optimize systems that make your business run smoother. Here's what we're really good at.</p>
                 </div>
 
                 <div class="services-wrapper">
@@ -1179,13 +1249,13 @@
                                     </svg>
                                 </div>
                                 <div class="service-info">
-                                    <div class="service-category">Frontend Development</div>
-                                    <h3 class="service-title">Responsive & Fast</h3>
+                                    <div class="service-category">Automation & AI</div>
+                                    <h3 class="service-title">Systems that work for you</h3>
                                     <div class="service-tags">
-                                        <span class="service-tag">JavaScript optimization</span>
-                                        <span class="service-tag">Load time improvements</span>
-                                        <span class="service-tag">Browser compatibility</span>
-                                        <span class="service-tag">UI/UX implementation</span>
+                                        <span class="service-tag">Stuck doing manual data entry every week?</span>
+                                        <span class="service-tag">Tired of copying info between systems?</span>
+                                        <span class="service-tag">Want AI that actually helps your business?</span>
+                                        <span class="service-tag">Need workflows that run themselves?</span>
                                     </div>
                                 </div>
                                 <div class="service-expand"></div>
@@ -1203,13 +1273,39 @@
                                     </svg>
                                 </div>
                                 <div class="service-info">
-                                    <div class="service-category">Backend Development</div>
-                                    <h3 class="service-title">Robust Architecture</h3>
+                                    <div class="service-category">Incident Monitoring</div>
+                                    <h3 class="service-title">Catch problems before your customers do</h3>
                                     <div class="service-tags">
-                                        <span class="service-tag">API development</span>
-                                        <span class="service-tag">Database optimization</span>
-                                        <span class="service-tag">Python & PHP</span>
-                                        <span class="service-tag">Microservices</span>
+                                        <span class="service-tag">Want to know about issues before they become disasters?</span>
+                                        <span class="service-tag">Tired of finding out your site is down from Twitter?</span>
+                                        <span class="service-tag">Need alerts that actually matter (not spam)?</span>
+                                        <span class="service-tag">Want 24/7 eyes on your critical systems?</span>
+                                    </div>
+                                </div>
+                                <div class="service-expand"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="service-section">
+                        <div class="service-container">
+                            <div class="service-content">
+                                <div class="service-icon">
+                                    <svg viewBox="0 0 240 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M80 100 L80 60 L160 60 L160 100" stroke="currentColor" stroke-width="2" opacity="0.4"/>
+                                        <rect x="60" y="100" width="120" height="80" stroke="currentColor" stroke-width="2" opacity="0.6"/>
+                                        <line x1="90" y1="130" x2="150" y2="130" stroke="currentColor" stroke-width="2"/>
+                                        <line x1="90" y1="150" x2="150" y2="150" stroke="currentColor" stroke-width="2"/>
+                                    </svg>
+                                </div>
+                                <div class="service-info">
+                                    <div class="service-category">Hosting & Infrastructure</div>
+                                    <h3 class="service-title">Reliable hosting that just works</h3>
+                                    <div class="service-tags">
+                                        <span class="service-tag">Worried about downtime during peak traffic?</span>
+                                        <span class="service-tag">Need someone who actually picks up at 2 AM?</span>
+                                        <span class="service-tag">Want backups that you can actually restore?</span>
+                                        <span class="service-tag">Looking for performance without the enterprise price tag?</span>
                                     </div>
                                 </div>
                                 <div class="service-expand"></div>
@@ -1226,13 +1322,13 @@
                                     </svg>
                                 </div>
                                 <div class="service-info">
-                                    <div class="service-category">Infrastructure & Hosting</div>
-                                    <h3 class="service-title">Reliable & Secure</h3>
+                                    <div class="service-category">Integration & Data</div>
+                                    <h3 class="service-title">Systems that talk to each other</h3>
                                     <div class="service-tags">
-                                        <span class="service-tag">24/7 monitoring</span>
-                                        <span class="service-tag">Emergency recovery</span>
-                                        <span class="service-tag">SSL & backups</span>
-                                        <span class="service-tag">Performance tuning</span>
+                                        <span class="service-tag">Tired of disconnected platforms?</span>
+                                        <span class="service-tag">Need your CRM to sync with your shop?</span>
+                                        <span class="service-tag">Want clean, usable data for once?</span>
+                                        <span class="service-tag">Looking to connect everything without breaking anything?</span>
                                     </div>
                                 </div>
                                 <div class="service-expand"></div>
@@ -1257,16 +1353,16 @@
         <div class="page-content">
             <div class="content-container">
                 <div class="about-header">
-                    <h1>Contact</h1>
-                    <p>Let's discuss how we can help accelerate your digital business.</p>
+                    <h1>Let's Talk</h1>
+                    <p>System broken? Need automation? Just want to see if we're a good fit? Drop us a line—no sales pitch, just straight answers.</p>
                 </div>
 
                 <!-- Contact Form -->
                 <div class="contact-form-section">
                     <div class="contact-form-container">
                         <div class="contact-form-info">
-                            <h2>Get In Touch</h2>
-                            <p>Whether you're ready to start a project or just have a few questions, we're here to help! Contact us below.</p>
+                            <h2>How can we help?</h2>
+                            <p>Whether your site's down right now, you're drowning in manual work, or you just want to chat about what's possible—we're here. We usually reply within a few hours (or minutes if it's urgent).</p>
                             
                             <div class="contact-phone-wrapper">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
@@ -1343,7 +1439,7 @@
                             <p>24/7 Availability</p>
                             <p>Emergency incident response</p>
                             <p>Response time: &lt;2 hours</p>
-                            <p><a href="mailto:info@digitalnorth.nl">info@digitalnorth.nl</a></p>
+                            <p><a href="/cdn-cgi/l/email-protection#147d7a727b54707d737d6075787a7b66607c3a7a78"><span class="__cf_email__" data-cfemail="b1d8dfd7def1d5d8d6d8c5d0dddfdec3c5d99fdfdd">[email&#160;protected]</span></a></p>
                             <p class="location-subtitle">Contact us</p>
                         </div>
                     </div>
@@ -1376,7 +1472,7 @@
                     <h4>Contact</h4>
                     <ul>
                         <li><a href="tel:+31068307228">+31 06 83 072 284</a></li>
-                        <li><a href="mailto:contact@digitalnorth.nl">contact@digitalnorth.nl</a></li>
+                        <li><a href="/cdn-cgi/l/email-protection#fc9f9392889d9f88bc98959b95889d9092938e8894d29290"><span class="__cf_email__" data-cfemail="41222e2f35202235012528262835202d2f2e3335296f2f2d">[email&#160;protected]</span></a></li>
                     </ul>
                 </div>
             </div>
@@ -1390,7 +1486,7 @@
         </div>
     </footer>
 
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script>
         function showPage(page) {
             document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
@@ -1417,17 +1513,9 @@
                 el: ".swiper-pagination",
                 clickable: true,
             },
-            mousewheel: {
-                sensitivity: 1,
-                releaseOnEdges: true,
-            },
-            effect: 'fade',
-            fadeEffect: {
-                crossFade: true
-            }
+            mousewheel: true,
+            keyboard: true,
         });
-
-        // Contact form handler
     </script>
 </body>
 </html>
