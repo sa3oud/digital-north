@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>North Digital - Technical Consultancy</title>
     
+    <!-- Favicon -->
     <link rel="icon" type="image/png" href="favicon.png">
     <link rel="apple-touch-icon" href="favicon.png">
     
@@ -150,7 +151,6 @@
         }
 
         /* ========== FULL PAGE BACKGROUND WRAPPER ========== */
-        /* This applies the video background to the non-swiper pages */
         .full-page-bg {
             position: absolute;
             top: 0;
@@ -176,12 +176,12 @@
             left: 0;
             width: 100%;
             height: 100%;
-            /* Modified overlay for better text contrast on inner pages */
             background: linear-gradient(
-                to bottom,
-                rgba(10, 10, 10, 0.95) 0%,
-                rgba(10, 10, 10, 0.85) 50%,
-                rgba(10, 10, 10, 0.95) 100%
+                to right,
+                rgba(10, 10, 10, 0.9) 0%,
+                rgba(10, 10, 10, 0.75) 40%,
+                rgba(10, 10, 10, 0.4) 70%,
+                transparent 100%
             );
         }
 
@@ -953,12 +953,14 @@
     </style>
 </head>
 <body>
+    <!-- Hamburger Menu Button (All Pages) -->
     <div class="hamburger-btn" onclick="toggleMenu()">
         <span></span>
         <span></span>
         <span></span>
     </div>
 
+    <!-- Mobile Menu -->
     <div class="mobile-menu" id="mobileMenu">
         <ul class="mobile-nav-links">
             <li><a href="#" onclick="showPage('home'); toggleMenu(); return false;">Home</a></li>
@@ -968,11 +970,13 @@
         </ul>
     </div>
 
+    <!-- HOME PAGE -->
     <div id="homePage" class="page active">
         <div class="hero-slider-wrapper">
             <div class="swiper-container heroSwiper">
                 <div class="swiper-wrapper">
                     
+                    <!-- Slide 1 - Tunnel Video -->
                     <div class="swiper-slide">
                         <video class="slide-bg" autoplay muted loop playsinline>
                             <source src="https://videos.pexels.com/video-files/2759477/2759477-uhd_2560_1440_30fps.mp4" type="video/mp4">
@@ -995,6 +999,8 @@
                 <div class="swiper-pagination"></div>
             </div>
         </div>
+
+        <!-- Services Section -->
         <div class="services-wrapper">
             <div class="service-section">
                 <div class="service-container">
@@ -1069,6 +1075,7 @@
             </div>
         </div>
 
+        <!-- Contact CTA -->
         <div class="page-content">
             <div class="content-container">
                 <div class="locations-section">
@@ -1089,185 +1096,138 @@
                 </div>
             </div>
         </div>
-
-        <footer>
-            <div class="footer-container">
-                <div class="footer-nav">
-                    <div class="footer-column">
-                        <h4>Navigation</h4>
-                        <ul>
-                            <li><a href="#" onclick="showPage('home'); return false;">Home</a></li>
-                            <li><a href="#" onclick="showPage('about'); return false;">About</a></li>
-                            <li><a href="#" onclick="showPage('services'); return false;">Services</a></li>
-                            <li><a href="#" onclick="showPage('contact'); return false;">Contact</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-column">
-                        <h4>Services</h4>
-                        <ul>
-                            <li><a href="#">Digital Strategy</a></li>
-                            <li><a href="#">Data Integration</a></li>
-                            <li><a href="#">Cloud Migration</a></li>
-                            <li><a href="#">System Optimization</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-column">
-                        <h4>Locations</h4>
-                        <ul>
-                            <li><a href="#">Amsterdam</a></li>
-                            <li><a href="#">Remote</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="footer-bottom">
-                    <p>&copy; 2025 North Digital. All Rights Reserved.</p>
-                    <div class="footer-social">
-                        <a href="#">LinkedIn</a>
-                        <a href="#">Twitter</a>
-                    </div>
-                </div>
-            </div>
-        </footer>
     </div>
-    
+
+    <!-- ABOUT PAGE -->
     <div id="aboutPage" class="page">
+        <!-- Full-page background - VIDEO 2 -->
         <div class="full-page-bg">
             <video autoplay muted loop playsinline>
-                <source src="https://videos.pexels.com/video-files/2759477/2759477-uhd_2560_1440_30fps.mp4" type="video/mp4">
+                <source src="https://videos.pexels.com/video-files/1851768/1851768-hd_1920_1080_30fps.mp4" type="video/mp4">
             </video>
             <div class="full-page-overlay"></div>
         </div>
-        
+
         <div class="page-content">
             <div class="content-container">
-                <header class="about-header">
-                    <h1>Who We Are</h1>
-                    <p>North Digital is a technical consultancy focused on delivering tangible business results through strategic technology implementation and operational excellence.</p>
-                </header>
+                <div class="about-header">
+                    <h1>About North Digital</h1>
+                    <p>Full-stack excellence meets rapid diagnostics. We build complete digital solutions that last.</p>
+                </div>
 
                 <div class="about-grid">
                     <div class="about-text">
-                        <h2>Driven by Results</h2>
-                        <p>We believe that technology should serve a purpose. Our mission is to align complex IT solutions with clear business goals, ensuring every investment yields measurable returns. We don't just fix systems; we build **future-proof foundations**.</p>
-                        <p>Our approach is holistic: combining deep technical expertise with a keen understanding of modern business challenges across e-commerce, logistics, and data management.</p>
-                        <a href="#" onclick="showPage('contact'); return false;" class="btn btn-primary">Start a Project</a>
+                        <h2>Full-Stack Excellence, Rapid Diagnostics</h2>
+                        <p>Netherlands-based technical consultancy with 4+ years of experience in full-stack development, platform troubleshooting, and automation. From frontend to backend, we build complete solutions.</p>
+                        <p><strong>We specialize in emergencies.</strong> Server crashes. Frontend performance issues. E-commerce platform failures. Database bottlenecks. We diagnose fast, fix it right, and prevent recurrence.</p>
+                        <p><strong>Built to last.</strong> Every solution combines immediate problem-solving with systematic improvements—ensuring your platforms run reliably at scale.</p>
                     </div>
+
                     <div class="stats-grid">
                         <div class="stat-card">
-                            <span class="stat-number">15+</span>
+                            <span class="stat-number">80%</span>
+                            <span class="stat-label">Process Efficiency Gain</span>
+                        </div>
+                        <div class="stat-card">
+                            <span class="stat-number">70%</span>
+                            <span class="stat-label">Incident Reduction</span>
+                        </div>
+                        <div class="stat-card">
+                            <span class="stat-number">24-48h</span>
+                            <span class="stat-label">Initial Assessment</span>
+                        </div>
+                        <div class="stat-card">
+                            <span class="stat-number">4+</span>
                             <span class="stat-label">Years Experience</span>
-                        </div>
-                        <div class="stat-card">
-                            <span class="stat-number">98%</span>
-                            <span class="stat-label">Client Retention</span>
-                        </div>
-                        <div class="stat-card">
-                            <span class="stat-number">120+</span>
-                            <span class="stat-label">Successful Projects</span>
-                        </div>
-                        <div class="stat-card">
-                            <span class="stat-number">4x</span>
-                            <span class="stat-label">Average ROI uplift</span>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-
-        <footer>
-            <div class="footer-container">
-                <div class="footer-bottom">
-                    <p>&copy; 2025 North Digital. All Rights Reserved.</p>
-                    <div class="footer-social">
-                        <a href="#">LinkedIn</a>
-                        <a href="#">Twitter</a>
-                    </div>
-                </div>
-            </div>
-        </footer>
     </div>
 
+    <!-- SERVICES PAGE -->
     <div id="servicesPage" class="page">
+        <!-- Full-page background - VIDEO 3 -->
         <div class="full-page-bg">
             <video autoplay muted loop playsinline>
-                <source src="https://videos.pexels.com/video-files/2759477/2759477-uhd_2560_1440_30fps.mp4" type="video/mp4">
+                <source src="https://videos.pexels.com/video-files/5473968/5473968-uhd_2560_1440_25fps.mp4" type="video/mp4">
             </video>
             <div class="full-page-overlay"></div>
         </div>
-        
+
         <div class="page-content">
             <div class="content-container">
-                <header class="about-header">
-                    <h1>Our Core Services</h1>
-                    <p>We provide full-lifecycle technical consultancy, from high-level strategy to hands-on implementation and system optimization.</p>
-                </header>
+                <div class="about-header">
+                    <h1>Build smarter growth</h1>
+                    <p>We architect the platforms, data foundations, and intelligent systems that power organizations with advanced digital ambitions.</p>
+                </div>
 
-                <div class="services-wrapper" style="margin-top: 0;">
+                <div class="services-wrapper">
                     <div class="service-section">
                         <div class="service-container">
                             <div class="service-content">
                                 <div class="service-icon">
                                     <svg viewBox="0 0 240 240" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <circle cx="120" cy="120" r="90" stroke="currentColor" stroke-width="2" opacity="0.4"/>
-                                        <circle cx="120" cy="120" r="60" stroke="currentColor" stroke-width="2" opacity="0.6"/>
-                                        <circle cx="120" cy="120" r="30" fill="currentColor" opacity="0.8"/>
+                                        <path d="M60 120 L120 60 L180 120 L120 180 Z" fill="currentColor" opacity="0.5"/>
                                     </svg>
                                 </div>
                                 <div class="service-info">
-                                    <div class="service-category">Digital Infrastructure</div>
-                                    <h3 class="service-title">Systems that drive revenue</h3>
+                                    <div class="service-category">Frontend Development</div>
+                                    <h3 class="service-title">Responsive & Fast</h3>
                                     <div class="service-tags">
-                                        <span class="service-tag">Considering eCommerce replatforming?</span>
-                                        <span class="service-tag">Downtime hurting your business?</span>
-                                        <span class="service-tag">Content chaos everywhere?</span>
-                                        <span class="service-tag">How to scale cross border?</span>
+                                        <span class="service-tag">JavaScript optimization</span>
+                                        <span class="service-tag">Load time improvements</span>
+                                        <span class="service-tag">Browser compatibility</span>
+                                        <span class="service-tag">UI/UX implementation</span>
                                     </div>
                                 </div>
                                 <div class="service-expand"></div>
                             </div>
                         </div>
                     </div>
-    
+
                     <div class="service-section">
                         <div class="service-container">
                             <div class="service-content">
                                 <div class="service-icon">
                                     <svg viewBox="0 0 240 240" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <rect x="60" y="60" width="120" height="120" stroke="currentColor" stroke-width="2" opacity="0.4"/>
-                                        <circle cx="90" cy="90" r="20" fill="currentColor" opacity="0.6"/>
-                                        <circle cx="150" cy="150" r="20" fill="currentColor" opacity="0.6"/>
+                                        <circle cx="120" cy="120" r="40" fill="currentColor" opacity="0.6"/>
                                     </svg>
                                 </div>
                                 <div class="service-info">
-                                    <div class="service-category">Operational optimization</div>
-                                    <h3 class="service-title">Systems that optimize</h3>
+                                    <div class="service-category">Backend Development</div>
+                                    <h3 class="service-title">Robust Architecture</h3>
                                     <div class="service-tags">
-                                        <span class="service-tag">Repetitive tasks slowing you down?</span>
-                                        <span class="service-tag">How AI can improve processes?</span>
-                                        <span class="service-tag">How to reduce manual labour?</span>
+                                        <span class="service-tag">API development</span>
+                                        <span class="service-tag">Database optimization</span>
+                                        <span class="service-tag">Python & PHP</span>
+                                        <span class="service-tag">Microservices</span>
                                     </div>
                                 </div>
                                 <div class="service-expand"></div>
                             </div>
                         </div>
                     </div>
-    
+
                     <div class="service-section">
                         <div class="service-container">
                             <div class="service-content">
                                 <div class="service-icon">
                                     <svg viewBox="0 0 240 240" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M120 40 L180 100 L180 180 L60 180 L60 100 Z" stroke="currentColor" stroke-width="2" opacity="0.4"/>
-                                        <circle cx="120" cy="130" r="40" stroke="currentColor" stroke-width="2" opacity="0.6"/>
+                                        <path d="M120 50 L180 110 L180 180 L60 180 L60 110 Z" stroke="currentColor" stroke-width="2" opacity="0.4"/>
                                     </svg>
                                 </div>
                                 <div class="service-info">
-                                    <div class="service-category">Foundation for data and integration</div>
-                                    <h3 class="service-title">Systems that scale</h3>
+                                    <div class="service-category">Infrastructure & Hosting</div>
+                                    <h3 class="service-title">Reliable & Secure</h3>
                                     <div class="service-tags">
-                                        <span class="service-tag">Struggling with disconnected systems?</span>
-                                        <span class="service-tag">Is your data landscape siloed?</span>
-                                        <span class="service-tag">Data quality not on par?</span>
+                                        <span class="service-tag">24/7 monitoring</span>
+                                        <span class="service-tag">Emergency recovery</span>
+                                        <span class="service-tag">SSL & backups</span>
+                                        <span class="service-tag">Performance tuning</span>
                                     </div>
                                 </div>
                                 <div class="service-expand"></div>
@@ -1277,114 +1237,189 @@
                 </div>
             </div>
         </div>
-
-        <footer>
-            <div class="footer-container">
-                <div class="footer-bottom">
-                    <p>&copy; 2025 North Digital. All Rights Reserved.</p>
-                    <div class="footer-social">
-                        <a href="#">LinkedIn</a>
-                        <a href="#">Twitter</a>
-                    </div>
-                </div>
-            </div>
-        </footer>
     </div>
-    
+
+    <!-- CONTACT PAGE -->
     <div id="contactPage" class="page">
+        <!-- Full-page background - VIDEO 4 -->
         <div class="full-page-bg">
             <video autoplay muted loop playsinline>
-                <source src="https://videos.pexels.com/video-files/2759477/2759477-uhd_2560_1440_30fps.mp4" type="video/mp4">
+                <source src="https://videos.pexels.com/video-files/8682326/8682326-hd_1920_1080_30fps.mp4" type="video/mp4">
             </video>
             <div class="full-page-overlay"></div>
         </div>
-        
+
         <div class="page-content">
             <div class="content-container">
+                <div class="about-header">
+                    <h1>Contact</h1>
+                    <p>Let's discuss how we can help accelerate your digital business.</p>
+                </div>
+
+                <!-- Contact Form -->
                 <div class="contact-form-section">
                     <div class="contact-form-container">
                         <div class="contact-form-info">
-                            <h2>Let's discuss your next project</h2>
-                            <p>Whether you're looking to replatform, improve existing systems, or simply need expert advice, our team is ready to help you navigate your biggest digital challenges.</p>
+                            <h2>Get In Touch</h2>
+                            <p>Whether you're ready to start a project or just have a few questions, we're here to help! Contact us below.</p>
                             
                             <div class="contact-phone-wrapper">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.76-.24 1.02l-2.2 2.2z"/></svg>
-                                <a href="tel:+1234567890">+1 (234) 567-890</a>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.11-.27 11.44 11.44 0 003.48.56 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.44 11.44 0 00.56 3.48 1 1 0 01-.27 1.11z"/>
+                                </svg>
+                                <a href="tel:+31068307228">+31 06 83 072 284</a>
                             </div>
                         </div>
+
                         <div class="contact-form-wrapper">
                             <h3>Send us a message</h3>
-                            <form action="#" method="POST">
+                            <form id="contactForm">
                                 <div class="form-row">
                                     <div class="form-group">
-                                        <label for="name">Your Name</label>
-                                        <input type="text" id="name" name="name" placeholder="John Doe" required>
+                                        <label>First Name *</label>
+                                        <input type="text" required placeholder="First name">
                                     </div>
                                     <div class="form-group">
-                                        <label for="email">Email Address</label>
-                                        <input type="email" id="email" name="email" placeholder="john.doe@example.com" required>
+                                        <label>Last Name *</label>
+                                        <input type="text" required placeholder="Last name">
                                     </div>
                                 </div>
-                                <div class="form-group">
-                                    <label for="company">Company Name</label>
-                                    <input type="text" id="company" name="company" placeholder="Acme Corp">
+                                
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label>Business Email *</label>
+                                        <input type="email" required placeholder="your@email.com">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Phone Number *</label>
+                                        <input type="tel" required placeholder="+31 06 1234 5678">
+                                    </div>
                                 </div>
+
                                 <div class="form-group">
-                                    <label for="service">Select Service</label>
-                                    <select id="service" name="service" required>
-                                        <option value="">-- Choose a Service --</option>
-                                        <option value="Infrastructure">Digital Infrastructure</option>
-                                        <option value="Optimization">Operational Optimization</option>
-                                        <option value="Data">Data & Integration</option>
-                                        <option value="Other">General Inquiry</option>
+                                    <label>Subject *</label>
+                                    <select required>
+                                        <option value="">Who would you like to contact?</option>
+                                        <option>Sales / New Project</option>
+                                        <option>Emergency Support</option>
+                                        <option>Technical Consultation</option>
+                                        <option>Partnership Inquiry</option>
+                                        <option>Other</option>
                                     </select>
                                 </div>
+
                                 <div class="form-group">
-                                    <label for="message">Your Message</label>
-                                    <textarea id="message" name="message" placeholder="Tell us about your challenge..." required></textarea>
+                                    <label>Message *</label>
+                                    <textarea required placeholder="How can we help you?"></textarea>
                                 </div>
-                                <button type="submit" class="form-submit">Send Inquiry</button>
+
+                                <button type="submit" class="form-submit">Contact Us</button>
                             </form>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
 
-        <footer>
-            <div class="footer-container">
-                <div class="footer-bottom">
-                    <p>&copy; 2025 North Digital. All Rights Reserved.</p>
-                    <div class="footer-social">
-                        <a href="#">LinkedIn</a>
-                        <a href="#">Twitter</a>
+                <!-- Locations -->
+                <div class="locations-section">
+                    <div class="locations-header">
+                        <h2>Our Offices</h2>
+                        <p>We're here to help wherever you are.</p>
+                    </div>
+                    <div class="locations-grid">
+                        <div class="location-card">
+                            <h3>Amsterdam</h3>
+                            <p>Available for on-site consultations</p>
+                            <p>Netherlands</p>
+                            <p>Tel. +31 06 83 072 284</p>
+                            <p class="location-subtitle">Contact us</p>
+                        </div>
+                        <div class="location-card">
+                            <h3>Remote Support</h3>
+                            <p>24/7 Availability</p>
+                            <p>Emergency incident response</p>
+                            <p>Response time: &lt;2 hours</p>
+                            <p><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="4b22252d240b2524393f232f222c223f2a27652527">[email&#160;protected]</a></p>
+                            <p class="location-subtitle">Contact us</p>
+                        </div>
                     </div>
                 </div>
             </div>
-        </footer>
+        </div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-nav">
+                <div class="footer-column">
+                    <h4>North Digital</h4>
+                    <ul>
+                        <li><a href="#" onclick="showPage('about'); return false;">About us</a></li>
+                        <li><a href="#" onclick="showPage('services'); return false;">Services</a></li>
+                        <li><a href="#" onclick="showPage('contact'); return false;">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#">Frontend Development</a></li>
+                        <li><a href="#">Backend Development</a></li>
+                        <li><a href="#">Infrastructure</a></li>
+                        <li><a href="#">Monitoring</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><a href="tel:+31068307228">+31 06 83 072 284</a></li>
+                        <li><a href="/cdn-cgi/l/email-protection#2b42454d446b4544595f434f424c425f4a47054547"><span class="__cf_email__" data-cfemail="bdd4d3dbd2fdd3d2cfc9d5d9d4dad4c9dcd193d3d1">[email&#160;protected]</span></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 North Digital. All rights reserved.</p>
+                <div class="footer-social">
+                    <a href="#">LinkedIn</a>
+                    <a href="#">Twitter</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Initialize Swiper for the Home page hero slider
-            const heroSwiper = new Swiper('.heroSwiper', {
-                direction: 'vertical',
-                loop: true,
-                autoplay: {
-                    delay: 8000,
-                    disableOnInteraction: false,
-                },
-                pagination: {
-                    el: '.swiper-pagination',
-                    clickable: true,
-                },
-            });
+        function showPage(page) {
+            document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+            document.getElementById(page + 'Page').classList.add('active');
+            window.scrollTo(0, 0);
+        }
 
-            // Ensure the initial page load starts on the Home page
-            showPage('home');
+        function toggleMenu() {
+            const menu = document.getElementById('mobileMenu');
+            const hamburger = document.querySelector('.hamburger-btn');
+            menu.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        }
+
+        var swiper = new Swiper(".heroSwiper", {
+            direction: "vertical",
+            slidesPerView: 1,
+            speed: 1000,
+            autoplay: {
+                delay: 6000,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            mousewheel: {
+                sensitivity: 1,
+                releaseOnEdges: true,
+            },
+            effect: 'fade',
+            fadeEffect: {
+                crossFade: true
+            }
         });
-    </script>
 
-</body>
-</html>
+        // Contact form handler
