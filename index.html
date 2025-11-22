@@ -6,8 +6,8 @@
     
     <!-- Primary SEO -->
     <title>Incident Management & Infrastructure Expert Amsterdam | North Digital</title>
-    <meta name="description" content="24/7 incident response, server infrastructure, and automation solutions. 4+ years as Incident Analyst. Specializing in e-commerce stability and critical system management.">
-    <meta name="keywords" content="incident management Amsterdam, infrastructure consultant Netherlands, server management, automation solutions, e-commerce hosting, 24/7 support, Warmenhuizen">
+    <meta name="description" content="24/7 incident response, server infrastructure, web testing, and automation solutions. 4+ years as Incident Analyst. Specializing in e-commerce stability and QA testing.">
+    <meta name="keywords" content="incident management Amsterdam, infrastructure consultant Netherlands, server management, web testing, e-commerce QA, automation solutions, hosting, 24/7 support, Warmenhuizen">
     
     <!-- Geo/Local SEO -->
     <meta name="geo.region" content="NL-NH">
@@ -28,7 +28,7 @@
       "@context": "https://schema.org",
       "@type": "ProfessionalService",
       "name": "North Digital",
-      "description": "Expert incident management, server infrastructure, and automation solutions. Specializing in 24/7 emergency response for e-commerce and critical systems.",
+      "description": "Expert incident management, server infrastructure, web testing, and automation solutions. Specializing in 24/7 emergency response for e-commerce platforms and critical systems.",
       "url": "https://northdigital.nl",
       "telephone": "+31-06-83072284",
       "email": "contact@northdigital.nl",
@@ -57,6 +57,8 @@
       "serviceType": [
         "Incident Management",
         "Server Infrastructure",
+        "Web Testing & QA",
+        "E-commerce Testing",
         "Automation Solutions",
         "E-commerce Hosting",
         "24/7 Emergency Response",
@@ -106,12 +108,17 @@
             --grey-400: #6b6b6b;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
             line-height: 1.6;
             color: #333;
             background: var(--primary-black);
             overflow-x: hidden;
+            overflow-y: auto;
         }
 
         /* ========== HAMBURGER MENU ========== */
@@ -319,7 +326,7 @@
         @keyframes slideInRight {
             from {
                 opacity: 0;
-                transform: translateX(-40px);
+                transform: translateX(-60px);
             }
             to {
                 opacity: 1;
@@ -330,7 +337,7 @@
         @keyframes slideInLeft {
             from {
                 opacity: 0;
-                transform: translateX(40px);
+                transform: translateX(60px);
             }
             to {
                 opacity: 1;
@@ -364,41 +371,45 @@
         }
 
         .btn {
-            padding: 1.2rem 2.5rem;
+            padding: 1rem 2rem;
             border: none;
             font-size: 1rem;
-            font-weight: 700;
+            font-weight: 600;
             cursor: pointer;
-            transition: all 0.3s ease;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             text-decoration: none;
             display: inline-block;
-            letter-spacing: 0;
+            letter-spacing: 0.3px;
             text-transform: none;
-            border-radius: 0;
+            border-radius: 8px;
             font-family: inherit;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
         }
 
         .btn-primary {
             background: var(--gold);
             color: var(--white);
+            font-weight: 600;
         }
 
         .btn-primary:hover {
-            background: #c203a0;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(161, 2, 134, 0.3);
+            background: #d604b4;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(161, 2, 134, 0.4);
         }
 
         .btn-secondary {
             background: transparent;
             color: var(--white);
-            border: 2px solid var(--white);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            box-shadow: none;
         }
 
         .btn-secondary:hover {
-            background: var(--white);
-            color: var(--primary-black);
+            background: rgba(255, 255, 255, 0.1);
             border-color: var(--white);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(255, 255, 255, 0.2);
         }
 
         /* Swiper Pagination */
@@ -447,7 +458,7 @@
             font-weight: 200;
             letter-spacing: -0.02em;
             margin-bottom: 1.5rem;
-            animation: slideInRight 0.8s ease-out;
+            animation: slideInRight 1s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         .about-header p {
@@ -456,7 +467,7 @@
             max-width: 700px;
             font-weight: 300;
             line-height: 1.7;
-            animation: slideInRight 0.8s ease-out 0.2s both;
+            animation: slideInRight 1s cubic-bezier(0.4, 0, 0.2, 1) 0.3s both;
         }
 
         .about-grid {
@@ -472,7 +483,7 @@
             font-weight: 300;
             margin-bottom: 2.5rem;
             letter-spacing: -0.01em;
-            animation: slideInRight 0.8s ease-out 0.3s both;
+            animation: slideInRight 1s cubic-bezier(0.4, 0, 0.2, 1) 0.3s both;
         }
 
         .about-text p {
@@ -480,7 +491,7 @@
             font-size: 1.15rem;
             line-height: 1.9;
             margin-bottom: 1.8rem;
-            animation: slideInRight 0.8s ease-out 0.4s both;
+            animation: slideInRight 1s cubic-bezier(0.4, 0, 0.2, 1) 0.4s both;
         }
 
         .about-text p:nth-of-type(2) {
@@ -509,7 +520,7 @@
             text-align: center;
             transition: all 0.4s ease;
             border: 1px solid rgba(161, 2, 134, 0.2);
-            animation: slideInLeft 0.8s ease-out both;
+            animation: slideInLeft 1s cubic-bezier(0.4, 0, 0.2, 1) both;
         }
 
         .stat-card:nth-child(1) {
@@ -561,7 +572,7 @@
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
             margin-bottom: 2px;
             transition: all 0.4s ease;
-            animation: slideInRight 0.8s ease-out both;
+            animation: slideInRight 1s cubic-bezier(0.4, 0, 0.2, 1) both;
         }
 
         .service-section:nth-child(1) {
@@ -1201,6 +1212,39 @@
                 padding: 0.5rem 1rem;
             }
 
+            /* PRICING MOBILE FIXES */
+            .pricing-wrapper {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+                margin-top: 2rem;
+            }
+
+            .pricing-card {
+                padding: 1.5rem;
+            }
+
+            .pricing-card:nth-child(2) {
+                transform: scale(1);
+            }
+
+            .pricing-title {
+                font-size: 1.5rem;
+            }
+
+            .pricing-price {
+                font-size: 2.5rem;
+            }
+
+            .pricing-price span {
+                font-size: 0.9rem;
+            }
+
+            .pricing-features li {
+                font-size: 0.9rem;
+                padding: 0.6rem 0;
+            }
+
+            /* CONTACT FORM MOBILE */
             .contact-form-info h2 {
                 font-size: 1.8rem;
             }
@@ -1219,6 +1263,25 @@
                 width: 100%;
                 padding: 1rem;
                 font-size: 1rem;
+            }
+
+            /* PAGE CONTENT PADDING */
+            .page-content {
+                padding: 2rem 1rem 4rem 1rem;
+            }
+
+            .slide-content {
+                padding: 0 1rem 4rem 1rem;
+            }
+
+            /* FOOTER MOBILE */
+            footer {
+                padding: 3rem 1.5rem 1.5rem;
+                margin-top: 4rem;
+            }
+
+            .footer-nav {
+                grid-template-columns: 1fr;
             }
         }
 
@@ -1288,6 +1351,138 @@
             }
         }
 
+        /* ========== PRICING SECTION ========== */
+        .pricing-wrapper {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        @media (max-width: 768px) {
+            .pricing-wrapper {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .pricing-card {
+            background: rgba(26, 26, 26, 0.6);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(161, 2, 134, 0.3);
+            padding: 2.5rem;
+            transition: all 0.4s ease;
+            animation: slideInRight 1s cubic-bezier(0.4, 0, 0.2, 1) both;
+        }
+
+        .pricing-card:nth-child(1) {
+            animation-delay: 0.2s;
+        }
+
+        .pricing-card:nth-child(2) {
+            animation-delay: 0.4s;
+            border-color: var(--magenta);
+            background: rgba(161, 2, 134, 0.1);
+            transform: scale(1.05);
+        }
+
+        .pricing-card:nth-child(3) {
+            animation-delay: 0.6s;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--magenta);
+            box-shadow: 0 10px 30px rgba(161, 2, 134, 0.3);
+        }
+
+        .pricing-card:nth-child(2):hover {
+            transform: scale(1.08) translateY(-5px);
+        }
+
+        .pricing-badge {
+            display: inline-block;
+            background: var(--magenta);
+            color: var(--white);
+            padding: 0.4rem 1rem;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
+        }
+
+        .pricing-header {
+            margin-bottom: 1.5rem;
+        }
+
+        .pricing-title {
+            font-size: 1.8rem;
+            font-weight: 300;
+            color: var(--white);
+            margin-bottom: 0.5rem;
+        }
+
+        .pricing-subtitle {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .pricing-price {
+            font-size: 3rem;
+            font-weight: 200;
+            color: var(--magenta);
+            margin: 1.5rem 0;
+            display: flex;
+            align-items: baseline;
+            gap: 0.5rem;
+        }
+
+        .pricing-price span {
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .pricing-features {
+            list-style: none;
+            padding: 0;
+            margin: 2rem 0;
+        }
+
+        .pricing-features li {
+            color: rgba(255, 255, 255, 0.8);
+            padding: 0.75rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .pricing-features li:before {
+            content: "✓";
+            color: var(--magenta);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .pricing-cta {
+            margin-top: 2rem;
+        }
+
+        .limited-time {
+            background: rgba(161, 2, 134, 0.2);
+            border: 1px dashed var(--magenta);
+            padding: 1rem;
+            margin: 2rem 0;
+            text-align: center;
+        }
+
+        .limited-time p {
+            color: var(--magenta);
+            font-size: 0.9rem;
+            margin: 0;
+            font-weight: 500;
+        }
+
         /* Touch Device Optimizations */
         @media (hover: none) and (pointer: coarse) {
             /* Larger tap targets for mobile */
@@ -1342,6 +1537,7 @@
             <li><a href="#" onclick="showPage('home'); toggleMenu(); return false;">Home</a></li>
             <li><a href="#" onclick="showPage('about'); toggleMenu(); return false;">About</a></li>
             <li><a href="#" onclick="showPage('services'); toggleMenu(); return false;">Services</a></li>
+            <li><a href="#" onclick="showPage('pricing'); toggleMenu(); return false;">Pricing</a></li>
             <li><a href="#" onclick="showPage('contact'); toggleMenu(); return false;">Contact</a></li>
         </ul>
     </div>
@@ -1362,7 +1558,7 @@
                         <div class="slide-content">
                             <div class="slide-text">
                                 <h1>Incident Management & Infrastructure Expert Amsterdam</h1>
-                                <p>Server down? E-commerce site crashed? We're your <strong>24/7 incident response team</strong>. Specializing in infrastructure management, automation, and keeping critical systems running. 4+ years experience at Veepee Amsterdam.</p>
+                                <p>E-commerce site crashed? Server down? We're your <strong>24/7 incident response team</strong>. Specializing in infrastructure management, automation, web testing, and keeping critical systems running. 4+ years experience at Veepee Amsterdam.</p>
                                 <div class="slide-buttons">
                                     <a href="#" onclick="showPage('services'); return false;" class="btn btn-primary">Our Services</a>
                                     <a href="https://n8n.io" target="_blank" class="btn btn-primary">AI & Automation</a>
@@ -1495,9 +1691,9 @@
                 <div class="about-grid">
                     <div class="about-text">
                         <h2>Incident Management Specialist | Amsterdam</h2>
-                        <p>Here's the thing about most IT consultants: they talk a lot, deliver slowly, and disappear when things break. We're not that. We're your <strong>24/7 incident response team</strong>—the specialists you call at 2 AM when your server crashes, and we actually pick up.</p>
-                        <p>With <strong>4+ years as Incident Analyst at Veepee Amsterdam</strong>, managing critical e-commerce infrastructure, we've seen it all. Server failures, database crashes, performance issues, system outages. <strong>We diagnose fast, fix it properly</strong>, and implement monitoring to prevent it from happening again.</p>
-                        <p>Our expertise: <strong>incident management, server infrastructure, automation, and e-commerce stability.</strong> Whether you need emergency response, infrastructure optimization, or automated monitoring—we deliver. Available 24/7 for critical incidents.</p>
+                        <p>Here's the thing about most IT consultants: they talk a lot, deliver slowly, and disappear when things break. We're not that. We're your <strong>24/7 incident response team</strong>—the specialists you call at 2 AM when your e-commerce site crashes, and we actually pick up.</p>
+                        <p>With <strong>4+ years as Incident Analyst at Veepee Amsterdam</strong>, managing critical e-commerce infrastructure and performing extensive web testing, we've seen it all. Server failures, database crashes, payment gateway issues, checkout bugs, performance problems. <strong>We diagnose fast, fix it properly</strong>, and implement monitoring to prevent it from happening again.</p>
+                        <p>Our expertise: <strong>incident management, server infrastructure, automation, web testing for e-commerce platforms, and end-to-end quality assurance.</strong> Whether you need emergency response, infrastructure optimization, automated testing, or monitoring—we deliver. Available 24/7 for critical incidents.</p>
                         <a href="#" onclick="showPage('contact'); return false;" class="btn btn-primary">Emergency Contact</a>
                     </div>
 
@@ -1643,6 +1839,136 @@
         </div>
     </div>
 
+    <!-- PRICING PAGE -->
+    <div id="pricingPage" class="page">
+        <!-- Full-page background -->
+        <div class="full-page-bg">
+            <video autoplay muted loop playsinline>
+                <source src="https://pub-5a85f37c8d384c9aaa64d90d3bd3357f.r2.dev/Prices.mp4" type="video/mp4">
+            </video>
+            <div class="full-page-overlay"></div>
+        </div>
+
+        <div class="page-content">
+            <div class="content-container">
+                <div class="about-header">
+                    <h1>Pricing & Services</h1>
+                    <p>Transparent pricing for incident management, infrastructure support, and automation. No hidden fees. No surprises.</p>
+                </div>
+
+                <div class="pricing-wrapper">
+                    <!-- Emergency Response -->
+                    <div class="pricing-card">
+                        <div class="pricing-header">
+                            <h3 class="pricing-title">Emergency Response</h3>
+                            <p class="pricing-subtitle">When things break at 2 AM</p>
+                        </div>
+                        <div class="pricing-price">
+                            €75<span>/hour</span>
+                        </div>
+                        <p style="color: rgba(255, 255, 255, 0.6); font-size: 0.85rem; text-decoration: line-through;">Regular €99/hour</p>
+                        <ul class="pricing-features">
+                            <li>24/7 availability</li>
+                            <li>Response within 2 hours</li>
+                            <li>Server troubleshooting</li>
+                            <li>Database recovery</li>
+                            <li>Performance optimization</li>
+                            <li>Post-incident report</li>
+                        </ul>
+                        <div class="pricing-cta">
+                            <a href="#" onclick="showPage('contact'); return false;" class="btn btn-secondary">Get Emergency Support</a>
+                        </div>
+                    </div>
+
+                    <!-- Complete Platform Management (Featured) -->
+                    <div class="pricing-card">
+                        <span class="pricing-badge">Full-Service Solution</span>
+                        <div class="pricing-header">
+                            <h3 class="pricing-title">Platform Build & Management</h3>
+                            <p class="pricing-subtitle">We build it, host it, monitor it, automate it</p>
+                        </div>
+                        <div class="pricing-price">
+                            From €999<span>/project</span>
+                        </div>
+                        <p style="color: rgba(255, 255, 255, 0.6); font-size: 0.85rem;">+ €249-499/month for hosting & monitoring</p>
+                        <ul class="pricing-features">
+                            <li>Full platform development (frontend + backend)</li>
+                            <li>E-commerce integration (Shopify, WooCommerce, custom)</li>
+                            <li>Database design & optimization</li>
+                            <li>Comprehensive web testing & QA</li>
+                            <li>N8N automation workflows</li>
+                            <li>Managed hosting infrastructure</li>
+                            <li>24/7 monitoring & incident management</li>
+                            <li>Performance optimization</li>
+                            <li>Regular security updates</li>
+                        </ul>
+                        <div class="pricing-cta">
+                            <a href="#" onclick="showPage('contact'); return false;" class="btn btn-primary">Build My Platform</a>
+                        </div>
+                    </div>
+
+                    <!-- Automation & Integration -->
+                    <div class="pricing-card">
+                        <div class="pricing-header">
+                            <h3 class="pricing-title">Automation & Integration</h3>
+                            <p class="pricing-subtitle">Connect your tools, automate workflows</p>
+                        </div>
+                        <div class="pricing-price">
+                            Custom<span>pricing</span>
+                        </div>
+                        <p style="color: rgba(255, 255, 255, 0.6); font-size: 0.85rem;">Depends on workflow complexity • Let's discuss your needs</p>
+                        <ul class="pricing-features">
+                            <li>N8N workflow development</li>
+                            <li>API integrations (any platform)</li>
+                            <li>Data pipeline automation</li>
+                            <li>E-commerce automation (orders, inventory)</li>
+                            <li>CRM synchronization</li>
+                            <li>Custom scripting (Python, JavaScript)</li>
+                            <li>Documentation & training</li>
+                            <li>Ongoing support available</li>
+                        </ul>
+                        <div class="pricing-cta">
+                            <a href="#" onclick="showPage('contact'); return false;" class="btn btn-secondary">Get Quote</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- E-commerce Web Testing & QA -->
+                <div style="margin-top: 4rem; padding: 3rem; background: rgba(161, 2, 134, 0.1); border: 2px solid rgba(161, 2, 134, 0.3); border-radius: 8px;">
+                    <div style="text-align: center; margin-bottom: 2rem;">
+                        <h3 style="color: var(--white); font-size: 2rem; margin-bottom: 0.5rem;">E-commerce Web Testing & QA</h3>
+                        <p style="color: rgba(255, 255, 255, 0.7); font-size: 1.1rem;">Catch bugs before your customers do</p>
+                    </div>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; color: rgba(255, 255, 255, 0.9);">
+                        <div>
+                            <h4 style="color: var(--magenta); margin-bottom: 0.75rem; font-size: 1.1rem;">What We Test</h4>
+                            <ul style="list-style: none; padding: 0;">
+                                <li style="padding: 0.5rem 0; border-bottom: 1px solid rgba(255, 255, 255, 0.1);">✓ Checkout flows</li>
+                                <li style="padding: 0.5rem 0; border-bottom: 1px solid rgba(255, 255, 255, 0.1);">✓ Payment gateways</li>
+                                <li style="padding: 0.5rem 0; border-bottom: 1px solid rgba(255, 255, 255, 0.1);">✓ Mobile responsiveness</li>
+                                <li style="padding: 0.5rem 0;">✓ Cross-browser compatibility</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 style="color: var(--magenta); margin-bottom: 0.75rem; font-size: 1.1rem;">Pricing</h4>
+                            <p style="font-size: 1.1rem; margin-bottom: 1rem;">Custom pricing based on platform complexity</p>
+                            <a href="#" onclick="showPage('contact'); return false;" class="btn btn-primary" style="display: inline-block;">Get a Quote</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Guarantee -->
+                <div style="margin-top: 3rem; text-align: center; padding: 2rem; border: 2px solid var(--magenta); background: rgba(161, 2, 134, 0.1);">
+                    <h3 style="color: var(--white); margin-bottom: 1rem;">Our Guarantee</h3>
+                    <p style="color: rgba(255, 255, 255, 0.9); max-width: 600px; margin: 0 auto;">
+                        Not happy with our service? Get a full refund within 30 days, no questions asked. 
+                        We fix problems, or you don't pay.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- CONTACT PAGE -->
     <div id="contactPage" class="page">
         <!-- Full-page background - VIDEO 4 -->
@@ -1742,7 +2068,7 @@
                             <p>24/7 Availability</p>
                             <p>Emergency incident response</p>
                             <p>Response time: &lt;2 hours</p>
-                            <p><a href="/cdn-cgi/l/email-protection#2b4844455f4a485f6b4544595f434f424c425f4a47054547" style="color: rgba(255, 255, 255, 0.9); text-decoration: none;"><span class="__cf_email__" data-cfemail="680b07061c090b1c2806071a1c000c010f011c0904460604">[email&#160;protected]</span></a></p>
+                            <p><a href="/cdn-cgi/l/email-protection#e685898892878592a6888994928e828f818f92878ac8888a" style="color: rgba(255, 255, 255, 0.9); text-decoration: none;"><span class="__cf_email__" data-cfemail="89eae6e7fde8eafdc9e7e6fbfde1ede0eee0fde8e5a7e7e5">[email&#160;protected]</span></a></p>
                             <p class="location-subtitle">Contact us</p>
                         </div>
                     </div>
@@ -1775,7 +2101,7 @@
                     <h4>Contact</h4>
                     <ul>
                         <li><a href="tel:+31068307228">+31 06 83 072 284</a></li>
-                        <li><a href="/cdn-cgi/l/email-protection#5c35323a331c32332e283438353b35283d30723230"><span class="__cf_email__" data-cfemail="95fcfbf3fad5fbfae7e1fdf1fcf2fce1f4f9bbfbf9">[email&#160;protected]</span></a></li>
+                        <li><a href="/cdn-cgi/l/email-protection#abc2c5cdc4ebc5c4d9dfc3cfc2ccc2dfcac785c5c7" style="color: rgba(255, 255, 255, 0.9); text-decoration: none;"><span class="__cf_email__" data-cfemail="c0a9aea6af80aeafb2b4a8a4a9a7a9b4a1aceeaeac">[email&#160;protected]</span></a></li>
                     </ul>
                 </div>
             </div>
