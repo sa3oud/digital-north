@@ -15,6 +15,12 @@
     <meta name="geo.position" content="52.7269;4.7197">
     <meta name="ICBM" content="52.7269, 4.7197">
     
+    <link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="favicon.png">
+
+<link rel="icon" type="image/png" href="logo22.png">
+<link rel="apple-touch-icon" href="logo22.png">
+
     <!-- Open Graph for Social/AI -->
     <meta property="og:title" content="Incident Management & Infrastructure Expert Amsterdam">
     <meta property="og:description" content="24/7 emergency response for server incidents and infrastructure failures. 4+ years experience. Specializing in e-commerce stability.">
@@ -83,7 +89,6 @@
             document.getElementById(page + 'Page').classList.add('active');
             window.scrollTo(0, 0);
         }
-
         function toggleMenu() {
             const menu = document.getElementById('mobileMenu');
             const hamburger = document.querySelector('.hamburger-btn');
@@ -97,7 +102,6 @@
             padding: 0;
             box-sizing: border-box;
         }
-
         :root {
             --primary-black: #0a0a0a;
             --secondary-black: #1a1a1a;
@@ -107,11 +111,9 @@
             --white: #ffffff;
             --grey-400: #6b6b6b;
         }
-
         html {
             scroll-behavior: smooth;
         }
-
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
             line-height: 1.6;
@@ -120,18 +122,45 @@
             overflow-x: hidden;
             overflow-y: auto;
         }
+        /* ========== LOGO ========== */
+        .logo-container {
+            position: fixed;
+            top: 0rem;
+            left: 2rem;
+            z-index: 1002;
+            transition: all 0.3s ease;
+        }
 
+.logo-container img {
+    height: 160px;
+    width: auto;
+    /* Added to improve rendering of transparency: */
+    display: block;
+    max-width: 100%;
+    /* -------------------------------------- */
+    filter: drop-shadow(0 4px 16px rgba(161, 2, 134, 0.8)) 
+            drop-shadow(0 0 30px rgba(161, 2, 134, 0.6))
+            brightness(1.2);
+    transition: all 0.2s ease;
+}
+
+        .logo-container:hover img {
+            transform: scale(1.1);
+            filter: drop-shadow(0 8px 24px rgba(161, 2, 134, 1)) 
+                    drop-shadow(0 0 40px rgba(161, 2, 134, 0.8))
+                    brightness(1.3);
+        }
         /* ========== HAMBURGER MENU ========== */
         .hamburger-btn {
             position: fixed;
-            top: 2rem;
-            right: 3rem;
+            top: 3rem;
+            right: 2rem;
             z-index: 1002;
             width: 50px;
             height: 50px;
             background: rgba(10, 10, 10, 0.8);
             backdrop-filter: blur(10px);
-            border: 1px solid rgba(161, 2, 134, 0.3);
+            border: 1px solid rgba(199, 119, 186, 0.3);
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -140,43 +169,34 @@
             cursor: pointer;
             transition: all 0.3s ease;
         }
-
         .hamburger-btn:hover {
             background: rgba(26, 26, 26, 0.95);
             border-color: rgba(255, 255, 255, 0.6);
         }
-
         .hamburger-btn span {
             width: 24px;
             height: 2px;
             background: var(--white);
             transition: all 0.3s ease;
         }
-
         .hamburger-btn:hover span {
             background: var(--white);
         }
-
         .hamburger-btn.active {
             background: var(--gold);
         }
-
         .hamburger-btn.active span {
             background: var(--primary-black);
         }
-
         .hamburger-btn.active span:nth-child(1) {
             transform: rotate(45deg) translate(7px, 7px);
         }
-
         .hamburger-btn.active span:nth-child(2) {
             opacity: 0;
         }
-
         .hamburger-btn.active span:nth-child(3) {
             transform: rotate(-45deg) translate(7px, -7px);
         }
-
         /* Mobile Menu */
         .mobile-menu {
             position: fixed;
@@ -193,20 +213,16 @@
             padding: 3rem;
             overflow-y: auto;
         }
-
         .mobile-menu.active {
             display: flex;
         }
-
         .mobile-nav-links {
             list-style: none;
             text-align: center;
         }
-
         .mobile-nav-links li {
             margin-bottom: 2rem;
         }
-
         .mobile-nav-links a {
             color: var(--white);
             font-size: 2.5rem;
@@ -215,12 +231,10 @@
             transition: all 0.3s ease;
             display: inline-block;
         }
-
         .mobile-nav-links a:hover {
             color: var(--gold);
             transform: translateX(10px);
         }
-
         /* ========== FULL PAGE BACKGROUND WRAPPER ========== */
         .full-page-bg {
             position: absolute;
@@ -230,7 +244,6 @@
             height: 100%;
             z-index: 0;
         }
-
         .full-page-bg video,
         .full-page-bg img {
             position: absolute;
@@ -240,7 +253,6 @@
             height: 100%;
             object-fit: cover;
         }
-
         .full-page-overlay {
             position: absolute;
             top: 0;
@@ -255,23 +267,19 @@
                 transparent 100%
             );
         }
-
         /* ========== HERO SLIDER ========== */
         .hero-slider-wrapper {
             height: 100vh;
             position: relative;
         }
-
         .swiper-container {
             width: 100%;
             height: 100%;
         }
-
         .swiper-slide {
             position: relative;
             overflow: hidden;
         }
-
         .slide-bg {
             position: absolute;
             top: 0;
@@ -280,7 +288,6 @@
             height: 100%;
             object-fit: cover;
         }
-
         .slide-overlay {
             position: absolute;
             top: 0;
@@ -295,7 +302,6 @@
                 transparent 100%
             );
         }
-
         .slide-content {
             position: relative;
             z-index: 2;
@@ -306,12 +312,10 @@
             margin: 0 auto;
             padding: 0 3rem 8rem 3rem;
         }
-
         .slide-text {
             max-width: 650px;
             animation: fadeInUp 0.8s ease-out;
         }
-
         @keyframes fadeInUp {
             from {
                 opacity: 0;
@@ -322,7 +326,6 @@
                 transform: translateY(0);
             }
         }
-
         @keyframes slideInRight {
             from {
                 opacity: 0;
@@ -333,7 +336,6 @@
                 transform: translateX(0);
             }
         }
-
         @keyframes slideInLeft {
             from {
                 opacity: 0;
@@ -344,32 +346,28 @@
                 transform: translateX(0);
             }
         }
-
         .slide-text h1,
         .slide-text h2 {
             color: var(--white);
-            font-size: 3.5rem;
+            font-size: 2.5rem;
             font-weight: 200;
             line-height: 1.2;
             margin-bottom: 1.5rem;
             letter-spacing: -0.02em;
         }
-
         .slide-text p {
             color: var(--white);
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             line-height: 1.8;
             margin-bottom: 2.5rem;
             opacity: 0.95;
             font-weight: 300;
         }
-
         .slide-buttons {
             display: flex;
             gap: 1rem;
             flex-wrap: wrap;
         }
-
         .btn {
             padding: 1rem 2rem;
             border: none;
@@ -385,40 +383,34 @@
             font-family: inherit;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
         }
-
         .btn-primary {
             background: var(--gold);
             color: var(--white);
             font-weight: 600;
         }
-
         .btn-primary:hover {
             background: #d604b4;
             transform: translateY(-3px);
             box-shadow: 0 6px 20px rgba(161, 2, 134, 0.4);
         }
-
         .btn-secondary {
             background: transparent;
             color: var(--white);
             border: 2px solid rgba(255, 255, 255, 0.3);
             box-shadow: none;
         }
-
         .btn-secondary:hover {
             background: rgba(255, 255, 255, 0.1);
             border-color: var(--white);
             transform: translateY(-2px);
             box-shadow: 0 4px 12px rgba(255, 255, 255, 0.2);
         }
-
         /* Swiper Pagination */
         .swiper-pagination {
             right: 30px !important;
             left: auto !important;
             width: auto !important;
         }
-
         .swiper-pagination-bullet {
             width: 8px;
             height: 8px;
@@ -427,13 +419,11 @@
             margin: 10px 0 !important;
             transition: all 0.3s ease;
         }
-
         .swiper-pagination-bullet-active {
             background: var(--gold);
             width: 10px;
             height: 10px;
         }
-
         /* ========== PAGE CONTENT WRAPPER ========== */
         .page-content {
             position: relative;
@@ -441,17 +431,14 @@
             min-height: 100vh;
             padding: 8rem 3rem 3rem;
         }
-
         .content-container {
             max-width: 1440px;
             margin: 0 auto;
         }
-
         /* ========== ABOUT PAGE CONTENT ========== */
         .about-header {
             margin-bottom: 6rem;
         }
-
         .about-header h1 {
             color: var(--white);
             font-size: 4.5rem;
@@ -460,7 +447,6 @@
             margin-bottom: 1.5rem;
             animation: slideInRight 1s cubic-bezier(0.4, 0, 0.2, 1);
         }
-
         .about-header p {
             color: rgba(255, 255, 255, 0.9);
             font-size: 1.3rem;
@@ -469,14 +455,12 @@
             line-height: 1.7;
             animation: slideInRight 1s cubic-bezier(0.4, 0, 0.2, 1) 0.3s both;
         }
-
         .about-grid {
             display: grid;
             grid-template-columns: 1.3fr 1fr;
             gap: 6rem;
             align-items: start;
         }
-
         .about-text h2 {
             color: var(--white);
             font-size: 2.8rem;
@@ -485,7 +469,6 @@
             letter-spacing: -0.01em;
             animation: slideInRight 1s cubic-bezier(0.4, 0, 0.2, 1) 0.3s both;
         }
-
         .about-text p {
             color: rgba(255, 255, 255, 0.85);
             font-size: 1.15rem;
@@ -493,26 +476,21 @@
             margin-bottom: 1.8rem;
             animation: slideInRight 1s cubic-bezier(0.4, 0, 0.2, 1) 0.4s both;
         }
-
         .about-text p:nth-of-type(2) {
             animation-delay: 0.5s;
         }
-
         .about-text p:nth-of-type(3) {
             animation-delay: 0.6s;
         }
-
         .about-text strong {
             color: var(--white);
             font-weight: 600;
         }
-
         .stats-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 2rem;
         }
-
         .stat-card {
             background: rgba(26, 26, 26, 0.5);
             backdrop-filter: blur(10px);
@@ -522,30 +500,24 @@
             border: 1px solid rgba(161, 2, 134, 0.2);
             animation: slideInLeft 1s cubic-bezier(0.4, 0, 0.2, 1) both;
         }
-
         .stat-card:nth-child(1) {
             animation-delay: 0.5s;
         }
-
         .stat-card:nth-child(2) {
             animation-delay: 0.6s;
         }
-
         .stat-card:nth-child(3) {
             animation-delay: 0.7s;
         }
-
         .stat-card:nth-child(4) {
             animation-delay: 0.8s;
         }
-
         .stat-card:hover {
             transform: translateY(-10px);
             box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
             border-color: var(--gold);
             background: rgba(161, 2, 134, 0.15);
         }
-
         .stat-number {
             font-size: 4rem;
             font-weight: 200;
@@ -553,7 +525,6 @@
             display: block;
             margin-bottom: 0.75rem;
         }
-
         .stat-label {
             font-size: 0.85rem;
             color: rgba(255, 255, 255, 0.7);
@@ -561,12 +532,10 @@
             letter-spacing: 0.15em;
             font-weight: 500;
         }
-
         /* ========== SERVICES SECTION ========== */
         .services-wrapper {
             margin-top: 4rem;
         }
-
         .service-section {
             background: transparent;
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
@@ -574,33 +543,26 @@
             transition: all 0.4s ease;
             animation: slideInRight 1s cubic-bezier(0.4, 0, 0.2, 1) both;
         }
-
         .service-section:nth-child(1) {
             animation-delay: 0.2s;
         }
-
         .service-section:nth-child(2) {
             animation-delay: 0.4s;
         }
-
         .service-section:nth-child(3) {
             animation-delay: 0.6s;
         }
-
         .service-section:nth-child(4) {
             animation-delay: 0.8s;
         }
-
         .service-section:hover {
             background: rgba(22, 33, 62, 0.3);
         }
-
         .service-container {
             max-width: 1440px;
             margin: 0 auto;
             padding: 4rem 3rem;
         }
-
         .service-content {
             display: flex;
             justify-content: space-between;
@@ -608,7 +570,6 @@
             gap: 4rem;
             cursor: pointer;
         }
-
         .service-icon {
             width: 200px;
             height: 200px;
@@ -617,16 +578,13 @@
             opacity: 0.8;
             transition: all 0.4s ease;
         }
-
         .service-section:hover .service-icon {
             opacity: 1;
             transform: scale(1.05);
         }
-
         .service-info {
             flex: 1;
         }
-
         .service-category {
             color: var(--white);
             font-size: 1.1rem;
@@ -634,12 +592,10 @@
             margin-bottom: 0.75rem;
             opacity: 0.85;
         }
-
         .service-section:hover .service-category {
             opacity: 1;
             color: var(--gold);
         }
-
         .service-title {
             color: var(--white);
             font-size: 2.5rem;
@@ -647,17 +603,14 @@
             margin-bottom: 2rem;
             line-height: 1.2;
         }
-
         .service-section:hover .service-title {
             color: var(--gold);
         }
-
         .service-tags {
             display: flex;
             flex-wrap: wrap;
             gap: 0.75rem;
         }
-
         .service-tag {
             padding: 0.7rem 1.2rem;
             background: rgba(24, 40, 62, 0.5);
@@ -666,13 +619,11 @@
             transition: all 0.3s ease;
             border: 1px solid rgba(255, 255, 255, 0.2);
         }
-
         .service-tag:hover {
             background: rgba(24, 40, 62, 0.8);
             border-color: var(--gold);
             transform: translateY(-2px);
         }
-
         .service-expand {
             width: 56px;
             height: 56px;
@@ -686,7 +637,6 @@
             position: relative;
             border: 1px solid rgba(255, 255, 255, 0.2);
         }
-
         .service-expand::before,
         .service-expand::after {
             content: '';
@@ -694,27 +644,22 @@
             background: var(--white);
             transition: all 0.4s ease;
         }
-
         .service-expand::before {
             width: 20px;
             height: 2px;
         }
-
         .service-expand::after {
             width: 2px;
             height: 20px;
         }
-
         .service-section:hover .service-expand {
             background: var(--gold);
             transform: rotate(45deg);
         }
-
         .service-section:hover .service-expand::before,
         .service-section:hover .service-expand::after {
             background: var(--primary-black);
         }
-
         /* ========== CONTACT FORM ========== */
         .contact-form-section {
             background: rgba(26, 26, 26, 0.3);
@@ -723,7 +668,6 @@
             margin-top: 4rem;
             border: 1px solid rgba(161, 2, 134, 0.2);
         }
-
         .contact-form-container {
             max-width: 1200px;
             margin: 0 auto;
@@ -732,34 +676,29 @@
             gap: 5rem;
             align-items: start;
         }
-
         .contact-form-info h2 {
             font-size: 2.5rem;
             font-weight: 300;
             color: var(--white);
             margin-bottom: 1.5rem;
         }
-
         .contact-form-info p {
             font-size: 1.1rem;
             color: rgba(255, 255, 255, 0.8);
             line-height: 1.8;
             margin-bottom: 3rem;
         }
-
         .contact-phone-wrapper {
             display: flex;
             align-items: center;
             gap: 1rem;
             margin-top: 3rem;
         }
-
         .contact-phone-wrapper svg {
             width: 24px;
             height: 24px;
             fill: var(--gold);
         }
-
         .contact-phone-wrapper a {
             color: var(--white);
             text-decoration: none;
@@ -769,35 +708,29 @@
             border-left: 3px solid var(--gold);
             transition: color 0.3s ease;
         }
-
         .contact-phone-wrapper a:hover {
             color: var(--gold);
         }
-
         .contact-form-wrapper {
             background: rgba(10, 10, 10, 0.4);
             padding: 3rem;
             border: 1px solid rgba(161, 2, 134, 0.2);
         }
-
         .contact-form-wrapper h3 {
             font-size: 1.5rem;
             font-weight: 500;
             color: var(--white);
             margin-bottom: 2rem;
         }
-
         .form-row {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 1.5rem;
             margin-bottom: 1.5rem;
         }
-
         .form-group {
             margin-bottom: 1.5rem;
         }
-
         .form-group label {
             display: block;
             font-size: 0.85rem;
@@ -807,7 +740,6 @@
             text-transform: uppercase;
             letter-spacing: 0.05em;
         }
-
         .form-group input,
         .form-group select,
         .form-group textarea {
@@ -820,12 +752,10 @@
             transition: all 0.3s ease;
             color: var(--white);
         }
-
         .form-group input::placeholder,
         .form-group textarea::placeholder {
             color: rgba(255, 255, 255, 0.4);
         }
-
         .form-group input:focus,
         .form-group select:focus,
         .form-group textarea:focus {
@@ -834,12 +764,10 @@
             box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1);
             background: rgba(255, 255, 255, 0.08);
         }
-
         .form-group textarea {
             min-height: 150px;
             resize: vertical;
         }
-
         .form-submit {
             background: var(--gold);
             color: var(--white);
@@ -854,37 +782,31 @@
             width: 100%;
             border-radius: 0;
         }
-
         .form-submit:hover {
             background: #c203a0;
             transform: translateY(-2px);
             box-shadow: 0 4px 12px rgba(161, 2, 134, 0.3);
         }
-
         /* ========== LOCATIONS SECTION ========== */
         .locations-section {
             margin-top: 4rem;
         }
-
         .locations-header h2 {
             color: var(--white);
             font-size: 3rem;
             font-weight: 300;
             margin-bottom: 1rem;
         }
-
         .locations-header p {
             color: rgba(255, 255, 255, 0.85);
             font-size: 1.2rem;
             margin-bottom: 3rem;
         }
-
         .locations-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 2rem;
         }
-
         .location-card {
             background: rgba(26, 26, 26, 0.5);
             backdrop-filter: blur(10px);
@@ -895,7 +817,6 @@
             overflow: hidden;
             border: 1px solid rgba(161, 2, 134, 0.2);
         }
-
         .location-card::before {
             content: '';
             position: absolute;
@@ -906,36 +827,30 @@
             background: var(--gold);
             transition: width 0.4s ease;
         }
-
         .location-card:hover::before {
             width: 100%;
         }
-
         .location-card:hover {
             transform: translateY(-8px);
             border-color: var(--gold);
         }
-
         .location-card h3 {
             color: var(--white);
             font-size: 2rem;
             font-weight: 600;
             margin-bottom: 0.5rem;
         }
-
         .location-card p {
             color: rgba(255, 255, 255, 0.75);
             font-size: 0.95rem;
             margin: 0.4rem 0;
         }
-
         .location-subtitle {
             color: var(--gold) !important;
             font-size: 0.9rem !important;
             margin-top: 1.5rem !important;
             font-weight: 500;
         }
-
         /* ========== FOOTER ========== */
         footer {
             background: rgba(10, 10, 10, 0.9);
@@ -946,19 +861,16 @@
             z-index: 1;
             margin-top: 8rem;
         }
-
         .footer-container {
             max-width: 1440px;
             margin: 0 auto;
         }
-
         .footer-nav {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
             gap: 4rem;
             margin-bottom: 5rem;
         }
-
         .footer-column h4 {
             color: var(--white);
             font-size: 1rem;
@@ -966,26 +878,21 @@
             margin-bottom: 2rem;
             letter-spacing: 0.05em;
         }
-
         .footer-column ul {
             list-style: none;
         }
-
         .footer-column ul li {
             margin-bottom: 1rem;
         }
-
         .footer-column ul li a {
             color: var(--grey-400);
             text-decoration: none;
             font-size: 0.9rem;
             transition: color 0.3s ease;
         }
-
         .footer-column ul li a:hover {
             color: var(--white);
         }
-
         .footer-bottom {
             display: flex;
             justify-content: space-between;
@@ -993,67 +900,60 @@
             padding-top: 2.5rem;
             border-top: 1px solid rgba(255, 255, 255, 0.08);
         }
-
         .footer-bottom p {
             color: var(--grey-400);
             font-size: 0.9rem;
         }
-
         .footer-social {
             display: flex;
             gap: 2rem;
         }
-
         .footer-social a {
             color: var(--grey-400);
             text-decoration: none;
             font-size: 0.9rem;
             transition: color 0.3s ease;
         }
-
         .footer-social a:hover {
             color: var(--gold);
         }
-
         /* ========== PAGE MANAGEMENT ========== */
         .page {
             display: none;
             position: relative;
             min-height: 100vh;
         }
-
         .page.active {
             display: block;
         }
-
         /* ========== RESPONSIVE ========== */
         /* Tablet Landscape (max-width: 1024px) */
         @media (max-width: 1024px) {
             .content-container {
                 max-width: 90%;
             }
-
             .slide-text h1 {
                 font-size: 3.5rem;
             }
-
             .about-header h1 {
                 font-size: 3.5rem;
             }
-
             .about-text h2 {
                 font-size: 2.3rem;
             }
-
             .stat-card {
                 padding: 2.5rem 1.5rem;
             }
-
             .stat-number {
                 font-size: 3rem;
             }
+            .logo-container {
+                left: 2rem;
+            }
+            .logo-container img {
+                height: 85px;
+            }
         }
-
         /* Tablet Portrait & Mobile (max-width: 968px) */
         @media (max-width: 968px) {
             .slide-text h1,
@@ -1061,296 +961,258 @@
             .about-header h1 {
                 font-size: 2.5rem;
             }
-
             .slide-content,
             .page-content {
                 padding: 0 2rem 4rem 2rem;
             }
-
             .hamburger-btn {
-                top: 1.5rem;
+                top: 0rem;
                 right: 2rem;
                 width: 45px;
                 height: 45px;
             }
-
+            .logo-container {
+                top: 0.5rem;
+                left: 2rem;
+            }
+            .logo-container img {
+                height: 75px;
+            }
             .mobile-nav-links a {
                 font-size: 2rem;
             }
-
             .service-content {
                 flex-direction: column;
                 text-align: center;
                 gap: 2rem;
             }
-
             .service-icon {
                 width: 150px;
                 height: 150px;
             }
-
             .service-title {
                 font-size: 2rem;
             }
-
             .service-tags {
                 justify-content: center;
             }
-
             .about-grid {
                 grid-template-columns: 1fr;
                 gap: 3rem;
             }
-
             .stats-grid {
                 grid-template-columns: 1fr 1fr;
                 gap: 1.5rem;
             }
-
             .contact-form-container {
                 grid-template-columns: 1fr;
                 gap: 3rem;
             }
-
             .form-row {
                 grid-template-columns: 1fr;
             }
-
             .footer-nav {
                 grid-template-columns: 1fr;
                 gap: 2rem;
             }
-
             .footer-bottom {
                 flex-direction: column;
                 gap: 1.5rem;
                 text-align: center;
             }
         }
-
         /* Mobile Large (max-width: 640px) */
         @media (max-width: 640px) {
             .content-container {
                 max-width: 100%;
                 padding: 0 1.5rem;
             }
-
             .slide-text h1,
             .about-header h1 {
                 font-size: 2rem;
                 line-height: 1.2;
             }
-
             .slide-text p,
             .about-header p {
                 font-size: 1rem;
                 line-height: 1.6;
             }
-
             .slide-buttons {
                 flex-direction: column;
                 gap: 1rem;
                 width: 100%;
             }
-
             .btn {
                 width: 100%;
                 padding: 1rem 2rem;
                 font-size: 1rem;
             }
-
             .hamburger-btn {
                 width: 40px;
                 height: 40px;
                 top: 1rem;
                 right: 1rem;
             }
-
+            .logo-container {
+                top: 1rem;
+                left: 1rem;
+            }
+            .logo-container img {
+                height: 70px;
+            }
             .mobile-nav-links a {
                 font-size: 1.8rem;
                 padding: 1rem 0;
             }
-
             .about-text h2 {
                 font-size: 1.8rem;
                 margin-bottom: 1.5rem;
             }
-
             .about-text p {
                 font-size: 1rem;
                 line-height: 1.7;
                 margin-bottom: 1.5rem;
             }
-
             .stats-grid {
                 grid-template-columns: 1fr;
                 gap: 1.5rem;
             }
-
             .stat-card {
                 padding: 2rem 1rem;
             }
-
             .stat-number {
                 font-size: 2.5rem;
             }
-
             .stat-label {
                 font-size: 0.9rem;
             }
-
             .service-title {
                 font-size: 1.5rem;
             }
-
             .service-category {
                 font-size: 0.8rem;
             }
-
             .service-tag {
                 font-size: 0.85rem;
                 padding: 0.5rem 1rem;
             }
-
             /* PRICING MOBILE FIXES */
             .pricing-wrapper {
                 grid-template-columns: 1fr;
                 gap: 1.5rem;
                 margin-top: 2rem;
             }
-
             .pricing-card {
                 padding: 1.5rem;
             }
-
             .pricing-card:nth-child(2) {
                 transform: scale(1);
             }
-
             .pricing-title {
                 font-size: 1.5rem;
             }
-
             .pricing-price {
                 font-size: 2.5rem;
             }
-
             .pricing-price span {
                 font-size: 0.9rem;
             }
-
             .pricing-features li {
                 font-size: 0.9rem;
                 padding: 0.6rem 0;
             }
-
             /* CONTACT FORM MOBILE */
             .contact-form-info h2 {
                 font-size: 1.8rem;
             }
-
             .contact-form-info p {
                 font-size: 1rem;
             }
-
             input,
             textarea {
                 font-size: 1rem;
                 padding: 1rem;
             }
-
             .submit-btn {
                 width: 100%;
                 padding: 1rem;
                 font-size: 1rem;
             }
-
             /* PAGE CONTENT PADDING */
             .page-content {
                 padding: 2rem 1rem 4rem 1rem;
             }
-
             .slide-content {
                 padding: 0 1rem 4rem 1rem;
             }
-
             /* FOOTER MOBILE */
             footer {
                 padding: 3rem 1.5rem 1.5rem;
                 margin-top: 4rem;
             }
-
             .footer-nav {
                 grid-template-columns: 1fr;
             }
         }
-
         /* Mobile Small (max-width: 480px) */
         @media (max-width: 480px) {
             .slide-text h1,
             .about-header h1 {
                 font-size: 1.75rem;
             }
-
             .slide-text p,
             .about-header p {
                 font-size: 0.95rem;
             }
-
             .slide-content,
             .page-content {
                 padding: 0 1rem 3rem 1rem;
             }
-
             .about-text h2 {
                 font-size: 1.5rem;
             }
-
             .service-icon {
                 width: 120px;
                 height: 120px;
             }
-
             .service-title {
                 font-size: 1.3rem;
             }
-
             .service-tag {
                 font-size: 0.8rem;
                 padding: 0.4rem 0.8rem;
             }
-
             .stat-number {
                 font-size: 2rem;
             }
-
             .stat-label {
                 font-size: 0.85rem;
             }
+            .logo-container img {
+                height: 60px;
+            }
         }
-
         /* Very Small Mobile (max-width: 360px) */
         @media (max-width: 360px) {
             .slide-text h1,
             .about-header h1 {
                 font-size: 1.5rem;
             }
-
             .hamburger-btn {
                 width: 36px;
                 height: 36px;
             }
-
+            .logo-container img {
+                height: 55px;
+            }
             .mobile-nav-links a {
                 font-size: 1.5rem;
             }
-
             .btn {
                 padding: 0.9rem 1.5rem;
                 font-size: 0.9rem;
             }
         }
-
         /* ========== PRICING SECTION ========== */
         .pricing-wrapper {
             display: grid;
@@ -1358,13 +1220,11 @@
             gap: 2rem;
             margin-top: 3rem;
         }
-
         @media (max-width: 768px) {
             .pricing-wrapper {
                 grid-template-columns: 1fr;
             }
         }
-
         .pricing-card {
             background: rgba(26, 26, 26, 0.6);
             backdrop-filter: blur(10px);
@@ -1373,32 +1233,26 @@
             transition: all 0.4s ease;
             animation: slideInRight 1s cubic-bezier(0.4, 0, 0.2, 1) both;
         }
-
         .pricing-card:nth-child(1) {
             animation-delay: 0.2s;
         }
-
         .pricing-card:nth-child(2) {
             animation-delay: 0.4s;
             border-color: var(--magenta);
             background: rgba(161, 2, 134, 0.1);
             transform: scale(1.05);
         }
-
         .pricing-card:nth-child(3) {
             animation-delay: 0.6s;
         }
-
         .pricing-card:hover {
             transform: translateY(-5px);
             border-color: var(--magenta);
             box-shadow: 0 10px 30px rgba(161, 2, 134, 0.3);
         }
-
         .pricing-card:nth-child(2):hover {
             transform: scale(1.08) translateY(-5px);
         }
-
         .pricing-badge {
             display: inline-block;
             background: var(--magenta);
@@ -1410,23 +1264,19 @@
             letter-spacing: 1px;
             margin-bottom: 1rem;
         }
-
         .pricing-header {
             margin-bottom: 1.5rem;
         }
-
         .pricing-title {
             font-size: 1.8rem;
             font-weight: 300;
             color: var(--white);
             margin-bottom: 0.5rem;
         }
-
         .pricing-subtitle {
             font-size: 0.9rem;
             color: rgba(255, 255, 255, 0.6);
         }
-
         .pricing-price {
             font-size: 3rem;
             font-weight: 200;
@@ -1436,18 +1286,15 @@
             align-items: baseline;
             gap: 0.5rem;
         }
-
         .pricing-price span {
             font-size: 1rem;
             color: rgba(255, 255, 255, 0.6);
         }
-
         .pricing-features {
             list-style: none;
             padding: 0;
             margin: 2rem 0;
         }
-
         .pricing-features li {
             color: rgba(255, 255, 255, 0.8);
             padding: 0.75rem 0;
@@ -1456,18 +1303,15 @@
             align-items: center;
             gap: 0.75rem;
         }
-
         .pricing-features li:before {
             content: "✓";
             color: var(--magenta);
             font-weight: bold;
             font-size: 1.2rem;
         }
-
         .pricing-cta {
             margin-top: 2rem;
         }
-
         .limited-time {
             background: rgba(161, 2, 134, 0.2);
             border: 1px dashed var(--magenta);
@@ -1475,14 +1319,12 @@
             margin: 2rem 0;
             text-align: center;
         }
-
         .limited-time p {
             color: var(--magenta);
             font-size: 0.9rem;
             margin: 0;
             font-weight: 500;
         }
-
         /* Touch Device Optimizations */
         @media (hover: none) and (pointer: coarse) {
             /* Larger tap targets for mobile */
@@ -1490,32 +1332,27 @@
                 min-height: 48px;
                 padding: 1rem 2rem;
             }
-
             .hamburger-btn {
                 min-width: 44px;
                 min-height: 44px;
             }
-
             .mobile-nav-links a {
                 padding: 1.5rem 2rem;
                 min-height: 56px;
                 display: flex;
                 align-items: center;
             }
-
             input,
             textarea,
             select {
                 min-height: 48px;
                 font-size: 16px; /* Prevents zoom on iOS */
             }
-
             /* Remove hover effects on touch devices */
             .stat-card:hover,
             .service-section:hover {
                 transform: none;
             }
-
             /* Smooth scroll for touch */
             html {
                 -webkit-overflow-scrolling: touch;
@@ -1524,13 +1361,17 @@
     </style>
 </head>
 <body>
+    <div class="logo-container">
+        <a href="#" onclick="showPage('home'); return false;"></a>
+        <img src="logo.png" alt="North Digital Logo">
+    </div>
+
     <!-- Hamburger Menu Button (All Pages) -->
     <div class="hamburger-btn" onclick="toggleMenu()">
         <span></span>
         <span></span>
         <span></span>
     </div>
-
     <!-- Mobile Menu -->
     <div class="mobile-menu" id="mobileMenu">
         <ul class="mobile-nav-links">
@@ -1541,7 +1382,6 @@
             <li><a href="#" onclick="showPage('contact'); toggleMenu(); return false;">Contact</a></li>
         </ul>
     </div>
-
     <!-- HOME PAGE -->
     <div id="homePage" class="page active">
         <div class="hero-slider-wrapper">
@@ -1550,14 +1390,14 @@
                     
                     <!-- Slide 1 - Tunnel Video -->
                     <div class="swiper-slide">
-                        <video class="slide-bg" autoplay muted loop playsinline>
+                        <video class="slide-bg" autoplay muted playsinline>
                             <source src="https://pub-5a85f37c8d384c9aaa64d90d3bd3357f.r2.dev/Home.mp4" type="video/mp4">
                         </video>
                         
                         <div class="slide-overlay"></div>
                         <div class="slide-content">
                             <div class="slide-text">
-                                <h1>Incident Management & Infrastructure Expert Amsterdam</h1>
+                                <h1>Incident Management & Infrastructure Expert</h1>
                                 <p>E-commerce site crashed? Server down? We're your <strong>24/7 incident response team</strong>. Specializing in infrastructure management, automation, web testing, and keeping critical systems running. 4+ years experience in incident analysis and e-commerce platforms.</p>
                                 <div class="slide-buttons">
                                     <a href="#" onclick="showPage('services'); return false;" class="btn btn-primary">Our Services</a>
@@ -1567,12 +1407,10 @@
                             </div>
                         </div>
                     </div>
-
                 </div>
                 <div class="swiper-pagination"></div>
             </div>
         </div>
-
         <!-- Services Section -->
         <div class="services-wrapper">
             <div class="service-section">
@@ -1599,7 +1437,6 @@
                     </div>
                 </div>
             </div>
-
             <div class="service-section">
                 <div class="service-container">
                     <div class="service-content">
@@ -1623,7 +1460,6 @@
                     </div>
                 </div>
             </div>
-
             <div class="service-section">
                 <div class="service-container">
                     <div class="service-content">
@@ -1647,7 +1483,6 @@
                 </div>
             </div>
         </div>
-
         <!-- Contact CTA -->
         <div class="page-content">
             <div class="content-container">
@@ -1670,7 +1505,6 @@
             </div>
         </div>
     </div>
-
     <!-- ABOUT PAGE -->
     <div id="aboutPage" class="page">
         <!-- Full-page background - VIDEO 2 -->
@@ -1680,14 +1514,12 @@
             </video>
             <div class="full-page-overlay"></div>
         </div>
-
         <div class="page-content">
             <div class="content-container">
                 <div class="about-header">
                     <h1>Who We Are</h1>
                     <p>We're North Digital, and we're kind of obsessed with making technology actually work for businesses instead of against them.</p>
                 </div>
-
                 <div class="about-grid">
                     <div class="about-text">
                         <h2>Incident Management Specialist | Amsterdam</h2>
@@ -1696,7 +1528,6 @@
                         <p>Our expertise: <strong>incident management, server infrastructure, automation, web testing for e-commerce platforms, and end-to-end quality assurance.</strong> Whether you need emergency response, infrastructure optimization, automated testing, or monitoring—we deliver. Available 24/7 for critical incidents.</p>
                         <a href="#" onclick="showPage('contact'); return false;" class="btn btn-primary">Emergency Contact</a>
                     </div>
-
                     <div class="stats-grid">
                         <div class="stat-card">
                             <span class="stat-number">80%</span>
@@ -1719,7 +1550,6 @@
             </div>
         </div>
     </div>
-
     <!-- SERVICES PAGE -->
     <div id="servicesPage" class="page">
         <!-- Full-page background - VIDEO 3 -->
@@ -1729,14 +1559,12 @@
             </video>
             <div class="full-page-overlay"></div>
         </div>
-
         <div class="page-content">
             <div class="content-container">
                 <div class="about-header">
                     <h1>What We Actually Do</h1>
                     <p>We're not just consultants who talk—we build, fix, and optimize systems that make your business run smoother. Here's what we're really good at.</p>
                 </div>
-
                 <div class="services-wrapper">
                     <div class="service-section">
                         <div class="service-container">
@@ -1761,7 +1589,6 @@
                             </div>
                         </div>
                     </div>
-
                     <div class="service-section">
                         <div class="service-container">
                             <div class="service-content">
@@ -1785,7 +1612,6 @@
                             </div>
                         </div>
                     </div>
-
                     <div class="service-section">
                         <div class="service-container">
                             <div class="service-content">
@@ -1811,7 +1637,6 @@
                             </div>
                         </div>
                     </div>
-
                     <div class="service-section">
                         <div class="service-container">
                             <div class="service-content">
@@ -1838,7 +1663,6 @@
             </div>
         </div>
     </div>
-
     <!-- PRICING PAGE -->
     <div id="pricingPage" class="page">
         <!-- Full-page background -->
@@ -1848,14 +1672,12 @@
             </video>
             <div class="full-page-overlay"></div>
         </div>
-
         <div class="page-content">
             <div class="content-container">
                 <div class="about-header">
                     <h1>Pricing & Services</h1>
                     <p>Transparent pricing for incident management, infrastructure support, and automation. No hidden fees. No surprises.</p>
                 </div>
-
                 <div class="pricing-wrapper">
                     <!-- Emergency Response -->
                     <div class="pricing-card">
@@ -1879,7 +1701,6 @@
                             <a href="#" onclick="showPage('contact'); return false;" class="btn btn-secondary">Get Emergency Support</a>
                         </div>
                     </div>
-
                     <!-- Complete Platform Management (Featured) -->
                     <div class="pricing-card">
                         <span class="pricing-badge">Full-Service Solution</span>
@@ -1906,7 +1727,6 @@
                             <a href="#" onclick="showPage('contact'); return false;" class="btn btn-primary">Build My Platform</a>
                         </div>
                     </div>
-
                     <!-- Automation & Integration -->
                     <div class="pricing-card">
                         <div class="pricing-header">
@@ -1932,7 +1752,6 @@
                         </div>
                     </div>
                 </div>
-
                 <!-- E-commerce Web Testing & QA -->
                 <div style="margin-top: 4rem; padding: 3rem; background: rgba(161, 2, 134, 0.1); border: 2px solid rgba(161, 2, 134, 0.3); border-radius: 8px;">
                     <div style="text-align: center; margin-bottom: 2rem;">
@@ -1956,7 +1775,6 @@
                         </div>
                     </div>
                 </div>
-
                 <!-- Guarantee -->
                 <div style="margin-top: 3rem; text-align: center; padding: 2rem; border: 2px solid var(--magenta); background: rgba(161, 2, 134, 0.1);">
                     <h3 style="color: var(--white); margin-bottom: 1rem;">Our Guarantee</h3>
@@ -1968,7 +1786,6 @@
             </div>
         </div>
     </div>
-
     <!-- CONTACT PAGE -->
     <div id="contactPage" class="page">
         <!-- Full-page background - VIDEO 4 -->
@@ -1978,14 +1795,12 @@
             </video>
             <div class="full-page-overlay"></div>
         </div>
-
         <div class="page-content">
             <div class="content-container">
                 <div class="about-header">
                     <h1>Let's Talk</h1>
                     <p>System broken? Need automation? Just want to see if we're a good fit? Drop us a line—no sales pitch, just straight answers.</p>
                 </div>
-
                 <!-- Contact Form -->
                 <div class="contact-form-section">
                     <div class="contact-form-container">
@@ -2000,7 +1815,6 @@
                                 <a href="tel:+31068307228">+31 06 83 072 284</a>
                             </div>
                         </div>
-
                         <div class="contact-form-wrapper">
                             <h3>Send us a message</h3>
                             <form id="contactForm">
@@ -2025,7 +1839,6 @@
                                         <input type="tel" required placeholder="+31 06 1234 5678">
                                     </div>
                                 </div>
-
                                 <div class="form-group">
                                     <label>Subject *</label>
                                     <select required>
@@ -2037,18 +1850,15 @@
                                         <option>Other</option>
                                     </select>
                                 </div>
-
                                 <div class="form-group">
                                     <label>Message *</label>
                                     <textarea required placeholder="How can we help you?"></textarea>
                                 </div>
-
                                 <button type="submit" class="form-submit">Contact Us</button>
                             </form>
                         </div>
                     </div>
                 </div>
-
                 <!-- Locations -->
                 <div class="locations-section">
                     <div class="locations-header">
@@ -2076,7 +1886,6 @@
             </div>
         </div>
     </div>
-
     <footer>
         <div class="footer-container">
             <div class="footer-nav">
@@ -2114,7 +1923,6 @@
             </div>
         </div>
     </footer>
-
     <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script>
         function showPage(page) {
@@ -2122,20 +1930,18 @@
             document.getElementById(page + 'Page').classList.add('active');
             window.scrollTo(0, 0);
         }
-
         function toggleMenu() {
             const menu = document.getElementById('mobileMenu');
             const hamburger = document.querySelector('.hamburger-btn');
             menu.classList.toggle('active');
             hamburger.classList.toggle('active');
         }
-
         var swiper = new Swiper(".heroSwiper", {
-            direction: "vertical",
+            direction: "horizontal",
             slidesPerView: 1,
-            speed: 1000,
+            speed: 2000,
             autoplay: {
-                delay: 6000,
+                delay: 10000,
                 disableOnInteraction: false,
             },
             pagination: {
