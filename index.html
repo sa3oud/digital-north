@@ -16,10 +16,9 @@
     <meta name="ICBM" content="52.7269, 4.7197">
     
     <link rel="icon" type="image/png" href="favicon.png">
-<link rel="apple-touch-icon" href="favicon.png">
-
-<link rel="icon" type="image/png" href="logo22.png">
-<link rel="apple-touch-icon" href="logo22.png">
+    <link rel="apple-touch-icon" href="favicon.png">
+    <link rel="icon" type="image/png" href="logo22.png">
+    <link rel="apple-touch-icon" href="logo22.png">
 
     <!-- Open Graph for Social/AI -->
     <meta property="og:title" content="Incident Management & Infrastructure Solutions for E-commerce">
@@ -76,9 +75,6 @@
     }
     </script>
     
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="favicon.png">
-    <link rel="apple-touch-icon" href="favicon.png">
     <link rel="canonical" href="https://northdigital.nl">
     
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
@@ -125,35 +121,111 @@
         /* ========== LOGO ========== */
         .logo-container {
             position: fixed;
-            top: -1rem;
-            left: -1rem;
+            top: 1.5rem;
+            left: 2rem;
             z-index: 1002;
             transition: all 0.3s ease;
         }
 
-.logo-container img {
-    height: 200px;
-    width: auto;
-    /* Added to improve rendering of transparency: */
-    display: block;
-    max-width: 100%;
-    /* -------------------------------------- */
-    filter: drop-shadow(0 4px 16px rgba(161, 2, 134, 0.8)) 
-            drop-shadow(0 0 30px rgba(161, 2, 134, 0.6))
-            brightness(1.2);
-    transition: all 0.2s ease;
-}
+        .logo-container img {
+            height: 120px;
+            width: auto;
+            display: block;
+            max-width: 100%;
+            filter: drop-shadow(0 4px 16px rgba(161, 2, 134, 0.8)) 
+                    drop-shadow(0 0 30px rgba(161, 2, 134, 0.6))
+                    brightness(1.2);
+            transition: all 0.2s ease;
+            cursor: pointer;
+        }
 
         .logo-container:hover img {
-            transform: scale(1.1);
+            transform: scale(1.05);
             filter: drop-shadow(0 8px 24px rgba(161, 2, 134, 1)) 
                     drop-shadow(0 0 40px rgba(161, 2, 134, 0.8))
                     brightness(1.3);
         }
+        
+        /* ========== DESKTOP NAVIGATION ========== */
+        .desktop-nav {
+            position: fixed;
+            top: 2rem;
+            right: 12rem;
+            z-index: 1002;
+            display: flex;
+            gap: 2.5rem;
+            align-items: center;
+        }
+        
+        .desktop-nav a {
+            color: var(--white);
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+            position: relative;
+            padding: 0.5rem 0;
+        }
+        
+        .desktop-nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gold);
+            transition: width 0.3s ease;
+        }
+        
+        .desktop-nav a:hover {
+            color: var(--gold);
+        }
+        
+        .desktop-nav a:hover::after {
+            width: 100%;
+        }
+        
+        .emergency-contact {
+            position: fixed;
+            top: 2rem;
+            right: 2rem;
+            z-index: 1003;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            background: rgba(161, 2, 134, 0.95);
+            padding: 0.75rem 1.5rem;
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--gold);
+            transition: all 0.3s ease;
+        }
+        
+        .emergency-contact:hover {
+            background: rgba(161, 2, 134, 1);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 20px rgba(161, 2, 134, 0.6);
+        }
+        
+        .emergency-contact svg {
+            width: 20px;
+            height: 20px;
+            fill: var(--white);
+        }
+        
+        .emergency-contact a {
+            color: var(--white);
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
         /* ========== HAMBURGER MENU ========== */
         .hamburger-btn {
             position: fixed;
-            top: 3rem;
+            top: 2rem;
             right: 2rem;
             z-index: 1002;
             width: 50px;
@@ -161,7 +233,7 @@
             background: rgba(10, 10, 10, 0.8);
             backdrop-filter: blur(10px);
             border: 1px solid rgba(199, 119, 186, 0.3);
-            display: flex;
+            display: none; /* Hidden on desktop */
             flex-direction: column;
             align-items: center;
             justify-content: center;
@@ -272,6 +344,9 @@
             height: 100vh;
             position: relative;
         }
+        #homePage .hero-slider-wrapper {
+            display: block;
+        }
         .swiper-container {
             width: 100%;
             height: 100%;
@@ -351,7 +426,7 @@
             color: var(--white);
             font-size: 2.5rem;
             font-weight: 200;
-            line-height: 1.2;
+            line-height: 1.3;
             margin-bottom: 1.5rem;
             letter-spacing: -0.02em;
         }
@@ -369,41 +444,55 @@
             flex-wrap: wrap;
         }
         .btn {
-            padding: 1rem 2rem;
+            padding: 1rem 2.5rem;
             border: none;
             font-size: 1rem;
             font-weight: 600;
             cursor: pointer;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: all 0.3s ease;
             text-decoration: none;
             display: inline-block;
-            letter-spacing: 0.3px;
-            text-transform: none;
-            border-radius: 8px;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            border-radius: 0;
             font-family: inherit;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            box-shadow: none;
+            position: relative;
+            overflow: hidden;
+        }
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.1);
+            transition: left 0.3s ease;
+        }
+        .btn:hover::before {
+            left: 100%;
         }
         .btn-primary {
             background: var(--gold);
             color: var(--white);
             font-weight: 600;
+            border: 2px solid var(--gold);
         }
         .btn-primary:hover {
-            background: #d604b4;
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(161, 2, 134, 0.4);
+            background: #8a0270;
+            border-color: #8a0270;
         }
         .btn-secondary {
             background: transparent;
             color: var(--white);
-            border: 2px solid rgba(255, 255, 255, 0.3);
+            border: 2px solid var(--white);
             box-shadow: none;
         }
         .btn-secondary:hover {
-            background: rgba(255, 255, 255, 0.1);
+            background: var(--white);
+            color: var(--primary-black);
             border-color: var(--white);
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(255, 255, 255, 0.2);
         }
         /* Swiper Pagination */
         .swiper-pagination {
@@ -429,7 +518,7 @@
             position: relative;
             z-index: 1;
             min-height: 100vh;
-            padding: 8rem 3rem 3rem;
+            padding: 12rem 3rem 3rem;
         }
         .content-container {
             max-width: 1440px;
@@ -542,6 +631,7 @@
             margin-bottom: 2px;
             transition: all 0.4s ease;
             animation: slideInRight 1s cubic-bezier(0.4, 0, 0.2, 1) both;
+            cursor: pointer;
         }
         .service-section:nth-child(1) {
             animation-delay: 0.2s;
@@ -568,7 +658,6 @@
             justify-content: space-between;
             align-items: center;
             gap: 4rem;
-            cursor: pointer;
         }
         .service-icon {
             width: 200px;
@@ -926,6 +1015,134 @@
         .page.active {
             display: block;
         }
+        /* ========== PRICING SECTION ========== */
+        .pricing-wrapper {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        @media (max-width: 768px) {
+            .pricing-wrapper {
+                grid-template-columns: 1fr;
+            }
+        }
+        .pricing-card {
+            background: rgba(26, 26, 26, 0.6);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(161, 2, 134, 0.3);
+            padding: 2.5rem;
+            transition: all 0.4s ease;
+            animation: slideInRight 1s cubic-bezier(0.4, 0, 0.2, 1) both;
+        }
+        .pricing-card:nth-child(1) {
+            animation-delay: 0.2s;
+        }
+        .pricing-card:nth-child(2) {
+            animation-delay: 0.4s;
+            border-color: var(--gold);
+            background: rgba(161, 2, 134, 0.1);
+            transform: scale(1.05);
+        }
+        .pricing-card:nth-child(3) {
+            animation-delay: 0.6s;
+        }
+        .pricing-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--gold);
+            box-shadow: 0 10px 30px rgba(161, 2, 134, 0.3);
+        }
+        .pricing-card:nth-child(2):hover {
+            transform: scale(1.08) translateY(-5px);
+        }
+        .pricing-badge {
+            display: inline-block;
+            background: var(--gold);
+            color: var(--white);
+            padding: 0.4rem 1rem;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
+        }
+        .pricing-header {
+            margin-bottom: 1.5rem;
+        }
+        .pricing-title {
+            font-size: 1.8rem;
+            font-weight: 300;
+            color: var(--white);
+            margin-bottom: 0.5rem;
+        }
+        .pricing-subtitle {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.6);
+        }
+        .pricing-price {
+            font-size: 3rem;
+            font-weight: 200;
+            color: var(--gold);
+            margin: 1.5rem 0;
+            display: flex;
+            align-items: baseline;
+            gap: 0.5rem;
+        }
+        .pricing-price span {
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.6);
+        }
+        .pricing-features {
+            list-style: none;
+            padding: 0;
+            margin: 2rem 0;
+        }
+        .pricing-features li {
+            color: rgba(255, 255, 255, 0.8);
+            padding: 0.75rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        .pricing-features li:before {
+            content: "✓";
+            color: var(--gold);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        .pricing-cta {
+            margin-top: 2rem;
+        }
+        .limited-time {
+            background: rgba(161, 2, 134, 0.2);
+            border: 1px dashed var(--gold);
+            padding: 1rem;
+            margin: 2rem 0;
+            text-align: center;
+        }
+        .limited-time p {
+            color: var(--gold);
+            font-size: 0.9rem;
+            margin: 0;
+            font-weight: 500;
+        }
+        /* External Link Indicator */
+        a[target="_blank"]::after {
+            content: " ↗";
+            font-size: 0.85em;
+            opacity: 0.7;
+        }
+        
+        /* SEO Hidden Text */
+        .seo-hidden {
+            position: absolute;
+            left: -10000px;
+            top: auto;
+            width: 1px;
+            height: 1px;
+            overflow: hidden;
+        }
         /* ========== RESPONSIVE ========== */
         /* Tablet Landscape (max-width: 1024px) */
         @media (max-width: 1024px) {
@@ -951,32 +1168,49 @@
                 left: 2rem;
             }
             .logo-container img {
-                height: 85px;
+                height: 100px;
+            }
+            .page-content {
+                padding: 11rem 3rem 3rem;
             }
         }
         /* Tablet Portrait & Mobile (max-width: 968px) */
         @media (max-width: 968px) {
+            .desktop-nav {
+                display: none; /* Hide desktop nav on mobile */
+            }
+            
+            .emergency-contact {
+                display: none; /* Hide on mobile, show in hamburger menu */
+            }
+            
+            .hamburger-btn {
+                display: flex; /* Show hamburger on mobile */
+            }
+            
             .slide-text h1,
             .slide-text h2,
             .about-header h1 {
                 font-size: 2.5rem;
             }
-            .slide-content,
-            .page-content {
+            .slide-content {
                 padding: 0 2rem 4rem 2rem;
             }
+            .page-content {
+                padding: 10rem 2rem 4rem;
+            }
             .hamburger-btn {
-                top: 0rem;
+                top: 2rem;
                 right: 2rem;
                 width: 45px;
                 height: 45px;
             }
             .logo-container {
-                top: 0.5rem;
+                top: 1.5rem;
                 left: 2rem;
             }
             .logo-container img {
-                height: 75px;
+                height: 85px;
             }
             .mobile-nav-links a {
                 font-size: 2rem;
@@ -1050,11 +1284,11 @@
             .hamburger-btn {
                 width: 40px;
                 height: 40px;
-                top: 1rem;
+                top: 1.5rem;
                 right: 1rem;
             }
             .logo-container {
-                top: 1rem;
+                top: 1.2rem;
                 left: 1rem;
             }
             .logo-container img {
@@ -1096,7 +1330,6 @@
                 font-size: 0.85rem;
                 padding: 0.5rem 1rem;
             }
-            /* PRICING MOBILE FIXES */
             .pricing-wrapper {
                 grid-template-columns: 1fr;
                 gap: 1.5rem;
@@ -1121,7 +1354,6 @@
                 font-size: 0.9rem;
                 padding: 0.6rem 0;
             }
-            /* CONTACT FORM MOBILE */
             .contact-form-info h2 {
                 font-size: 1.8rem;
             }
@@ -1138,14 +1370,12 @@
                 padding: 1rem;
                 font-size: 1rem;
             }
-            /* PAGE CONTENT PADDING */
             .page-content {
-                padding: 2rem 1rem 4rem 1rem;
+                padding: 9rem 1rem 4rem 1rem;
             }
             .slide-content {
                 padding: 0 1rem 4rem 1rem;
             }
-            /* FOOTER MOBILE */
             footer {
                 padding: 3rem 1.5rem 1.5rem;
                 margin-top: 4rem;
@@ -1164,9 +1394,11 @@
             .about-header p {
                 font-size: 0.95rem;
             }
-            .slide-content,
-            .page-content {
+            .slide-content {
                 padding: 0 1rem 3rem 1rem;
+            }
+            .page-content {
+                padding: 8rem 1rem 3rem;
             }
             .about-text h2 {
                 font-size: 1.5rem;
@@ -1213,121 +1445,8 @@
                 font-size: 0.9rem;
             }
         }
-        /* ========== PRICING SECTION ========== */
-        .pricing-wrapper {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-        @media (max-width: 768px) {
-            .pricing-wrapper {
-                grid-template-columns: 1fr;
-            }
-        }
-        .pricing-card {
-            background: rgba(26, 26, 26, 0.6);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(161, 2, 134, 0.3);
-            padding: 2.5rem;
-            transition: all 0.4s ease;
-            animation: slideInRight 1s cubic-bezier(0.4, 0, 0.2, 1) both;
-        }
-        .pricing-card:nth-child(1) {
-            animation-delay: 0.2s;
-        }
-        .pricing-card:nth-child(2) {
-            animation-delay: 0.4s;
-            border-color: var(--magenta);
-            background: rgba(161, 2, 134, 0.1);
-            transform: scale(1.05);
-        }
-        .pricing-card:nth-child(3) {
-            animation-delay: 0.6s;
-        }
-        .pricing-card:hover {
-            transform: translateY(-5px);
-            border-color: var(--magenta);
-            box-shadow: 0 10px 30px rgba(161, 2, 134, 0.3);
-        }
-        .pricing-card:nth-child(2):hover {
-            transform: scale(1.08) translateY(-5px);
-        }
-        .pricing-badge {
-            display: inline-block;
-            background: var(--magenta);
-            color: var(--white);
-            padding: 0.4rem 1rem;
-            font-size: 0.75rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 1rem;
-        }
-        .pricing-header {
-            margin-bottom: 1.5rem;
-        }
-        .pricing-title {
-            font-size: 1.8rem;
-            font-weight: 300;
-            color: var(--white);
-            margin-bottom: 0.5rem;
-        }
-        .pricing-subtitle {
-            font-size: 0.9rem;
-            color: rgba(255, 255, 255, 0.6);
-        }
-        .pricing-price {
-            font-size: 3rem;
-            font-weight: 200;
-            color: var(--magenta);
-            margin: 1.5rem 0;
-            display: flex;
-            align-items: baseline;
-            gap: 0.5rem;
-        }
-        .pricing-price span {
-            font-size: 1rem;
-            color: rgba(255, 255, 255, 0.6);
-        }
-        .pricing-features {
-            list-style: none;
-            padding: 0;
-            margin: 2rem 0;
-        }
-        .pricing-features li {
-            color: rgba(255, 255, 255, 0.8);
-            padding: 0.75rem 0;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-        }
-        .pricing-features li:before {
-            content: "✓";
-            color: var(--magenta);
-            font-weight: bold;
-            font-size: 1.2rem;
-        }
-        .pricing-cta {
-            margin-top: 2rem;
-        }
-        .limited-time {
-            background: rgba(161, 2, 134, 0.2);
-            border: 1px dashed var(--magenta);
-            padding: 1rem;
-            margin: 2rem 0;
-            text-align: center;
-        }
-        .limited-time p {
-            color: var(--magenta);
-            font-size: 0.9rem;
-            margin: 0;
-            font-weight: 500;
-        }
         /* Touch Device Optimizations */
         @media (hover: none) and (pointer: coarse) {
-            /* Larger tap targets for mobile */
             .btn {
                 min-height: 48px;
                 padding: 1rem 2rem;
@@ -1346,14 +1465,12 @@
             textarea,
             select {
                 min-height: 48px;
-                font-size: 16px; /* Prevents zoom on iOS */
+                font-size: 16px;
             }
-            /* Remove hover effects on touch devices */
             .stat-card:hover,
             .service-section:hover {
                 transform: none;
             }
-            /* Smooth scroll for touch */
             html {
                 -webkit-overflow-scrolling: touch;
             }
@@ -1361,17 +1478,42 @@
     </style>
 </head>
 <body>
-    <div class="logo-container">
-        <a href="#" onclick="showPage('home'); return false;"></a>
-        <img src="logo.png" alt="North Digital Logo">
+    <!-- SEO Hidden Content -->
+    <div class="seo-hidden">
+        <h1>Incident Management & Infrastructure Solution for E-commerce | North Digital</h1>
+        <p>24/7 incident response, server infrastructure, web testing, and automation solutions. Based in Warmenhuizen, North Holland, Netherlands. Specializing in e-commerce stability and QA testing.</p>
     </div>
 
-    <!-- Hamburger Menu Button (All Pages) -->
+    <div class="logo-container">
+        <a href="#" onclick="showPage('home'); return false;">
+            <img src="logo.png" alt="North Digital Logo">
+        </a>
+    </div>
+    
+    <!-- Desktop Navigation -->
+    <nav class="desktop-nav">
+        <a href="#" onclick="showPage('home'); return false;">Home</a>
+        <a href="#" onclick="showPage('about'); return false;">About</a>
+        <a href="#" onclick="showPage('services'); return false;">Services</a>
+        <a href="#" onclick="showPage('pricing'); return false;">Pricing</a>
+        <a href="#" onclick="showPage('contact'); return false;">Contact</a>
+    </nav>
+    
+    <!-- Emergency Contact (Always Visible on Desktop) -->
+    <div class="emergency-contact">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.11-.27 11.44 11.44 0 003.48.56 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.44 11.44 0 00.56 3.48 1 1 0 01-.27 1.11z"/>
+        </svg>
+        <a href="tel:+31683072284">+31 683 072 284</a>
+    </div>
+
+    <!-- Hamburger Menu Button (Mobile Only) -->
     <div class="hamburger-btn" onclick="toggleMenu()">
         <span></span>
         <span></span>
         <span></span>
     </div>
+    
     <!-- Mobile Menu -->
     <div class="mobile-menu" id="mobileMenu">
         <ul class="mobile-nav-links">
@@ -1380,20 +1522,22 @@
             <li><a href="#" onclick="showPage('services'); toggleMenu(); return false;">Services</a></li>
             <li><a href="#" onclick="showPage('pricing'); toggleMenu(); return false;">Pricing</a></li>
             <li><a href="#" onclick="showPage('contact'); toggleMenu(); return false;">Contact</a></li>
+            <li style="margin-top: 2rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.2);">
+                <a href="tel:+31683072284" style="color: var(--gold);">📞 +31 683 072 284</a>
+            </li>
         </ul>
     </div>
+
     <!-- HOME PAGE -->
     <div id="homePage" class="page active">
         <div class="hero-slider-wrapper">
             <div class="swiper-container heroSwiper">
                 <div class="swiper-wrapper">
-                    
-                    <!-- Slide 1 - Tunnel Video -->
+                    <!-- Slide 1 - Home Video -->
                     <div class="swiper-slide">
-                        <video class="slide-bg" autoplay muted playsinline>
+                        <video class="slide-bg" autoplay muted loop playsinline>
                             <source src="https://pub-5a85f37c8d384c9aaa64d90d3bd3357f.r2.dev/Home.mp4" type="video/mp4">
                         </video>
-                        
                         <div class="slide-overlay"></div>
                         <div class="slide-content">
                             <div class="slide-text">
@@ -1401,7 +1545,7 @@
                                 <p>E-commerce site crashed? Server down? We're your <strong>24/7 incident response team</strong>.</p>
                                 <div class="slide-buttons">
                                     <a href="#" onclick="showPage('services'); return false;" class="btn btn-primary">Our Services</a>
-                                    <a href="https://n8n.io" target="_blank" class="btn btn-primary">AI & Automation</a>
+                                    <a href="https://n8n.io" target="_blank" rel="noopener noreferrer" class="btn btn-primary">AI & Automation</a>
                                     <a href="#" onclick="showPage('contact'); return false;" class="btn btn-secondary">Get In Touch</a>
                                 </div>
                             </div>
@@ -1411,9 +1555,10 @@
                 <div class="swiper-pagination"></div>
             </div>
         </div>
-        <!-- Services Section -->
+        
+        <!-- Services Section (scrollable below) -->
         <div class="services-wrapper">
-            <div class="service-section">
+            <div class="service-section" onclick="showPage('services')">
                 <div class="service-container">
                     <div class="service-content">
                         <div class="service-icon">
@@ -1437,7 +1582,7 @@
                     </div>
                 </div>
             </div>
-            <div class="service-section">
+            <div class="service-section" onclick="showPage('services')">
                 <div class="service-container">
                     <div class="service-content">
                         <div class="service-icon">
@@ -1460,7 +1605,7 @@
                     </div>
                 </div>
             </div>
-            <div class="service-section">
+            <div class="service-section" onclick="showPage('services')">
                 <div class="service-container">
                     <div class="service-content">
                         <div class="service-icon">
@@ -1483,8 +1628,9 @@
                 </div>
             </div>
         </div>
-        <!-- Contact CTA -->
-        <div class="page-content">
+        
+        <!-- Contact CTA (scrollable at bottom) -->
+        <div class="page-content" style="min-height: auto;">
             <div class="content-container">
                 <div class="locations-section">
                     <div class="locations-header">
@@ -1505,24 +1651,30 @@
             </div>
         </div>
     </div>
+
     <!-- ABOUT PAGE -->
     <div id="aboutPage" class="page">
-        <!-- Full-page background - VIDEO 2 -->
         <div class="full-page-bg">
             <video autoplay muted loop playsinline>
                 <source src="https://pub-5a85f37c8d384c9aaa64d90d3bd3357f.r2.dev/About.mp4" type="video/mp4">
             </video>
             <div class="full-page-overlay"></div>
         </div>
-        <div class="page-content">
+        <div class="page-content" style="display: flex; align-items: center; min-height: 100vh;">
             <div class="content-container">
                 <div class="about-header">
                     <h1>Who We Are</h1>
                     <p>We're North Digital, and we're kind of obsessed with making technology actually work for businesses instead of against them.</p>
                 </div>
+            </div>
+        </div>
+        
+        <!-- Additional scrollable content below -->
+        <div class="page-content" style="min-height: auto;">
+            <div class="content-container">
                 <div class="about-grid">
                     <div class="about-text">
-                        <h2>Incident Management Specialist </h2>
+                        <h2>Incident Management Specialist</h2>
                         <p>Here's the thing about most IT consultants: they talk a lot, deliver slowly, and disappear when things break. We're not that. We're your <strong>24/7 incident response team</strong>—the specialists you call at 2 AM when your e-commerce site crashes, and we actually pick up.</p>
                         <p>With <strong>4+ years as Incident Analyst</strong>, managing critical e-commerce infrastructure and performing extensive web testing, we've seen it all. Server failures, database crashes, payment gateway issues, checkout bugs, performance problems. <strong>We diagnose fast, fix it properly</strong>, and implement monitoring to prevent it from happening again.</p>
                         <p>Our expertise: <strong>incident management, server infrastructure, automation, web testing for e-commerce platforms, and end-to-end quality assurance.</strong> Whether you need emergency response, infrastructure optimization, automated testing, or monitoring—we deliver. Available 24/7 for critical incidents.</p>
@@ -1550,21 +1702,27 @@
             </div>
         </div>
     </div>
+
     <!-- SERVICES PAGE -->
     <div id="servicesPage" class="page">
-        <!-- Full-page background - VIDEO 3 -->
         <div class="full-page-bg">
             <video autoplay muted loop playsinline>
                 <source src="https://pub-5a85f37c8d384c9aaa64d90d3bd3357f.r2.dev/Services.mp4" type="video/mp4">
             </video>
             <div class="full-page-overlay"></div>
         </div>
-        <div class="page-content">
+        <div class="page-content" style="display: flex; align-items: center; min-height: 100vh;">
             <div class="content-container">
                 <div class="about-header">
                     <h1>What We Actually Do</h1>
-                    <p>We're not just consultants who talk—we build, fix, and optimize systems that make your business run smoother. Here's what we're really good at.</p>
+                    <p>We're not just consultants who talk—we build, fix, and optimize systems that make your business run smoother.</p>
                 </div>
+            </div>
+        </div>
+        
+        <!-- Services details (scrollable below) -->
+        <div class="page-content" style="min-height: auto;">
+            <div class="content-container">
                 <div class="services-wrapper">
                     <div class="service-section">
                         <div class="service-container">
@@ -1663,21 +1821,27 @@
             </div>
         </div>
     </div>
+
     <!-- PRICING PAGE -->
     <div id="pricingPage" class="page">
-        <!-- Full-page background -->
         <div class="full-page-bg">
             <video autoplay muted loop playsinline>
                 <source src="https://pub-5a85f37c8d384c9aaa64d90d3bd3357f.r2.dev/Prices.mp4" type="video/mp4">
             </video>
             <div class="full-page-overlay"></div>
         </div>
-        <div class="page-content">
+        <div class="page-content" style="display: flex; align-items: center; min-height: 100vh;">
             <div class="content-container">
                 <div class="about-header">
                     <h1>Pricing & Services</h1>
                     <p>Transparent pricing for incident management, infrastructure support, and automation. No hidden fees. No surprises.</p>
                 </div>
+            </div>
+        </div>
+        
+        <!-- Pricing details (scrollable below) -->
+        <div class="page-content" style="min-height: auto;">
+            <div class="content-container">
                 <div class="pricing-wrapper">
                     <!-- Emergency Response -->
                     <div class="pricing-card">
@@ -1701,6 +1865,7 @@
                             <a href="#" onclick="showPage('contact'); return false;" class="btn btn-secondary">Get Emergency Support</a>
                         </div>
                     </div>
+                    
                     <!-- Complete Platform Management (Featured) -->
                     <div class="pricing-card">
                         <span class="pricing-badge">Full-Service Solution</span>
@@ -1727,6 +1892,7 @@
                             <a href="#" onclick="showPage('contact'); return false;" class="btn btn-primary">Build My Platform</a>
                         </div>
                     </div>
+                    
                     <!-- Automation & Integration -->
                     <div class="pricing-card">
                         <div class="pricing-header">
@@ -1752,6 +1918,7 @@
                         </div>
                     </div>
                 </div>
+                
                 <!-- E-commerce Web Testing & QA -->
                 <div style="margin-top: 4rem; padding: 3rem; background: rgba(161, 2, 134, 0.1); border: 2px solid rgba(161, 2, 134, 0.3); border-radius: 8px;">
                     <div style="text-align: center; margin-bottom: 2rem;">
@@ -1760,7 +1927,7 @@
                     </div>
                     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; color: rgba(255, 255, 255, 0.9);">
                         <div>
-                            <h4 style="color: var(--magenta); margin-bottom: 0.75rem; font-size: 1.1rem;">What We Test</h4>
+                            <h4 style="color: var(--gold); margin-bottom: 0.75rem; font-size: 1.1rem;">What We Test</h4>
                             <ul style="list-style: none; padding: 0;">
                                 <li style="padding: 0.5rem 0; border-bottom: 1px solid rgba(255, 255, 255, 0.1);">✓ Checkout flows</li>
                                 <li style="padding: 0.5rem 0; border-bottom: 1px solid rgba(255, 255, 255, 0.1);">✓ Payment gateways</li>
@@ -1769,14 +1936,15 @@
                             </ul>
                         </div>
                         <div>
-                            <h4 style="color: var(--magenta); margin-bottom: 0.75rem; font-size: 1.1rem;">Pricing</h4>
+                            <h4 style="color: var(--gold); margin-bottom: 0.75rem; font-size: 1.1rem;">Pricing</h4>
                             <p style="font-size: 1.1rem; margin-bottom: 1rem;">Custom pricing based on platform complexity</p>
                             <a href="#" onclick="showPage('contact'); return false;" class="btn btn-primary" style="display: inline-block;">Get a Quote</a>
                         </div>
                     </div>
                 </div>
+                
                 <!-- Guarantee -->
-                <div style="margin-top: 3rem; text-align: center; padding: 2rem; border: 2px solid var(--magenta); background: rgba(161, 2, 134, 0.1);">
+                <div style="margin-top: 3rem; text-align: center; padding: 2rem; border: 2px solid var(--gold); background: rgba(161, 2, 134, 0.1);">
                     <h3 style="color: var(--white); margin-bottom: 1rem;">Our Guarantee</h3>
                     <p style="color: rgba(255, 255, 255, 0.9); max-width: 600px; margin: 0 auto;">
                         Not happy with our service? Get a full refund within 30 days, no questions asked. 
@@ -1786,9 +1954,9 @@
             </div>
         </div>
     </div>
+
     <!-- CONTACT PAGE -->
     <div id="contactPage" class="page">
-        <!-- Full-page background - VIDEO 4 -->
         <div class="full-page-bg">
             <video autoplay muted loop playsinline>
                 <source src="https://pub-5a85f37c8d384c9aaa64d90d3bd3357f.r2.dev/Contact.mp4" type="video/mp4">
@@ -1801,6 +1969,7 @@
                     <h1>Let's Talk</h1>
                     <p>System broken? Need automation? Just want to see if we're a good fit? Drop us a line—no sales pitch, just straight answers.</p>
                 </div>
+                
                 <!-- Contact Form -->
                 <div class="contact-form-section">
                     <div class="contact-form-container">
@@ -1812,7 +1981,7 @@
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
                                     <path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.11-.27 11.44 11.44 0 003.48.56 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.44 11.44 0 00.56 3.48 1 1 0 01-.27 1.11z"/>
                                 </svg>
-                                <a href="tel:+31068307228">+31 683 072 284</a>
+                                <a href="tel:+31683072284">+31 683 072 284</a>
                             </div>
                         </div>
                         <div class="contact-form-wrapper">
@@ -1839,6 +2008,7 @@
                                         <input type="tel" required placeholder="+31 06 1234 5678">
                                     </div>
                                 </div>
+                                
                                 <div class="form-group">
                                     <label>Subject *</label>
                                     <select required>
@@ -1850,15 +2020,18 @@
                                         <option>Other</option>
                                     </select>
                                 </div>
+                                
                                 <div class="form-group">
                                     <label>Message *</label>
                                     <textarea required placeholder="How can we help you?"></textarea>
                                 </div>
+                                
                                 <button type="submit" class="form-submit">Contact Us</button>
                             </form>
                         </div>
                     </div>
                 </div>
+                
                 <!-- Locations -->
                 <div class="locations-section">
                     <div class="locations-header">
@@ -1878,7 +2051,7 @@
                             <p>24/7 Availability</p>
                             <p>Emergency incident response</p>
                             <p>Response time: &lt;2 hours</p>
-                            <p><a href="mailto:contact@northdigital.nl" style="color: rgba(255, 255, 255, 0.9); text-decoration: none;">contact@northdigital.nl</a></p>
+                            <p><a href="/cdn-cgi/l/email-protection#abc8c4c5dfcac8dfebc5c4d9dfc3cfc2ccc2dfcac785c5c7" style="color: rgba(255, 255, 255, 0.9); text-decoration: none;"><span class="__cf_email__" data-cfemail="b9dad6d7cdd8dacdf9d7d6cbcdd1ddd0ded0cdd8d597d7d5">[email&#160;protected]</span></a></p>
                             <p class="location-subtitle">Contact us</p>
                         </div>
                     </div>
@@ -1886,12 +2059,14 @@
             </div>
         </div>
     </div>
+
     <footer>
         <div class="footer-container">
             <div class="footer-nav">
                 <div class="footer-column">
                     <h4>North Digital</h4>
                     <ul>
+                        <li><a href="#" onclick="showPage('landing'); return false;">Home</a></li>
                         <li><a href="#" onclick="showPage('about'); return false;">About us</a></li>
                         <li><a href="#" onclick="showPage('services'); return false;">Services</a></li>
                         <li><a href="#" onclick="showPage('contact'); return false;">Contact</a></li>
@@ -1909,8 +2084,8 @@
                 <div class="footer-column">
                     <h4>Contact</h4>
                     <ul>
-                        <li><a href="tel:+31068307228">+31 683 072 284</a></li>
-                        <li><a href="mailto:info@northdigital.nl" style="color: rgba(255, 255, 255, 0.9); text-decoration: none;">info@northdigital.nl</a></li>
+                        <li><a href="tel:+31683072284">+31 683 072 284</a></li>
+                        <li><a href="/cdn-cgi/l/email-protection#ea83848c85aa8485989e828e838d839e8b86c48486"><span class="__cf_email__" data-cfemail="ff96919990bf91908d8b979b9698968b9e93d19193">[email&#160;protected]</span></a></li>
                     </ul>
                 </div>
             </div>
@@ -1923,33 +2098,45 @@
             </div>
         </div>
     </footer>
+
     <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script>
-        function showPage(page) {
-            document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-            document.getElementById(page + 'Page').classList.add('active');
-            window.scrollTo(0, 0);
-        }
-        function toggleMenu() {
-            const menu = document.getElementById('mobileMenu');
-            const hamburger = document.querySelector('.hamburger-btn');
-            menu.classList.toggle('active');
-            hamburger.classList.toggle('active');
-        }
+        // Swiper initialization with ultra-smooth futuristic transitions
         var swiper = new Swiper(".heroSwiper", {
             direction: "horizontal",
             slidesPerView: 1,
-            speed: 2000,
+            speed: 2000, // Slower, more cinematic transitions
+            effect: 'fade',
+            fadeEffect: {
+                crossFade: true
+            },
             autoplay: {
-                delay: 10000,
+                delay: 6000, // 6 seconds per slide
                 disableOnInteraction: false,
+                pauseOnMouseEnter: false,
             },
             pagination: {
                 el: ".swiper-pagination",
                 clickable: true,
             },
             mousewheel: false,
-            keyboard: true,
+            keyboard: {
+                enabled: true,
+                onlyInViewport: true,
+            },
+            loop: true,
+            // Smooth easing
+            simulateTouch: true,
+            touchRatio: 1,
+            touchAngle: 45,
+            grabCursor: true,
+            // Optimize performance
+            watchSlidesProgress: true,
+            watchSlidesVisibility: true,
+            preloadImages: false,
+            lazy: {
+                loadPrevNext: true,
+            },
         });
     </script>
 </body>
